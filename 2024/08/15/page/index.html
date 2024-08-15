@@ -13,7 +13,7 @@
 
 
 
-<title>Hello World | Hexo</title>
+<title>kk视频常见问题以及解答 | Hexo</title>
 
 
 
@@ -196,7 +196,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">kk视频常见问题以及解答</h1>
             
                 <div class="post-meta">
                     
@@ -205,28 +205,38 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 14, 2024&nbsp;&nbsp;22:22:57</a>
+                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;12:33:40</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/blog1/">blog1</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <h3 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h3><p>问题<br>cubeide否有代码提示功能<br>解答<br>Alt+&#x2F; 代码提示，显著提高效率<br>MAC是Option+&#x2F;, 通常Win上的Alt键跟Mac上的Option键是对应的</p>
+<p>问题<br>如果打开安装包出现<br>“Error! Can‘t initialize plug-ins directory Please try again later”<br>解答<br>如果安装STM32CubeIDE时需要更换安装路径,请确保安装路径中没有中文。工作空间的路径中也不要有中文。否则会有奇奇怪怪的事情发生。</p>
+<p>问题<br>Error in initializing ST-LINK device.<br>Reason: ST-LINK: Could not verify ST device! Abort connection<br>解答<br>CubeIDE会验证芯片.盗版芯片验证不通过,就会这样.</p>
+<p>问题<br>STM32cubeide安装failed to load jni shared library<br>解答<br>用管理员身份才能运行，双击会报错</p>
+<p>问题<br>处理中断的高级方法<br>解答<br>可以配合定时器，状态机。或者有FreeRTOS的话专门开个处理中断的线程</p>
+<p>问题<br>延时优先级比外部中断高的话，那while循环中是要等一个延时完成后才能进入外部中断吗<br>解答<br>HAL_Delay本身不是中断，只是依赖系统滴答中断提供时钟基准，系统滴答中断每1ms就中断一次，不管有没有运行HAL_Delay，它都会中断</p>
+<p>问题<br>如果高优先级中断在执行，但是此时触发了两次低优先级中断，是不是第一次低优先级中断就丢失了？<br>解答<br>你要这样理解, 来中断后会设置中断标志位为1, 然后就会执行相应的中断处理函数. 如果你说的两个低优先级中断是同一个中断的话(假设叫A中断), 那么第一次中断时, A中断的中断标志位被设置为1, 由于高优先级中断在执行, 所以A中断的处理函数未执行,也就没有清中断标志位, 所以第二次中断来时, A中断的中断标志位依旧为1, 没有任何变化. 当高优先级中断结束后, A中断的中断标志位被发现是1, 然后执行A中断的中断处理函数. 所以, 两次低优先级中断确实被并成一次中断了. 但是也不好说到底是哪次的….</p>
+<p>问题<br>用usb转rs232线的2,3,5号线接单片机的串口针.电脑收到的是乱码.但波特率是一样的<br>回答<br>单片机上只能接收TTL电平信号，不能直接用RS232接到单片机上哦，需要使用RS232转TTL模块，或者USB转TTL</p>
+<p>问题<br>突然不能把程序烧录到板子里了？提示Error  message from debug German back end: localhost:61234: connection timed out.<br>回答<br>针对SWD端口占用导致控制台报错no device found on target：<a target="_blank" rel="noopener" href="https://docs.keysking.com/docs/stm32/FAQ/DownloadFailed/CompilationFailed">https://docs.keysking.com/docs/stm32/FAQ/DownloadFailed/CompilationFailed</a><br>（报错要看控制台的信息而不是这个弹窗，61234只是端口号）</p>
+<p>问题<br>用的不是UP主的学习板，自己买的学习板是用的PA9和PA10作为端口，结果用其他调试助手就能够正常发送hello world，但是up主的调试助手就没有接收信息显示<br>回答<br>是RTS和DTR的配置问题。一般板子内置了转换模块芯片，只需要插上有数据传输功能的typec口线（平时说的数据线）就可以实现通信。也可能是那块stm32坏了。。。</p>
+<p>问题<br>是乱码怎么办<br>回答<br>是串口接收到乱码吗? 可以看看是不是比特率选择的不一致(｀・ω・´)</p>
+<p>问题<br>oled不亮<br>解答<br>用OLED_DisPlay_On();或配置上拉电阻</p>
+<p>问题<br>串口助手网站出问题了嘛，我在其他串口软件接收发送都正常，在这个网站就收不到数据。或者是为什么我打开串口助手网站是一片灰色？<br>解答<br>目前只支持Chrome和Edge浏览器</p>
+<p>问题<br>在第十集中 main.c文件中显示’hdma_usart1_rx’ undeclared (first use in this function)和undefined reference to &#96;_HAL_DMA_DISABLE_IT’这两个问题我应该怎么解决啊<br>解答<br>是不是在CubeMX中勾选了Generate peripheral initialization as a pair of ‘.c&#x2F;.h. files per peripheral<br>应该是你勾上了为每个外设生成单独的.c.h文件<br>也可在uasrt.h文件中添加这些代码<br>extern DMA_HandleTypeDef hdma_usart3_rx;<br>extern DMA_HandleTypeDef hdma_usart3_tx;</p>
+<p>问题<br>up，请问这个支持ble的串口调试助手在哪下？资料包里没看到<br>解答<br>不用下载，网页版的 serial.keysking.com</p>
+<p>问题<br>kkOLED屏幕的品牌名，其他OLED怎么用这个库<br>解答<br>中景园 SSD1306 128*64，其他屏幕就修改一下初始化和SendCmd函数里的指令就好了。另外用的不是i2c1的话，Send函数也改一下（一般修改地址就行，要算）</p>
 
         </div>
 
@@ -241,7 +251,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/14/hello-world/">http://example.com/2024/08/14/hello-world/</a></span>
+                        <span><a href="http://example.com/2024/08/15/page/">http://example.com/2024/08/15/page/</a></span>
                     </p>
                 
                 
@@ -264,6 +274,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E7%BB%8F%E9%AA%8C/"># 电子设计经验</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -274,8 +288,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/15/EXPERIENCE/">EXPERIENCE</a>
             
+            <a class="next" rel="next" href="/2024/08/15/EXPERIENCE/">EXPERIENCE</a>
             
         </section>
 
