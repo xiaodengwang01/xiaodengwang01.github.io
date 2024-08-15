@@ -13,7 +13,7 @@
 
 
 
-<title>kk视频常见问题以及解答 | Hexo</title>
+<title>电子设计经验 | Hexo</title>
 
 
 
@@ -196,7 +196,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">kk视频常见问题以及解答</h1>
+            <h1 class="post-title">电子设计经验</h1>
             
                 <div class="post-meta">
                     
@@ -205,7 +205,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;12:33:40</a>
+                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;11:56:51</a>
                         </span>
                     
                     
@@ -221,22 +221,18 @@
         </header>
 
         <div class="post-content">
-            <h3 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h3><p>问题<br>cubeide否有代码提示功能<br>解答<br>Alt+&#x2F; 代码提示，显著提高效率<br>MAC是Option+&#x2F;, 通常Win上的Alt键跟Mac上的Option键是对应的</p>
-<p>问题<br>如果打开安装包出现<br>“Error! Can‘t initialize plug-ins directory Please try again later”<br>解答<br>如果安装STM32CubeIDE时需要更换安装路径,请确保安装路径中没有中文。工作空间的路径中也不要有中文。否则会有奇奇怪怪的事情发生。</p>
-<p>问题<br>Error in initializing ST-LINK device.<br>Reason: ST-LINK: Could not verify ST device! Abort connection<br>解答<br>CubeIDE会验证芯片.盗版芯片验证不通过,就会这样.</p>
-<p>问题<br>STM32cubeide安装failed to load jni shared library<br>解答<br>用管理员身份才能运行，双击会报错</p>
-<p>问题<br>处理中断的高级方法<br>解答<br>可以配合定时器，状态机。或者有FreeRTOS的话专门开个处理中断的线程</p>
-<p>问题<br>延时优先级比外部中断高的话，那while循环中是要等一个延时完成后才能进入外部中断吗<br>解答<br>HAL_Delay本身不是中断，只是依赖系统滴答中断提供时钟基准，系统滴答中断每1ms就中断一次，不管有没有运行HAL_Delay，它都会中断</p>
-<p>问题<br>如果高优先级中断在执行，但是此时触发了两次低优先级中断，是不是第一次低优先级中断就丢失了？<br>解答<br>你要这样理解, 来中断后会设置中断标志位为1, 然后就会执行相应的中断处理函数. 如果你说的两个低优先级中断是同一个中断的话(假设叫A中断), 那么第一次中断时, A中断的中断标志位被设置为1, 由于高优先级中断在执行, 所以A中断的处理函数未执行,也就没有清中断标志位, 所以第二次中断来时, A中断的中断标志位依旧为1, 没有任何变化. 当高优先级中断结束后, A中断的中断标志位被发现是1, 然后执行A中断的中断处理函数. 所以, 两次低优先级中断确实被并成一次中断了. 但是也不好说到底是哪次的….</p>
-<p>问题<br>用usb转rs232线的2,3,5号线接单片机的串口针.电脑收到的是乱码.但波特率是一样的<br>回答<br>单片机上只能接收TTL电平信号，不能直接用RS232接到单片机上哦，需要使用RS232转TTL模块，或者USB转TTL</p>
-<p>问题<br>突然不能把程序烧录到板子里了？提示Error  message from debug German back end: localhost:61234: connection timed out.<br>回答<br>针对SWD端口占用导致控制台报错no device found on target：<a target="_blank" rel="noopener" href="https://docs.keysking.com/docs/stm32/FAQ/DownloadFailed/CompilationFailed">https://docs.keysking.com/docs/stm32/FAQ/DownloadFailed/CompilationFailed</a><br>（报错要看控制台的信息而不是这个弹窗，61234只是端口号）</p>
-<p>问题<br>用的不是UP主的学习板，自己买的学习板是用的PA9和PA10作为端口，结果用其他调试助手就能够正常发送hello world，但是up主的调试助手就没有接收信息显示<br>回答<br>是RTS和DTR的配置问题。一般板子内置了转换模块芯片，只需要插上有数据传输功能的typec口线（平时说的数据线）就可以实现通信。也可能是那块stm32坏了。。。</p>
-<p>问题<br>是乱码怎么办<br>回答<br>是串口接收到乱码吗? 可以看看是不是比特率选择的不一致(｀・ω・´)</p>
-<p>问题<br>oled不亮<br>解答<br>用OLED_DisPlay_On();或配置上拉电阻</p>
-<p>问题<br>串口助手网站出问题了嘛，我在其他串口软件接收发送都正常，在这个网站就收不到数据。或者是为什么我打开串口助手网站是一片灰色？<br>解答<br>目前只支持Chrome和Edge浏览器</p>
-<p>问题<br>在第十集中 main.c文件中显示’hdma_usart1_rx’ undeclared (first use in this function)和undefined reference to &#96;_HAL_DMA_DISABLE_IT’这两个问题我应该怎么解决啊<br>解答<br>是不是在CubeMX中勾选了Generate peripheral initialization as a pair of ‘.c&#x2F;.h. files per peripheral<br>应该是你勾上了为每个外设生成单独的.c.h文件<br>也可在uasrt.h文件中添加这些代码<br>extern DMA_HandleTypeDef hdma_usart3_rx;<br>extern DMA_HandleTypeDef hdma_usart3_tx;</p>
-<p>问题<br>up，请问这个支持ble的串口调试助手在哪下？资料包里没看到<br>解答<br>不用下载，网页版的 serial.keysking.com</p>
-<p>问题<br>kkOLED屏幕的品牌名，其他OLED怎么用这个库<br>解答<br>中景园 SSD1306 128*64，其他屏幕就修改一下初始化和SendCmd函数里的指令就好了。另外用的不是i2c1的话，Send函数也改一下（一般修改地址就行，要算）</p>
+            <h3 id="1-如何学习"><a href="#1-如何学习" class="headerlink" title="1. 如何学习"></a>1. 如何学习</h3><p>技术总是与时俱进的，它不像我们的课本知识一成不变(至少在下一个Einstein诞生之前是这样的:D)，可能我们去年才学会的技术，今年就被淘汰掉。<br>所以我们需要学会 如何自学，我做了简单的总结如下:</p>
+<p>学会搜索资料<br>擅于使用搜索引擎、靠谱的书籍来查找你所需要的一切。信息搜集与归纳能力是很重要的，下面细说。</p>
+<p>学会自主解决问题<br>当问题出现不要慌，提取其中的关键词&#x2F;点进行针对性的搜索和研究，尽量自己独立地解决问题<br>比如你写的流水灯程序出现了问题，无法通过编译，有Error，你需要在编译输出窗口寻找并定位到Error来源，再来根据报错类型具体分析、查找、是哪里出现了问题。<br>同时你可以搜索问题，如报错”undefined xxx”，你就可以搜索 “undefined xxx”，而不是搜索 为什么我的流水灯不亮(</p>
+<p>学会提问<br>当问题实在是超出了你的知识范畴，你可以向他人求助，向他人求助并不丢人，不过你要学会正确的提问方式，不然可能得到的就是经典回答：RTFM或者是STFM</p>
+<p>我简单总结如下就是:</p>
+<p>遇到问题 先用搜索引擎搜索，实在不知道如何下手&#x2F;找不到方法再求助他人<br>使用关键词检索,而不是拟人语气<br>技术问题少用baidu,少用baidu,少用baidu(重要的事情说三遍~)<br>抓住问题重点,如果不知道重点在哪应该向有经验的人请教<br>会fanqiang的话,能用Google尽量用Google,不能fq的话就用Bing,Bing也很强大（注意是Bing国际版）。<br>附上Bing的网址: <a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com</a></p>
+<h3 id="2-提问的艺术"><a href="#2-提问的艺术" class="headerlink" title="2. 提问的艺术"></a>2. 提问的艺术</h3><p><strong>错误的提问示范</strong><br>在吗？&#x2F;有人吗？&#x2F;有大佬吗？&#x2F;有人帮帮我吗？ Ans： 你想让人怎么回复？有？没有？？<br>(手机拍屏幕)，大佬这个代码怎么报错啊？ Ans：你这程序干啥的？你是不会用截图吗？你就不能发报错信息吗？<br>发一长串指标要求balabala，然后：这个东西怎么做？ Ans：你xx谁啊，你给我钱吗&#x2F;我是你爹吗，让我帮你做？<br>大佬帮我做个xxx参加比赛吧。 Ans：？？？？？？你是魅魔？<br>明明有技术交流群，非要找人私聊问特简单的问题… Ans：我最闲还是我的时间不值钱？<br>你好这个代码&#x2F;电路图&#x2F;pcb可以发我一份吗？我的邮箱:xxx -Ans：可以啊，先V我50万。</p>
+<p><strong>正确的提问示范</strong></p>
+<p>你好，我在开发xx的时候遇到了问题(附上完整的工程文件和所有代码)，我尝试了xxx、yyy方法，仍然无法解决，我的运行环境是xxx操作系统，软件版本是V5.x，硬件连线我不确定有没有问题，(如果有的话附上电路原理图和PCB文件)<br>当然你也不需要 完 全 一 致，只需要提供足够用于debug的完整信息就可以了。如果你能正确地提问，相信大家都会非常乐意帮助你的~</p>
+<h3 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h3><blockquote>
+<p><em>KEYSKING: <a target="_blank" rel="noopener" href="https://docs.keysking.com/">https://docs.keysking.com/</a></em><br><em>ERIC: <a target="_blank" rel="noopener" href="https://www.ericzhuestc.site/">https://www.ericzhuestc.site</a></em><br><em>ch3nsir: <a target="_blank" rel="noopener" href="https://www.ch3nsir.github.io/">https://www.ch3nsir.github.io</a></em><br><em>woyo: <a target="_blank" rel="noopener" href="https://www.woyo-i-sllh.github.io/">https://www.woyo-i-sllh.github.io</a></em></p>
+</blockquote>
 
         </div>
 
@@ -251,7 +247,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/15/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E7%BB%8F%E9%AA%8C/">http://example.com/2024/08/15/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E7%BB%8F%E9%AA%8C/</a></span>
+                        <span><a href="http://example.com/2024/08/15/%E6%88%91%E7%9A%84%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E4%BD%93%E4%BC%9A/">http://example.com/2024/08/15/%E6%88%91%E7%9A%84%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E4%BD%93%E4%BC%9A/</a></span>
                     </p>
                 
                 
@@ -275,7 +271,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E7%BB%8F%E9%AA%8C/"># 电子设计经验</a>
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/"># 电子设计</a>
                     
                         
                 </span>
@@ -288,8 +284,10 @@
         </section>
         <section class="post-nav">
             
+                <a class="prev" rel="prev" href="/2024/08/15/kk%E8%A7%86%E9%A2%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%AD%94/">kk视频常见问题以及解答</a>
             
-            <a class="next" rel="next" href="/2024/08/15/kk%E8%A7%86%E9%A2%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%AD%94/">电子设计经验</a>
+            
+            <a class="next" rel="next" href="/2024/08/14/hello-world/">Hello World</a>
             
         </section>
 
