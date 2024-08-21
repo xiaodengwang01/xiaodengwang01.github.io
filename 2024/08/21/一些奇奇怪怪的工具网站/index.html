@@ -13,7 +13,7 @@
 
 
 
-<title>电子设计经验 | Hexo</title>
+<title>一些奇奇怪怪的工具网站 | Hexo</title>
 
 
 
@@ -127,76 +127,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">电子设计经验</h1>
+            <h1 class="post-title">一些奇奇怪怪的工具网站</h1>
             
                 <div class="post-meta">
                     
@@ -205,7 +140,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;11:56:51</a>
+                        Date: <a href="#">August 21, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
                     
@@ -221,15 +156,29 @@
         </header>
 
         <div class="post-content">
-            <h3 id="1-如何学习"><a href="#1-如何学习" class="headerlink" title="1. 如何学习"></a>1. 如何学习</h3><p>技术总是与时俱进的，它不像我们的课本知识一成不变(至少在下一个Einstein诞生之前是这样的:D)，可能我们去年才学会的技术，今年就被淘汰掉。<br>所以我们需要学会 如何自学，我做了简单的总结如下:</p>
-<p>学会搜索资料<br>擅于使用搜索引擎、靠谱的书籍来查找你所需要的一切。信息搜集与归纳能力是很重要的，下面细说。</p>
-<p>学会自主解决问题<br>当问题出现不要慌，提取其中的关键词&#x2F;点进行针对性的搜索和研究，尽量自己独立地解决问题<br>比如你写的流水灯程序出现了问题，无法通过编译，有Error，你需要在编译输出窗口寻找并定位到Error来源，再来根据报错类型具体分析、查找、是哪里出现了问题。<br>同时你可以搜索问题，如报错”undefined xxx”，你就可以搜索 “undefined xxx”，而不是搜索 为什么我的流水灯不亮(</p>
-<p>学会提问<br>当问题实在是超出了你的知识范畴，你可以向他人求助，向他人求助并不丢人，不过你要学会正确的提问方式，不然可能得到的就是经典回答：RTFM或者是STFM</p>
-<p>我简单总结如下就是:</p>
-<p>遇到问题 先用搜索引擎搜索，实在不知道如何下手&#x2F;找不到方法再求助他人<br>使用关键词检索,而不是拟人语气<br>技术问题少用baidu,少用baidu,少用baidu(重要的事情说三遍~)<br>抓住问题重点,如果不知道重点在哪应该向有经验的人请教<br>会fanqiang的话,能用Google尽量用Google,不能fq的话就用Bing,Bing也很强大（注意是Bing国际版）。<br>附上Bing的网址: <a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com</a></p>
-<h3 id="2-提问的艺术"><a href="#2-提问的艺术" class="headerlink" title="2. 提问的艺术"></a>2. 提问的艺术</h3><p><strong>错误的提问示范</strong><br>在吗？&#x2F;有人吗？&#x2F;有大佬吗？&#x2F;有人帮帮我吗？ Ans： 你想让人怎么回复？有？没有？？<br>(手机拍屏幕)，大佬这个代码怎么报错啊？ Ans：你这程序干啥的？你是不会用截图吗？你就不能发报错信息吗？<br>发一长串指标要求balabala，然后：这个东西怎么做？ Ans：你xx谁啊，你给我钱吗&#x2F;我是你爹吗，让我帮你做？<br>大佬帮我做个xxx参加比赛吧。 Ans：？？？？？？你是魅魔？<br>明明有技术交流群，非要找人私聊问特简单的问题… Ans：我最闲还是我的时间不值钱？<br>你好这个代码&#x2F;电路图&#x2F;pcb可以发我一份吗？我的邮箱:xxx -Ans：可以啊，先V我50万。</p>
-<p><strong>正确的提问示范</strong></p>
-<p>你好，我在开发xx的时候遇到了问题(附上完整的工程文件和所有代码)，我尝试了xxx、yyy方法，仍然无法解决，我的运行环境是xxx操作系统，软件版本是V5.x，硬件连线我不确定有没有问题，(如果有的话附上电路原理图和PCB文件)<br>当然你也不需要 完 全 一 致，只需要提供足够用于debug的完整信息就可以了。如果你能正确地提问，相信大家都会非常乐意帮助你的~</p>
+            <p>kimi <a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">https://kimi.moonshot.cn/</a></p>
+<p>bots <a target="_blank" rel="noopener" href="https://www.coze.com/">https://www.coze.com/</a></p>
+<p>chatgpt<br><a target="_blank" rel="noopener" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
+<p>gpt3.5 <a target="_blank" rel="noopener" href="https://x.aichatos8.cn/">https://x.aichatos8.cn/</a></p>
+<p>天工ai<br><a target="_blank" rel="noopener" href="https://work.tiangong.cn/home/writting">https://work.tiangong.cn/home/writting</a></p>
+<p>期末复习指引<br><a target="_blank" rel="noopener" href="https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh">https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh</a></p>
+<p>deepl翻译<br><a target="_blank" rel="noopener" href="https://www.deepl.com/zh/translator-mobile">https://www.deepl.com/zh/translator-mobile</a></p>
+<p>免费论文查重<br><a target="_blank" rel="noopener" href="https://www.paperyy.com/">https://www.paperyy.com/</a></p>
+<p>geogerbra<br><a target="_blank" rel="noopener" href="https://www.geogebra.org/?lang=zh-CN">https://www.geogebra.org/?lang=zh-CN</a></p>
+<p>英作批改网<br><a target="_blank" rel="noopener" href="https://www.pigai.org/">https://www.pigai.org/</a></p>
+<p>3d打印模型<br><a target="_blank" rel="noopener" href="https://www.thingiverse.com/">https://www.thingiverse.com/</a></p>
+<p>表情包制作<br><a target="_blank" rel="noopener" href="https://pearmini.github.io/colorfu/#/">https://pearmini.github.io/colorfu/#/</a></p>
+<p>测速网<br><a target="_blank" rel="noopener" href="https://m.speedtest.cn/">https://m.speedtest.cn/</a></p>
+<p>16人格测试<br><a target="_blank" rel="noopener" href="https://www.16personalities.com/free-personality-test">https://www.16personalities.com/free-personality-test</a></p>
+<p>c语言速查<br><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp">https://en.cppreference.com/w/cpp</a></p>
+<p>verilog在线评测<br><a target="_blank" rel="noopener" href="https://verilogoj.ustc.edu.cn/oj/">https://verilogoj.ustc.edu.cn/oj/</a></p>
+<p>logo自动生成<br><a target="_blank" rel="noopener" href="https://stockimg.ai/">https://stockimg.ai/</a></p>
+<p>数据筛选与检测<br><a target="_blank" rel="noopener" href="https://www.browse.ai/">https://www.browse.ai/</a></p>
+<p>变声器<br><a target="_blank" rel="noopener" href="https://www.altered.ai/">https://www.altered.ai/</a></p>
+<p>辅助读书<br><a target="_blank" rel="noopener" href="https://elevenlabs.io/">https://elevenlabs.io/</a></p>
+<p>矢量图标<br><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p>破解软件<br><a target="_blank" rel="noopener" href="https://www.ghxi.com/">https://www.ghxi.com/</a></p>
+<p>破解网站<br><a target="_blank" rel="noopener" href="http://rutracker.org/">http://rutracker.org/</a></p>
 
         </div>
 
@@ -244,7 +193,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/15/%E6%88%91%E7%9A%84%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E4%BD%93%E4%BC%9A/">http://example.com/2024/08/15/%E6%88%91%E7%9A%84%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E4%BD%93%E4%BC%9A/</a></span>
+                        <span><a href="http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</a></span>
                     </p>
                 
                 
@@ -281,10 +230,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/15/kk%E8%A7%86%E9%A2%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%AD%94/">kk视频常见问题以及解答</a>
+                <a class="prev" rel="prev" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">一些奇奇怪怪的技能学习网站</a>
             
             
-            <a class="next" rel="next" href="/2024/08/14/hello-world/">Hello World</a>
+            <a class="next" rel="next" href="/2024/08/15/%E5%8F%8B%E9%93%BE/">LINK</a>
             
         </section>
 

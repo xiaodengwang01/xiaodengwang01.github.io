@@ -13,7 +13,7 @@
 
 
 
-<title>Hello World | Hexo</title>
+<title>一些奇奇怪怪的技能学习网站 | Hexo</title>
 
 
 
@@ -127,76 +127,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">一些奇奇怪怪的技能学习网站</h1>
             
                 <div class="post-meta">
                     
@@ -205,28 +140,49 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 14, 2024&nbsp;&nbsp;22:22:57</a>
+                        Date: <a href="#">August 21, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/blog1/">blog1</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <p>markdown基本语法<br><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p>
+<p>cs自学指南<br><a target="_blank" rel="noopener" href="https://csdiy.wiki/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">https://csdiy.wiki/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</a></p>
+<p>菜鸟教程<br><a target="_blank" rel="noopener" href="https://www.runoob.com/">https://www.runoob.com/</a></p>
+<p>电子入坑百科全书<br><a target="_blank" rel="noopener" href="https://www.emoe.xyz/all-about-electronics/">https://www.emoe.xyz/all-about-electronics/</a></p>
+<p>各类编程语言速查表<br><a target="_blank" rel="noopener" href="https://quickref.cn/">https://quickref.cn/</a></p>
+<p>雷达学报<br><a target="_blank" rel="noopener" href="https://radars.ac.cn/">https://radars.ac.cn/</a></p>
+<p>外语学习<br><a target="_blank" rel="noopener" href="https://languageplayer.io/">https://languageplayer.io/</a></p>
+<p>深度学习<br><a target="_blank" rel="noopener" href="https://udlbook.github.io/udlbook/">https://udlbook.github.io/udlbook/</a></p>
+<p>codegeex使用<br><a target="_blank" rel="noopener" href="https://zhipu-ai.feishu.cn/wiki/CuvxwUDDqiErQUkFO2Tc4walnZY">https://zhipu-ai.feishu.cn/wiki/CuvxwUDDqiErQUkFO2Tc4walnZY</a></p>
+<p>Linux命令集查询<br><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/linux-command">https://github.com/jaywcjlove/linux-command</a></p>
+<p>Verilog学习<br><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/Main_Page">https://hdlbits.01xz.net/wiki/Main_Page</a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/wszwszwszqwer/article/details/123764784">https://blog.csdn.net/wszwszwszqwer/article/details/123764784</a></p>
+<p>在线latex编辑器 <a target="_blank" rel="noopener" href="https://www.overleaf.com/">https://www.overleaf.com/</a></p>
+<p>visuwords <a target="_blank" rel="noopener" href="https://visuwords.com/">https://visuwords.com/</a></p>
+<p>清华大学开源软件镜像网<br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">https://mirrors.tuna.tsinghua.edu.cn/</a></p>
+<p>云服务器 <a target="_blank" rel="noopener" href="https://university.aliyun.com/">https://university.aliyun.com/</a></p>
+<p>油管优秀课程搬运<br><a target="_blank" rel="noopener" href="https://crashcourse.club/category">https://crashcourse.club/category</a></p>
+<p>免代理GitHub<br><a target="_blank" rel="noopener" href="https://githubfast.com/">https://githubfast.com/</a></p>
+<p>开源代码<br><a target="_blank" rel="noopener" href="https://gitee.com/explore">https://gitee.com/explore</a></p>
+<p>b站优秀公开课<br><a target="_blank" rel="noopener" href="https://docs.qq.com/sheet/DRU5MWHZCTHFGQnhM?tab=qb1sze">https://docs.qq.com/sheet/DRU5MWHZCTHFGQnhM?tab=qb1sze</a></p>
+<p>良心网站推荐合集<br><a target="_blank" rel="noopener" href="https://lkssite.vip/">https://lkssite.vip/</a></p>
+<p>编程自学之路<br><a target="_blank" rel="noopener" href="https://www.r2coding.com/#/">https://www.r2coding.com/#/</a></p>
+<p>编程问题提问<br><a target="_blank" rel="noopener" href="https://stackoverflow.co/">https://stackoverflow.co/</a></p>
+<p>openmv<br><a target="_blank" rel="noopener" href="https://singtown.com/openmv/">https://singtown.com/openmv/</a></p>
+<p>kms激活<br><a target="_blank" rel="noopener" href="https://www.kms.pub/index.html">https://www.kms.pub/index.html</a></p>
+<p>matlab学习指南<br><a target="_blank" rel="noopener" href="https://github.com/101Hub/Matlab101">https://github.com/101Hub/Matlab101</a></p>
+<p>ai工程师手册<br><a target="_blank" rel="noopener" href="https://www.huaxiaozhuan.com/">https://www.huaxiaozhuan.com/</a></p>
+<p>高效学习<br><a target="_blank" rel="noopener" href="https://brilliant.org/">https://brilliant.org/</a></p>
 
         </div>
 
@@ -241,7 +197,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/14/hello-world/">http://example.com/2024/08/14/hello-world/</a></span>
+                        <span><a href="http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</a></span>
                     </p>
                 
                 
@@ -264,6 +220,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/"># 电子设计</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -274,8 +234,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/15/%E6%88%91%E7%9A%84%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E4%BD%93%E4%BC%9A/">电子设计经验</a>
             
+            <a class="next" rel="next" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">一些奇奇怪怪的工具网站</a>
             
         </section>
 
