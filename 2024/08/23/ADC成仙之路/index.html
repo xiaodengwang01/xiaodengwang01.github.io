@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>ADC成仙之路 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">ADC成仙之路</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><strong>前言</strong><br>有关ADC的介绍已经很多了，本文只针对cubeide如何配置ADC进行解释说明  </p>
+<h3 id="1-ADC基础配置"><a href="#1-ADC基础配置" class="headerlink" title="1. ADC基础配置"></a>1. ADC基础配置</h3><ul>
+<li><p>先配置RCC-HSE-CRYSTAL</p>
+</li>
+<li><p>再于SYS中配置serial wire</p>
+</li>
+<li><p>启用float打印：在cubeIDE菜单栏中，Project Properties -&gt; C&#x2F;C++ Build -&gt; Settings -&gt; Tool Settings -&gt; MCU Settings，勾选Use float with printf … -nano</p>
+</li>
+<li><p>打开ADC1：在Pinout&amp;Configuration页面，设置为ADC1_IN2 Differential</p>
+</li>
+<li><p>配置ADC：在Pinout&amp;Configuration -&gt; Analog -&gt; ADC1 -&gt; Configuration中</p>
+<ul>
+<li>ADC_Settings -&gt; Continuous Conversion Mode设为Enable，使ADC转换持续进行，不需要每次获取之前手动触发转换</li>
+<li>ADC_Regular_ConversionMode -&gt; Rank -&gt; Sampling Time设为810.5 Cycles，最长采样时间，可以获得更稳定的转换结果</li>
+</ul>
+</li>
+<li><p>引用头文件：<br>由于需要使用 sprintf 打印输出，以及数学函数，在 main.c 引用头文件：<br><code>#include &quot;stdio.h&quot;#include &quot;string.h&quot;#include &quot;math.h&quot;</code></p>
+</li>
+<li><p><strong>启动连续ADC转换</strong><br><code>*// 启动连续ADC转换*HAL_ADC_Start(&amp;hadc1); </code><br><code>*// 等待ADC稳定*HAL_Delay(500);</code>  </p>
+</li>
+<li><p>打开串口2外设：<br>Pinout&amp;Configuration -&gt; Connectivity -&gt; USART2，将Mode选择为Asynchronous</p>
+</li>
+<li><p>读取ADC结果<br><code>*// 获取ADC值*result = HAL_ADC_GetValue(&amp;hadc1);</code><br><code>*// 计算电压值：电压 = ADC结果 × 3.3V ÷ 4095*voltage = result * 3.3f / 4095;</code><br><code>*// 将变量打印为字符串*sprintf(send_buf, &quot;原始值: %d，电压值: %.3f V\r\n&quot;, result, voltage);</code><br><code>*// 通过串口2发送*HAL_UART_Transmit(&amp;huart2, (uint8_t*) send_buf, strlen(send_buf), 20);</code></p>
+</li>
+<li><p>h7及以上配置代码时可能出现warning： Main Config: These peripherals still have some not configured or wrong parameter values:[Clock]不影响必要功能</p>
+</li>
+</ul>
+<h3 id="2-timer计时器测频率"><a href="#2-timer计时器测频率" class="headerlink" title="2.timer计时器测频率"></a>2.timer计时器测频率</h3><p>通常，你应该先启动定时器的计数（<code>HAL_TIM_Base_Start</code>），然后才能启动输入捕获中断（<code>HAL_TIM_IC_Start_IT</code>）。这是因为输入捕获依赖于定时器的计数器在运行。</p>
+<p>如果目的是配置输入捕获中断，并且希望在外部信号触发时响应中断，那么在启动输入捕获中断之后不要立即停止它。如果你不希望响应中断，那么只需要调用<code>HAL_TIM_Base_Start</code>来启动定时器的计数。</p>
+<p>假设你希望定时器开始计数，并且当外部信号触发时响应中断：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__HAL_TIM_SET_COUNTER(&amp;htim3, <span class="number">0</span>);<span class="comment">// 设置定时器计数值为0</span></span><br><span class="line">HAL_TIM_Base_Start(&amp;htim3);<span class="comment">// 启动定时器计数</span></span><br><span class="line">__HAL_TIM_SET_CAPTUREPOLARITY(&amp;htim3, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_RISING);<span class="comment">// 设置捕获极性为上升沿</span></span><br><span class="line">HAL_TIM_IC_Start_IT(&amp;htim3, TIM_CHANNEL_3);<span class="comment">// 启动输入捕获中断</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你不希望使用中断，只是想让定时器开始计数，那么应该省略中断相关的函数调用：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__HAL_TIM_SET_COUNTER(&amp;htim3, <span class="number">0</span>);<span class="comment">// 设置定时器计数值为0</span></span><br><span class="line">HAL_TIM_Base_Start(&amp;htim3);<span class="comment">// 启动定时器计数</span></span><br></pre></td></tr></table></figure>
+
+<p>请根据你的具体需求调整代码。如果你确实需要使用中断，请确保你的中断服务例程（ISR）已经正确配置，并且能够处理输入捕获事件。</p>
+<p>main()中的代码  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">__HAL_TIM_SET_COUNTER(&amp;htim1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始捕获</span></span><br><span class="line"></span><br><span class="line">__HAL_TIM_SET_CAPTUREPOLARITY(&amp;htim1, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_RISING);</span><br><span class="line"></span><br><span class="line">HAL_TIM_IC_Start_IT(&amp;htim1, TIM_CHANNEL_3);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等待一段时间以捕获足够数量的周期</span></span><br><span class="line"></span><br><span class="line">HAL_Delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 停止输入捕获中断</span></span><br><span class="line"></span><br><span class="line">HAL_TIM_IC_Stop_IT(&amp;htim1, TIM_CHANNEL_3);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出测量到的频率</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (period_count &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> buf[<span class="number">64</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">sprintf</span>(buf, <span class="string">&quot;Frequency: %lu Hz\r\n&quot;</span>, frequency);</span><br><span class="line"></span><br><span class="line">HAL_UART_Transmit(&amp;huart2, (<span class="type">uint8_t</span> *)buf, **<span class="built_in">strlen</span>**(buf), <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> buf[<span class="number">64</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">sprintf</span>(buf, <span class="string">&quot;Not enough periods captured to calculate frequency.\r\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">HAL_UART_Transmit(&amp;huart2, (<span class="type">uint8_t</span> *)buf, **<span class="built_in">strlen</span>**(buf), <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>中断回调函数中的代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">HAL_TIM_IC_CaptureCallback</span><span class="params">(TIM_HandleTypeDef *htim)</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (htim-&gt;Instance == TIM1) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3) &lt; capture_value1) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 捕获到下降沿，记录周期结束</span></span><br><span class="line"></span><br><span class="line">period_count++;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新周期时间</span></span><br><span class="line"></span><br><span class="line">frequency = (<span class="type">uint32_t</span>)((SystemCoreClock / <span class="number">1000000</span>) / period_count); <span class="comment">// 计算频率(单位：Hz)</span></span><br><span class="line"></span><br><span class="line">capture_value2 = capture_value1; <span class="comment">// 上一个捕获值用于下一次上升沿的比较</span></span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 捕获到上升沿，记录当前捕获值</span></span><br><span class="line"></span><br><span class="line">capture_value1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-添加DSP库对ADC采样值进行FFT处理"><a href="#3-添加DSP库对ADC采样值进行FFT处理" class="headerlink" title="3.添加DSP库对ADC采样值进行FFT处理"></a>3.添加DSP库对ADC采样值进行FFT处理</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34022877/article/details/123190943">https://blog.csdn.net/qq_34022877/article/details/123190943</a> </p>
+<p>一般把dsp库配置好，再增加个ARM_MATH_CM3或ARM_MATH_CM4定义不报错就行了</p>
+<p>注意：有的方案只能适用于M3和M4的核，也就是我们常见的F1,F4等。对于H7,F7这样采用M7的核就不适用了。</p>
+<h3 id="4-ADC-TIM-DMA采集交流信号"><a href="#4-ADC-TIM-DMA采集交流信号" class="headerlink" title="4.ADC+TIM+DMA采集交流信号"></a>4.ADC+TIM+DMA采集交流信号</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34022877/article/details/121941236">https://blog.csdn.net/qq_34022877/article/details/121941236</a></p>
+<h3 id="5-调用自己编写的FFT库"><a href="#5-调用自己编写的FFT库" class="headerlink" title="5.调用自己编写的FFT库"></a>5.调用自己编写的FFT库</h3><p>以下仓库给出几种案例<br><a target="_blank" rel="noopener" href="https://github.com/xiaodengwang01/dian-sai/tree/master/Lib.FFT">https://github.com/xiaodengwang01/dian-sai/tree/master/Lib.FFT</a><br>（期待小星星ing.jpg）</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/23/ADC%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">http://example.com/2024/08/23/ADC%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024/08/23/uestc%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/">uestc课程资源合集</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

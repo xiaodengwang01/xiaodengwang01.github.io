@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>怎么用AI工具写文章 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">怎么用AI工具写文章</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">大学生活小技巧</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>对于首次使用 AI 工具来写文章、论文的朋友，最开始可能不知道如何「调教」AI，让它产出符合我们要求的内容。</p>
+<p>就这个问题，我们可以参考 GitHub 上一个热门的项目，这个项目列举了众多使用 AI 工具时输入的<strong>提示语（prompts）</strong>案例，其中就有一些和写作、写论文相关的：</p>
+<ul>
+<li>扮演学者的角色</li>
+</ul>
+<p>我希望您扮演一个学者的角色。您将负责研究一个自己选择的主题，并以<strong>论文</strong>或<strong>文章</strong>形式呈现研究结果。您的任务是确定可靠的信息来源，以良好结构的方式组织材料，并准确地用引文进行记录。我第一个要求的建议是：“我需要帮助撰写一篇关于面向18-25岁大学生的可再生能源发电现代趋势的文章。”</p>
+<ul>
+<li>扮演论文作者</li>
+</ul>
+<p>我想让你扮演一名论文作者。你需要研究一个给定的主题，提出一个论点，并创作出一篇既有信息性又具有说服力的文章。我的第一个建议是，“我需要帮助写一篇有关减少环境中塑料垃圾的重要性且有说服力的文章”。</p>
+<ul>
+<li>扮演人工智能写作导师</li>
+</ul>
+<p>我希望你扮演一个AI写作导师的角色。我会提供一个需要帮助提高写作水平的学生，你的任务是使用自然语言处理等人工智能工具，为学生提供反馈，告诉他们如何改进论文写作。你还应该根据你的修辞知识和写作技巧经验，建议学生更好地表达他们的思想和想法。我的第一个请求是“我需要有人帮我<strong>编辑</strong>我的<strong>硕士论文</strong>。”</p>
+<p>除了项目展示的案例，小博还整理了一些<strong>使用 AI 来辅助我们写文章的技巧</strong>：</p>
+<ul>
+<li>请帮我重写下面这段话</li>
+</ul>
+<p>!<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-2621c464565a84ac4d85ec1db70e7635_b.jpg">https://pic2.zhimg.com/v2-2621c464565a84ac4d85ec1db70e7635_b.jpg</a></p>
+<ul>
+<li>请我帮我重新润色下面这段话</li>
+</ul>
+<p>!<a target="_blank" rel="noopener" href="https://pic1.zhimg.com/v2-5e1b348193e8e16508a8a5a1f37dc888_b.jpg">https://pic1.zhimg.com/v2-5e1b348193e8e16508a8a5a1f37dc888_b.jpg</a></p>
+<ul>
+<li>请从更加学术、严谨的角度，帮我重新润色下面这段话</li>
+</ul>
+<p>!<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-fee28ca2a41fa05a5eb39ec1c9434edd_b.jpg">https://pic2.zhimg.com/v2-fee28ca2a41fa05a5eb39ec1c9434edd_b.jpg</a></p>
+<p>写文章&#x2F;论文的过程中，如果参考了外网的资源或文献，我们还可以把 AI 用作翻译工具：</p>
+<ul>
+<li>请把下面的内容翻译为中文</li>
+</ul>
+<p>!<a target="_blank" rel="noopener" href="https://pic3.zhimg.com/v2-66e3e71538f00db6a6d3cc98cd2ad2ca_b.jpg">https://pic3.zhimg.com/v2-66e3e71538f00db6a6d3cc98cd2ad2ca_b.jpg</a></p>
+<h3 id="AIGC智能白板软件boardmix"><a href="#AIGC智能白板软件boardmix" class="headerlink" title="AIGC智能白板软件boardmix"></a><strong>AIGC智能白板软件boardmix</strong></h3><p>掌握使用 AI 工具来辅助写文章和论文的技巧后，我们就可以来进行实操啦～这里我们使用的是一款集成了 AIGC 能力的在线白板软件「<strong>boardmix博思白板</strong>」，它提供了一个强大的「<strong>AI 助手</strong>」功能，我们可以向 AI 助手提出各种问题，也可以让它就某一个主题，为我们「出谋划策」。</p>
+<p>!<a target="_blank" rel="noopener" href="https://pic3.zhimg.com/v2-c3d0cbe33fb12da71311bc6cfd0e54ce_b.jpg">https://pic3.zhimg.com/v2-c3d0cbe33fb12da71311bc6cfd0e54ce_b.jpg</a></p>
+<p>以<strong>写文章</strong>这个场景为例，博思白板 AI 助手可以辅助我们完成多个事项：</p>
+<ul>
+<li><strong>提供写作思路</strong></li>
+<li><strong>生成正文内容</strong></li>
+<li><strong>生成文章标题</strong></li>
+</ul>
+<h2 id="AI助手提供写作思路"><a href="#AI助手提供写作思路" class="headerlink" title="AI助手提供写作思路"></a><strong>AI助手提供写作思路</strong></h2><p>通常在确定文章主题之后，接下来就是围绕主题<strong>撰写大纲</strong>，如果你对要写的主题没有很好的思路，可以向 AI 助手提问，提问时输入的<strong>提示语</strong>可参考下面的例子：</p>
+<p>「我想写一篇介绍博思白板的文章，麻烦给我提供一些思路」</p>
+<p>输入之后，AI 助手会给出可供参考的内容大纲，如下图所示。值得一提的是，<strong>这里列出的提示语仅作为参考</strong>，各位在向 AI 助手提问时，可补充更多的背景信息，或是提出更为具体的问题，这样 AI 助手给出的回答也就更有针对性。</p>
+<p>!<a target="_blank" rel="noopener" href="https://pic4.zhimg.com/v2-4bbfc47daac6ce4abe1cd1c8e91084ab_b.jpg">https://pic4.zhimg.com/v2-4bbfc47daac6ce4abe1cd1c8e91084ab_b.jpg</a></p>
+<p>对于 AI 助手生成的内容，我们点击面板右下角的「插入画布」，将问题和 AI 助手给出的回答，同时插入白板中。</p>
+<p>!<a target="_blank" rel="noopener" href="https://pic1.zhimg.com/v2-30f444c32bc1474ffd098fb2ab9457c8_b.jpg">https://pic1.zhimg.com/v2-30f444c32bc1474ffd098fb2ab9457c8_b.jpg</a></p>
+<h2 id="AI助手生成正文内容"><a href="#AI助手生成正文内容" class="headerlink" title="AI助手生成正文内容"></a><strong>AI助手生成正文内容</strong></h2><p>前面使用 AI 助手生成文章大纲后，我们可以在大纲的基础上，继续向 AI 助手发起提问，让它就我们接下来想写的板块<strong>展开详细的阐述、提供灵感</strong>，辅助编辑正文内容。</p>
+<p>小博将前面生成的大纲中的第 2、3 点放到一起，向 AI 助手提了一个需求「<strong>麻烦详细介绍一下在线白板软件博思白板的特点和优势</strong>」，让其就博思白板的这两个方面展开介绍。</p>
+<p>下图是 AI 助手自动生成的内容，围绕 6 个方面进行介绍——<strong>协作支持、流程管理、数据互通、存储安全、界面友好、功能完善</strong>，熟悉博思白板的朋友，可能会发现 AI 助手生成的内容并不完全准确，这个确实也是现在许多生成式 AI 工具的「通病」，但它至少给编辑内容的人提供了一个方向或参考，让思路更加开阔。</p>
+<p>!<a target="_blank" rel="noopener" href="https://pic3.zhimg.com/v2-3cd09b50cf5402e84e1521beae7cc34a_b.jpg">https://pic3.zhimg.com/v2-3cd09b50cf5402e84e1521beae7cc34a_b.jpg</a></p>
+<h2 id="AI助手生成文章标题"><a href="#AI助手生成文章标题" class="headerlink" title="AI助手生成文章标题"></a><strong>AI助手生成文章标题</strong></h2><p>在正式发布文章之前，还得给它起一个标题，俗话说，<strong>好的标题，是成功的一半</strong>，毕竟辛辛苦苦写好的文章，谁都不希望阅读量只有 2 位数……这时给文章起一个有吸引力的标题，就显得尤为重要。</p>
+<p>譬如坐在小博旁边的同事，刚写好一篇作品集模板的文章，正为文章标题发愁，机智的我向 AI 助手提了一个问题「我写了一篇分享设计师作品集模板的文章，麻烦帮我取10个有吸引力的文章标题」，咔咔咔 AI 助手一下子就给出了 10 个可供参考的标题。</p>
+<p>!<a target="_blank" rel="noopener" href="https://pic1.zhimg.com/v2-542aaf2daeaabdfc06093c8fcf7766c0_b.jpg">https://pic1.zhimg.com/v2-542aaf2daeaabdfc06093c8fcf7766c0_b.jpg</a></p>
+<h2 id="在博思白板中美化AI助手生成的内容"><a href="#在博思白板中美化AI助手生成的内容" class="headerlink" title="在博思白板中美化AI助手生成的内容"></a><strong>在博思白板中美化AI助手生成的内容</strong></h2><p>使用博思白板 AI 助手生成的内容，可以点击面板右下角的「<strong>插入画布</strong>」，将我们向 AI 助手提出的问题&#x2F;需求、AI 助手返回的回答，一并插入白板中。</p>
+<p>当然，直接插入白板的 AI 内容，默认会存放在一个个的文本框中，外观看上去<strong>缺少亿点点冲击力</strong>，不过，得益于博思白板内置的多个<strong>可视化工具</strong>——<strong>文档、便签、思维导图、流程图</strong>等，我们可以逐一对其进行美化：</p>
+<ul>
+<li>文档支持添加<strong>文本、图片、链接、表格、思维导图</strong>等，我们可以将相关的元素或内容整合到一个文档中</li>
+<li>思维导图用于呈现文章大纲、梳理脉络</li>
+<li>便签用于承载碎片化&#x2F;短小的内容</li>
+<li>流程图用于可视化呈现流程&#x2F;步骤</li>
+<li>……</li>
+</ul>
+<p>!<a target="_blank" rel="noopener" href="https://pic4.zhimg.com/v2-e968f375c28f6fa72c85f618541d3de7_b.jpg">https://pic4.zhimg.com/v2-e968f375c28f6fa72c85f618541d3de7_b.jpg</a></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/23/%E6%80%8E%E4%B9%88%E7%94%A8AI%E5%B7%A5%E5%85%B7%E5%86%99%E6%96%87%E7%AB%A0/">http://example.com/2024/08/23/%E6%80%8E%E4%B9%88%E7%94%A8AI%E5%B7%A5%E5%85%B7%E5%86%99%E6%96%87%E7%AB%A0/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/23/%E5%8D%95%E7%89%87%E6%9C%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%96%B9%E6%B3%95/">单片机低功耗方法</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/23/%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F%E3%80%81%E6%9F%A5%E9%87%8D%E3%80%81%E7%AD%94%E8%BE%A9%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">论文格式、查重、答辩信息汇总</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

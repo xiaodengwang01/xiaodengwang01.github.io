@@ -13,7 +13,7 @@
 
 
 
-<title>一些奇奇怪怪的工具网站 | Hexo</title>
+<title>单片机低功耗方法 | Hexo</title>
 
 
 
@@ -131,7 +131,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">一些奇奇怪怪的工具网站</h1>
+            <h1 class="post-title">单片机低功耗方法</h1>
             
                 <div class="post-meta">
                     
@@ -140,14 +140,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2024&nbsp;&nbsp;13:34:03</a>
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E5%A6%99%E6%8B%9B/">生活小妙招</a>
+                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
                             
                         </span>
                     
@@ -156,29 +156,25 @@
         </header>
 
         <div class="post-content">
-            <p>kimi <a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">https://kimi.moonshot.cn/</a></p>
-<p>bots <a target="_blank" rel="noopener" href="https://www.coze.com/">https://www.coze.com/</a></p>
-<p>chatgpt<br><a target="_blank" rel="noopener" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
-<p>gpt3.5 <a target="_blank" rel="noopener" href="https://x.aichatos8.cn/">https://x.aichatos8.cn/</a></p>
-<p>天工ai<br><a target="_blank" rel="noopener" href="https://work.tiangong.cn/home/writting">https://work.tiangong.cn/home/writting</a></p>
-<p>期末复习指引<br><a target="_blank" rel="noopener" href="https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh">https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh</a></p>
-<p>deepl翻译<br><a target="_blank" rel="noopener" href="https://www.deepl.com/zh/translator-mobile">https://www.deepl.com/zh/translator-mobile</a></p>
-<p>免费论文查重<br><a target="_blank" rel="noopener" href="https://www.paperyy.com/">https://www.paperyy.com/</a></p>
-<p>geogerbra<br><a target="_blank" rel="noopener" href="https://www.geogebra.org/?lang=zh-CN">https://www.geogebra.org/?lang=zh-CN</a></p>
-<p>英作批改网<br><a target="_blank" rel="noopener" href="https://www.pigai.org/">https://www.pigai.org/</a></p>
-<p>3d打印模型<br><a target="_blank" rel="noopener" href="https://www.thingiverse.com/">https://www.thingiverse.com/</a></p>
-<p>表情包制作<br><a target="_blank" rel="noopener" href="https://pearmini.github.io/colorfu/#/">https://pearmini.github.io/colorfu/#/</a></p>
-<p>测速网<br><a target="_blank" rel="noopener" href="https://m.speedtest.cn/">https://m.speedtest.cn/</a></p>
-<p>16人格测试<br><a target="_blank" rel="noopener" href="https://www.16personalities.com/free-personality-test">https://www.16personalities.com/free-personality-test</a></p>
-<p>c语言速查<br><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp">https://en.cppreference.com/w/cpp</a></p>
-<p>verilog在线评测<br><a target="_blank" rel="noopener" href="https://verilogoj.ustc.edu.cn/oj/">https://verilogoj.ustc.edu.cn/oj/</a></p>
-<p>logo自动生成<br><a target="_blank" rel="noopener" href="https://stockimg.ai/">https://stockimg.ai/</a></p>
-<p>数据筛选与检测<br><a target="_blank" rel="noopener" href="https://www.browse.ai/">https://www.browse.ai/</a></p>
-<p>变声器<br><a target="_blank" rel="noopener" href="https://www.altered.ai/">https://www.altered.ai/</a></p>
-<p>辅助读书<br><a target="_blank" rel="noopener" href="https://elevenlabs.io/">https://elevenlabs.io/</a></p>
-<p>矢量图标<br><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p>破解软件<br><a target="_blank" rel="noopener" href="https://www.ghxi.com/">https://www.ghxi.com/</a></p>
-<p>破解网站<br><a target="_blank" rel="noopener" href="http://rutracker.org/">http://rutracker.org/</a></p>
+            <p>总体原则：</p>
+<p>1、将不用的I&#x2F;O引脚设置为高或者低状态，不要让其悬空。</p>
+<p>2、在不需要运行时间严格要求的任务，如UART通信或精密脉冲时钟时序等，尽可能使用内 部时钟，这通常是低功耗的首选。</p>
+<p>3、关断所有不使用的外设：如PWM模块、AD转换器等等。</p>
+<p>4、尽可能在程序代码中使用查找表，而不是让CPU去计算结果。</p>
+<p>5、检查所有外部元器件的功耗，减少那些驱动外设，如EEPROM或者外部模拟电路的I&#x2F;O数目。总之，要去寻找那些电流消耗的单元，并尽量降低其功耗。</p>
+<p>硬件方面:</p>
+<p>[1]尽可能采用低功耗的器件或电路设计。比如，低功耗场合能不用LED尽可能不要用，声响的电路也是一样。</p>
+<p>[2]尽可能选择带有关闭功能的器件，比较运放、R232电路、逻辑电路等等…在不必要的时候使其关闭。</p>
+<p>[3]在显示方便也要选择低功耗的显示方式，比如采用LCD片，而不要用LCD模块。或采用LCD模块时将背光关掉。</p>
+<p>[4]一些常用开关晶体管由三极管改为MOSFET管。</p>
+<p>[5]有可能的话，不要选择小阻值分压；这样同样可减少功耗。按键上接电阻同样可以选择大点。对于模拟前端部分可能不态适合，因为当用高精度ADC时，电阻值越大热噪声就会越大。所以这做法不适宜用在高精度ADC前端。</p>
+<p>[6]关于MSP430的IO处理，我个人的理解是可以空着，并设置为输入。因为设置为输入时IO处理高阻态，IO的漏电流只有50nA。</p>
+<p>[7]能不用LDO尽可能不要用LDO，因为线性电源器件会带功耗上的增加。确实没办法了可以选择CMOS型的LDO器件。或采用高效的DC&#x2F;DC电源管理电路，以提高效能利用。关于以上几项，MC430F44开发板在设计都是基于这些原则上设计的，同时兼容了通用器件的使用。也就是说两种类型的器件都可以用。</p>
+<p>软件方面：</p>
+<p>[1]你要了解MSP430的4种不同模式下的时钟与模块使用情况，这样你才控制好整个设计的功耗管理。</p>
+<p>[2]若不是很需要很高精度的时钟的话尽可能不要外部晶振，尽可能使用内部的DCO作为MCLK。当程序中需要在串口时，这时可以开启所需的时钟源以得到精度的波特率，不用时则要关闭掉时钟和串口模块。如果不是高速响应处理任务的话尽可能不要用选择外部晶体时钟作为MCLK。</p>
+<p>[3]在进入低功耗模式前，尽可能将MCLK改为DCO模式。因为DCO模式在进入功耗模式后，在得到中断唤醒时是最速度启动工作的时钟源。这样可以大大减小在唤醒时节省能源。如果唤醒后确实需要高速度时钟源，此时可以再转换到高速度的时钟源上使用。</p>
+<p>[4]系统在每隔xxx秒唤醒时启动ADC一次转换，同时使能ADC12IFG中断，当中断后读出ADC12MEMX中的结果存储，然后休眠。ADC采样率满足10次谐波要求条件下取小些。</p>
 
         </div>
 
@@ -193,7 +189,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</a></span>
+                        <span><a href="http://example.com/2024/08/23/%E5%8D%95%E7%89%87%E6%9C%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%96%B9%E6%B3%95/">http://example.com/2024/08/23/%E5%8D%95%E7%89%87%E6%9C%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%96%B9%E6%B3%95/</a></span>
                     </p>
                 
                 
@@ -230,10 +226,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">一些奇奇怪怪的技能学习网站</a>
+                <a class="prev" rel="prev" href="/2024/08/23/uestc%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/">uestc课程资源合集</a>
             
             
-            <a class="next" rel="next" href="/2024/08/15/%E5%8F%8B%E9%93%BE/">LINK</a>
+            <a class="next" rel="next" href="/2024/08/23/%E6%80%8E%E4%B9%88%E7%94%A8AI%E5%B7%A5%E5%85%B7%E5%86%99%E6%96%87%E7%AB%A0/">怎么用AI工具写文章</a>
             
         </section>
 

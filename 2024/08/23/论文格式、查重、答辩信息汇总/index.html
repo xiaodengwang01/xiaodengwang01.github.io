@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>论文格式、查重、答辩信息汇总 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">论文格式、查重、答辩信息汇总</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">大学生活小技巧</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>不管三七二十一，码够字数再说，字数不够没有盖好大楼何谈粉刷？！</p>
+<p><strong>（1）论文改写完了，调格式开始，进入第一步：页边距设置。</strong></p>
+<p>PS1：可能会好奇，它为啥是第一步，原因是如果排版搞好再调页边距，默认的3.17,2.45-&gt;3,3就会导致A4纸一行内的字数和总行数都会发生变化，原来的排版就会发生篡位，如果是纯文本还好，问题不大；如果是表格图片很多，会发现原来的排版都会乱掉，比如原来本页的图窜到上一页了，表格跨页了，前功尽弃！</p>
+<p>PS2：word里面，页边距设置常用方法包括三种方式，“整篇”，“本节”和“插入点之后”，如果已经为每章末尾插入“分节符”，那么它默认是本节，因此，可能会发生“明明我设置了，为什么页边距还是原来的？！”，其实是只设置了一节，并没有设置成整篇，对于毕业论文，不适合采用“整篇”，因为封皮是个“爷”，你得对他好点。所以有两种方法：1.每章挨个设置；2.光标放到“摘要”，以插入点之后设置，然后再每章检查一下，一般不会出现问题。</p>
+<p><strong>（2）设置行间距和字体</strong></p>
+<p>光标放到摘要，鼠标拖动右下拉条，到文章末尾，按住shfit，鼠标点击“致谢”文本末尾，选中论文所有内容，alt+o+p，三个按键依此点，注意不是组合键，调出“段落”设置行距为固定值：20磅；组合键ctrl +D，设置中文宋体小四，英文字体新罗马TNR；最后选中参考文献，设置其行间距20磅，宋体五号，字符TNR</p>
+<p>PS1：如果论文有封面前4页，不要ctrl A全选，还是因为封皮是个“大爷”。如果论文还没有安装封面4组合，那么可以全选。</p>
+<p>PS2：此时不用关心图题表题的字体大小的，在每章节排版中再一一设置的。</p>
+<p>PS3：参考文献是5号字</p>
+<p><strong>（3）插入“分节符”</strong></p>
+<p>PS1：这个就简单了，把光标放到需要插入的地方，一般都是章节末尾，word07以上版本：alt+p+b+n，不用看，四个键依序点， 保证插入。</p>
+<p>PS2：分节符干嘛的？帮助设置页眉页脚的。</p>
+<p>PS3：它放到这里可以保证下一步在“分节”（一般是一章）中无论怎么排版，不会影响到其他章节，有人会说页眉会，其实页眉也不会，下面再解释。</p>
+<p><strong>（4）分节设置文本</strong></p>
+<p>PS1：设置第一章的一级，二级，三级标题的字体、大小，段前后间距。然后使用格式刷，选中模板文本，双击格式刷，开始刷，刷，刷，重要的事情说三遍。把每章标题都刷对了就好了</p>
+<p>PS2：图片，表格，公式，文本布局合理，意思就是看上去美观即可：</p>
+<p>A-&gt;图片不要整篇贴，一般宽度11-13cm适当，看个人需要调整，不是明文规定，只要看着美观一些吧，次要宽高比等比例放大或者缩小，如此保证截图中的文字不会发生拉长或压缩等扭曲问题。</p>
+<p>B-&gt;表格和图片不同，一般要铺满文档宽度，图片两边留白有点“韵味”。设置表格内文本全部居中，个别需要可以不居中，居中指文字在表格内上下左右都居中。采用右键表格属性设置即可。如果设置无效，那么可以采取先清除表格格式，然后重新设置，就一定能成功。列宽根据需要自己拖动变化，行高可以设置最小值0.7-1cm范围适当。</p>
+<p>C-&gt;图片和表格内容（图片包含文字，不是截图），图题和表题，一律是宋体五号，英文TNR；图题段前6磅，段后12磅，表题与之反过来。如此设置原因很简单，就是让题和图表结合，让人一眼就看出“这个题就是这个图表的说明”这就达到效果了，如果太远，那认真调吧。表格内的标题，要简明扼要，最理想是不换行。此外，图片要居中，选中它，ctrl+e,居中没？没有居中？那此行的最左边肯定有个Tab键或空白^_^。最后，图片与图片正上方的文字之间以及表格与表格正下方文字之间，最好有一定间隔，一般间隔6磅适当。如果本页空闲较多（此时一般发生在页最下面放不下一张图片或整个表格，而推到下一页，导致页底下空白较多），12磅也能用。对于页底由于放不下整图或整表导致留白较多时，考虑调整文本和图片的顺序，这是允许的。也就是说将对图表的解释说明文字放到图表之前，填补页面留的空白，如此图表推到下一页，这样比留大片白要好，但是如果留白不多，比如两三行，也是没啥问题的。如果实在没得调整，页底又留有多行，那么有两种方案解决：1.往前找，能换行的换行，能往下推的推，争取把空白占用了。2.选中大片文本，设置行间距为21磅，就会少几行。可能会觉得不符合要求，其实用19磅还是21磅，肉眼看着都是20磅，不信可以一试。在E条目中，此招还要用。</p>
+<p>D-&gt;公式需要居中。对于公式偏多的文本，需要为公式编号，组合键ctrl+R，设置右对齐，在行末尾输入公式编号，然后在公式和编号中间不断添加空格，将公式推到文档中间即可，复杂的公式，其编号可能不好添加，可以考虑使用文本框。公式段前断后设置6磅，更美观。此外，公式不要放到文本行中，一定要单独列出一行并居中。</p>
+<p>E-&gt;文本段缩进一定是中文4个空白，即两个汉字。不要用Tab，Tab是英文摘要用的缩进，小学语文写作文都开始要求缩进两个汉字宽度，也该知道这茬吧，调整方式1：段落里设置缩进；2：挨个改。如果某个小节只有一句半句在下一页上，提上来，怎么提？方法1：首先尝试该论文。修改下句子，删点没用的句子或词组，就上来了；方法2：D条目中已经提到了，实在没得删，选中一大段文本，设置其行间距为19.0-19.9磅一个适当的值，它就上来了。还有，如果一小节的标题在页的最后两行，将其换行放到下一页去，换行导致的留白，可以不用管。这样设置保证文本阅读的连贯性和排版的美观性。</p>
+<p>F-&gt;耐心，细心，坚持的考验，有些人到这时候就开始跳了，抱怨连声，其实没有必要，虽然这些劳动有些机械，但是有精力去打游戏，去耍，去吃，去泡马子，就没有两个小时去改自己的论文？如此不挂你，挂谁？！人生不在这里浪费时间，就是在那浪费时间，总之，我们平凡之人总是在浪费时间，或者说消磨更恰当，浪费还得有个参照标准呢，有时候自己都不知道自己该干神马，何谈“浪费”呢，只能算消磨吧。</p>
+<p>G-&gt;没有G了</p>
+<p><strong>（5）其实到这里，论文已经可以看到胜利的曙光了，主体已经完工。下面插入页脚页眉。</strong></p>
+<p>估计栽到这上面的人不少。插入的技（zi）巧（shi）：从上往下插，从前往后插（想多的去面壁哈）。</p>
+<p>PS1：页面布局里面有个板式，每小节设置页眉页脚边距2cm，勾选奇偶页不同</p>
+<p>PS2：word03需要操作一下“插入页码”；07版以上，双击好像就会有</p>
+<p>PS3：从摘要开始插起，页眉下划线，采用word的“边框和底纹”设置；页眉插入时取消“链接到前一个”，输入本节标题；然后是页码，插入页码之前，先设置页眉格式，如果需要续前节页码，勾选选项确定。然后点击“插入页码”即可。每一小节都是如此，如果某个页眉标题设置之后，其他章节也变了，那肯定是输入页眉之前没有取消“链接到前一个”；如果每小节页码都从1开始算，那你肯定没有勾选续前页选项。注：这里的小节是分节符的节。</p>
+<p>PS4：这里插入页码就是为目录准备的</p>
+<p><strong>（6）设置文本大纲</strong></p>
+<p>PS1.视图里面有个大纲功能，打开之后，需要对每个标题对应设置标题的级别，设置它干嘛？用自动生成目录啊！标题的级别一定要设置准备，看标题阿拉伯数字个数就好，大标题一级，2个数字就是2级标题，3个数字-三级，4个四级。五级标题，那你论文够牛逼的。</p>
+<p>PS2：本校论文摘要，英文摘要，目录不设置级别，即不纳入目录。</p>
+<p><strong>（7）生成目录</strong></p>
+<p>PS1：怎么生成自己上网搜吧，有现成的，再啰嗦也没意思。</p>
+<p>PS2：生成目录之后，别慌忙调整目录的格式。第一步要做的是，检查标题有没有错别字，数字和文字之间有没有空格，标题的级别设置的对不对，不对，改！都准确无误了，再考虑设置，注意了，只是考虑，在没有形成付印的版本时，目录调格式没有必要的，因为论文有可能随时调整，一点影响到标题，更新目录就会把设置后目录格式全冲没了。除非你只保证更新页码，定稿之前，能保证的不多吧。</p>
+<p>PS3：准备付印了，好，格式化目录，格式化之前，最好先更新一下，保证其最新的。需要提醒一点的是大标题黑体不变大小小四，其余中文宋体小四，英文和数字TNR，间距20磅</p>
+<p>PS4：over！</p>
+<p>到此，论文格式化完成，不当的地方微调全局美观即可。</p>
+<p>打印格式说明：</p>
+<p>（1）建议打印之前，生成pdf版本，一般安装foxit之后，在word里会有其打印插件，直接ctrl+P打印即能导成pdf，或者直接使用foxit的生成功能。如此有个好处就是安全，拿pdf拿到哪个打印点打印只要pdf是正确的，其格式绝对不会乱，word就会出现各种问题（看运气喽）。</p>
+<p>（2）中文摘要一页，背面留白；英文摘要如果一页，背面也要留白；目录如果是奇数页，最后一面也要留白。这些留白不加页眉页码。使用pdf很容易插入空白页，然后一体打印正反面。如果使用word，打印时插入空白页会出现问题，就是空白页有页眉页码，此时需要增加新的分节符进行调整。最好自己调整好去打印，否则，在打印店改，只会让老板想撵你，再说也不一定能整的了，与人方便自己方便。</p>
+<p>（3）有些布局打印出来才能看到效果。因此打印完，最好不要装订，用个文集夹夹住最好，因为发现那页有问题，重打那正反两页即可，当然前提是没有什么大变动，只是细枝末节才能如此做。一般到打印时，不会发生大的变动，如此，可以节省开销吧。个人建议而已，对土豪不适用。</p>
+<p>（4）最后的封面，好像学校指定“官印”的。交给他们吧，只负责刷卡好了。</p>
+<p>最后，授人予鱼，不如授人以渔。自己动手，丰衣足食。</p>
+<p>PS：全局文字设置新罗马（TNR）可能会导致双引号，单引号都会变成英文字母，解决办法是全局设置之后重新替换成中文的引号</p>
+<p>如有不清楚之处，仔细阅读撰写规范里的要求，其中都有详细说明</p>
+<h2 id="毕业论文的几个小建议（本硕博通用）"><a href="#毕业论文的几个小建议（本硕博通用）" class="headerlink" title="毕业论文的几个小建议（本硕博通用）"></a>毕业论文的几个小建议（本硕博通用）</h2><p>如果是用word来编辑论文的话，强烈建议使用如下工具：</p>
+<p>1.文献管理工具（例如endnote），一键更新参考文献，否则的话等你论文写得差不多的时候，需要增删文献的话会非常痛苦</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/82.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/82.gif</a></p>
+<p>。谷歌学术上的文献可以下载endnote文件，然后导入，选择好插入位置后一键插入就可以完成参考文献插入。增删文献同样也是一键更新傻瓜式操作</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/67.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/67.gif</a></p>
+<p>2.专业的数学公式插入软件（例如mathtype，axmath等），最好不要使用word自带的公式编辑器。主要是因为自带的公式编辑器在编辑独立成行的公式的时候调居中+编号非常麻烦，而专业的数学插件根本不需要操心这些</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/66.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/66.gif</a></p>
+<p>我本人使用的组合是endnote x9+axmath，word用的是付费的office365。顺便分享一下踩过的坑：</p>
+<p>1.endnote强烈不建议使用最新的20版本，endnote20不能装在c盘之外的地方且不兼容mathtype，否则会在更新文献的时候word闪退</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/82.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/82.gif</a></p>
+<p>2.endnote河畔已经有人更新了符合学校学位论文格式要求的模板，可以直接用。前人栽树后人乘凉，感谢各位前辈巨佬</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/55.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/55.gif</a></p>
+<p>3.没有选择使用mathtype的原因是，mathtype插入的公式经常会出现昨天编辑好了，今天重新打开文档的时候公式显示直接炸了，字符异常变大或者变小</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/58.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/58.gif</a></p>
+<p>这个问题至今无法解决。而且mathtype我没有找到可以自动调整字符大小到正常状态的办法，手动一个个改又太操蛋了</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/62.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/62.gif</a></p>
+<p>4.axmath好像是浙大的团队开发的，个人认为更符合国人的使用习惯，想要的功能更容易找到，界面也更舒服。且不论盗版破解的（mathtype现在破解资源很难找），即便是正版也才36块（作为对比，某宝上mathtype6.x买个激活码也要百来块）同时对于3提到的mathtype的字符大小问题，axmath有一键调整的功能可以批量将文档里面的所有公式调整到正常大小。磕盐狗花个36买个舒心+支持国产，我觉得不亏</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/67.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/67.gif</a></p>
+<p>理论上讲，用latex弄论文最好，但是目前河畔上的latex模板好像都或多或少有点小毛病，学校给的模板就是word版本的，latex被刻意冷落我觉得挺迷的。不熟悉latex的童鞋不建议用latex编辑毕业论文</p>
+<p>!<a target="_blank" rel="noopener" href="https://bbs.uestc.edu.cn/static/image/smiley/alu/81.gif">https://bbs.uestc.edu.cn/static/image/smiley/alu/81.gif</a></p>
+<p>最后附上axmath的二手东链接</p>
+<p><a target="_blank" rel="noopener" href="https://item.jd.com/11278815916.html">https://item.jd.com/11278815916.html</a></p>
+<p>endnote x9有中科大的批量授权版，网上一搜就有了，貌似没啥限制直接安装就好了</p>
+<hr>
+<p>调节段落和字体：</p>
+<p>1.格式刷：Ctrl+shift+C复制格式，Ctrl+shift+V粘贴格式</p>
+<p>2.调节段落和行距：右击，选择段落，选择行前和行后距离，选择固定间距</p>
+<p>在论文正文处编辑页码：</p>
+<p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/19/0516/17/35958655_836136843.shtml">http://www.360doc.com/content/19/0516/17/35958655_836136843.shtml</a></p>
+<p>生成目录与修改目录:</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13b411g7cX?p=7">https://www.bilibili.com/video/BV13b411g7cX?p=7</a></p>
+<p>首先分享下自己的经历： 当时记得毕业单章重复率是不超25%,整体重复率是不超15%</p>
+<p>我自己第一章的重复率是8%,后面几章就没超过这个值，总体重复率非常低</p>
+<p>总结： 只要是自己写的，实验是自己做的，基本上没有查重问题，勇一点的直接冲，不用查重</p>
+<p>如果自己感觉自己第一章摘抄了非常多的内容，那么可以只查第一章</p>
+<p>查重工具建议淘宝去按章查，数据库不需要用最新的 ，会比较划算一些，像自己写的部分，完全可以不查！</p>
+<p>针对重复的修改建议：  查重工具会自动判断你的语句，部分词语会给你替换近似的(所谓的语意相近)，只要是相似的，都算重复，因此修改重复部分由两种办法，第一：颠倒语句，但是和可能会搞得不通顺，不太建议  第二：用自己的话转述一次，注意语序和用词情况(见过牛批的直接翻译成英语，再翻译回中文…基本变得X都不认识了)</p>
+<p>先写这么多，学弟学妹们加油呀，只要是自己写的，查重不用太紧张哦！</p>
+<p>03.21补充：</p>
+<p>淘宝店容易出现不准的情况，最好设置一个margin了，比如学院要求20%, 个人查重控制在10%就比较安全！</p>
+<p>03.22补充：</p>
+<p>有关答辩，切记</p>
+<p>不要硬怼答辩老师</p>
+<p>，除非你真的比他还厉害… 大部分情况老师都是专业不对口的，然后会以你比较懵逼的角度去question你的论文，</p>
+<p>知道的你就答，不知道的就说不知到，不要不懂装懂</p>
+<p>，切记！就算很多不知道也没关系。但是答辩的时候最好突出下自己的工作量和创新点，</p>
+<p>主要体现是这论文得是你自己写的，有创新，有苦劳</p>
+<p>！</p>
+<p>另外一点非常重要，老师肯定会挑你一些毛病的，莫慌，坚守“</p>
+<p>论文是我辛苦写的，再小的创新也是创新</p>
+<p>”，这个基本大原则来回答就好。</p>
+<p>根据我的经验，大部分被question的都是论文格式的问题，包括什么推优，推差blablabla，大多都是格式问题，一定要保证打印出来格式OK，清晰可见，简单明了。这里所谓的格式不仅仅是word格式，还包含你的图片是否匹配文字，是否清晰(黑白看不清可以彩打)，是否清楚的表达了你的意思等等。 图片比文字重要的多，别乱放图(灌水)，不然一定喊你改，还可能被推差！</p>
+<p>最后，如果你遇到了专业对口的老师，那么如果你对毕业论文掌控度不高，那你可能比较倒霉了，不过依旧还是红字原则，该怂就怂，很少会让你不过的！</p>
+<p>一、熟悉内容<br>作为将要参加毕业论文答辩的同学，首先而且必须对自己所著的论文内容有比较深刻的理解和比较全面的熟悉。所谓“深刻的理解”是对论文有横向的把握。<br>二、图表穿插<br>图表不仅是一种直观的表达观点的方法，更是一种调节答辩会气氛的手段，长时间地听述，听觉难免会有排斥性，不再对你论述的内容接纳吸收，难免对你的毕业论文答辩成绩有所影响。所以，应该在答辩过程事适当穿插图表或类似图表的其它媒介以提高你的答辩成绩。<br>三、语速适中<br>进行毕业论文答辩的同学一般都是首次。答辩时，说话速度往往越来越快，以致答辩委员会听不清楚，影响了答辩成绩。故答辩学生一定要注意在答辩过程中的语流速度，要有急有缓，有轻有重，不能像连珠炮似的轰向老师。<br>四、目光移动<br>毕业生在论文答辩时，应注意自己的目光，使目光时常地瞟向答辩委员会成员及会场上的同学们。这是你用目光与听众进行心灵的接触，使老师们对你的论题产生兴趣的一种手段。在毕业论文答辩会上，由于听时间过长，老师们难免会有分神现象，这时，你用目光的投射会很礼貌地将他们的神“拉”回来，使老师们的思路跟你的思路走。<br>五、时间控制<br>在进行论文答辩时应重视时间的掌握。对时间的控制要有力度，到该截止的时间立即结束，这样，显得有准备，对内容的掌握和控制也轻车熟路，容易给答辩委员会成员一个良好的印象。故在答辩前应该对将要答辩的内容有时间上的估计。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/23/%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F%E3%80%81%E6%9F%A5%E9%87%8D%E3%80%81%E7%AD%94%E8%BE%A9%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">http://example.com/2024/08/23/%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F%E3%80%81%E6%9F%A5%E9%87%8D%E3%80%81%E7%AD%94%E8%BE%A9%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/23/%E6%80%8E%E4%B9%88%E7%94%A8AI%E5%B7%A5%E5%85%B7%E5%86%99%E6%96%87%E7%AB%A0/">怎么用AI工具写文章</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">一些奇奇怪怪的技能学习网站</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
