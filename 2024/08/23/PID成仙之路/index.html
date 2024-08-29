@@ -13,7 +13,7 @@
 
 
 
-<title>LINK | Hexo</title>
+<title>PID成仙之路 | Hexo</title>
 
 
 
@@ -127,76 +127,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">LINK</h1>
+            <h1 class="post-title">PID成仙之路</h1>
             
                 <div class="post-meta">
                     
@@ -205,18 +140,58 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;13:38:26</a>
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h3 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h3><blockquote>
-<p><em>KEYSKING: <a target="_blank" rel="noopener" href="https://docs.keysking.com/">https://docs.keysking.com/</a></em><br><em>带鼠鼠入门的藉元哥哥: <a target="_blank" rel="noopener" href="https://www.ericzhuestc.site/">https://www.ericzhuestc.site</a></em><br><em>凝聚大佬陈sir: <a target="_blank" rel="noopener" href="https://www.ch3nsir.github.io/">https://www.ch3nsir.github.io</a></em><br><em>北大武当山王也: <a target="_blank" rel="noopener" href="https://www.woyo-i-sllh.github.io/">https://www.woyo-i-sllh.github.io</a></em><br><em>彦神: notes.yanjinli.fun</em><br><em>子恒: <a target="_blank" rel="noopener" href="https://www.earendelh.github.io/">https://www.earendelh.github.io</a></em></p>
-</blockquote>
+            <p>大部分时候可用例程，扔给ai修改变量</p>
+<p>其中 data是一个结构体指针，其定义如下：</p>
+<p>typedef struct  _PID{</p>
+<p>float Kp;            &#x2F;&#x2F;PID三个参数</p>
+<p>float Ki;</p>
+<p>float Kd;</p>
+<p>float set;          &#x2F;&#x2F;目标值</p>
+<p>float fdb;          &#x2F;&#x2F;当前值</p>
+<p>float out;          &#x2F;&#x2F;pid输出</p>
+<p>float Pout;         &#x2F;&#x2F;比例控制量</p>
+<p>float Iout;         &#x2F;&#x2F;积分控制量</p>
+<p>float Dout;         &#x2F;&#x2F;微分控制量</p>
+<p>float Dbuf[3];      &#x2F;&#x2F;微分项 0最新 1上一次 2上上次</p>
+<p>float error[3];     &#x2F;&#x2F;误差项 0最新 1上一次 2上上次</p>
+<p>}PID_STRUCT;</p>
+<p>请根据以上信息和网上查阅的资料，完成下面函数的编程，并将最终的控制量保存到结构体成员”out”中，（假设用于计算控制器输出的数据，比如目标值，微分项，误差项等，已经保存在输入的参数（即结构体指针data指向的结构体中）</p>
+<p>void pid_calc( PID_STRUCT *data)</p>
+<p>{</p>
+<p>&#x2F;&#x2F; 自己填充</p>
+<p>}</p>
+<p>void pid_calc(PID_STRUCT* data)</p>
+<p>{</p>
+<p>data-&gt;error[0] &#x3D; data-&gt;set - data-&gt;fdb;</p>
+<p>data-&gt;Pout &#x3D; data-&gt;Kp * data-&gt;error[0];</p>
+<p>data-&gt;Iout +&#x3D; data-&gt;Ki * data-&gt;error[0];</p>
+<p>data-&gt;Dout &#x3D; data-&gt;Kd * (data-&gt;error[0] - data-&gt;error[1]) + data-&gt;Dbuf[1] * data-&gt;Kd;</p>
+<p>data-&gt;out &#x3D; data-&gt;Pout + data-&gt;Iout + data-&gt;Dout;</p>
+<p>data-&gt;error[2] &#x3D; data-&gt;error[1];</p>
+<p>data-&gt;error[1] &#x3D; data-&gt;error[0];</p>
+<p>data-&gt;Dbuf[2] &#x3D; data-&gt;Dbuf[1];</p>
+<p>data-&gt;Dbuf[1] &#x3D; data-&gt;Dbuf[0];</p>
+<p>data-&gt;Dbuf[0] &#x3D; data-&gt;Dout;</p>
+<p>}</p>
+<p>积分应该要有个上下限，不能越积越多，到时候输出饱和就没用了</p>
+<p>每次积分之前判断一下有没有越界</p>
+<p>自己加判断，然后这个值是个经验值来着，比如限制积分项的输出不超过系统输出的50%之类的，反正你自己拿捏，这玩意要动手调了才知道</p>
 
         </div>
 
@@ -231,7 +206,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/15/%E5%8F%8B%E9%93%BE/">http://example.com/2024/08/15/%E5%8F%8B%E9%93%BE/</a></span>
+                        <span><a href="http://example.com/2024/08/23/PID%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">http://example.com/2024/08/23/PID%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/</a></span>
                     </p>
                 
                 
@@ -254,6 +229,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -264,10 +243,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">一些奇奇怪怪的工具网站</a>
+                <a class="prev" rel="prev" href="/2024/08/23/Linux%E5%85%A5%E9%97%A8/">Linux入门</a>
             
             
-            <a class="next" rel="next" href="/2024/08/15/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/">电子设计入门</a>
+            <a class="next" rel="next" href="/2024/08/23/%E9%9B%B7%E8%BE%BE%E5%85%A5%E9%97%A8/">雷达入门</a>
             
         </section>
 

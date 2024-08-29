@@ -13,7 +13,7 @@
 
 
 
-<title>LINK | Hexo</title>
+<title>雷达入门 | Hexo</title>
 
 
 
@@ -196,7 +196,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">LINK</h1>
+            <h1 class="post-title">雷达入门</h1>
             
                 <div class="post-meta">
                     
@@ -205,18 +205,44 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 15, 2024&nbsp;&nbsp;13:38:26</a>
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83/">科研训练</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h3 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h3><blockquote>
-<p><em>KEYSKING: <a target="_blank" rel="noopener" href="https://docs.keysking.com/">https://docs.keysking.com/</a></em><br><em>带鼠鼠入门的藉元哥哥: <a target="_blank" rel="noopener" href="https://www.ericzhuestc.site/">https://www.ericzhuestc.site</a></em><br><em>凝聚大佬陈sir: <a target="_blank" rel="noopener" href="https://www.ch3nsir.github.io/">https://www.ch3nsir.github.io</a></em><br><em>北大武当山王也: <a target="_blank" rel="noopener" href="https://www.woyo-i-sllh.github.io/">https://www.woyo-i-sllh.github.io</a></em><br><em>彦神: notes.yanjinli.fun</em><br><em>子恒: <a target="_blank" rel="noopener" href="https://www.earendelh.github.io/">https://www.earendelh.github.io</a></em></p>
-</blockquote>
+            <h3 id="1-认知"><a href="#1-认知" class="headerlink" title="1.认知"></a>1.认知</h3><p>简单的民用雷达涉及的领域不会很多，但也是“麻雀虽小五脏俱全”。数学理论、信号理论、控制理论、系统理论、微波射频理论，以及计算机领域（人工智能）等等内容。</p>
+<p>复杂的军用雷达涉及的领域还会更多一些，除了上述之外，还有建筑工程、重型机械、电气工程、大功率微波工程，以及先进的高速实时信号处理和数据处理等等内容。</p>
+<p>多学科交叉融合的现实使得原本理论丰富的雷达又变得额外的复杂，但是我们不可能研究所有领域。对于个人来说，如果不是做雷达总体设计工作，那么在有限的时间内只需要选择其中的某一个研究方向即可。比如毫米波雷达信号处理、MIMO 阵列、SAR&#x2F;ISAR、海杂波、相控阵、压缩感知、智能化雷达、认知雷达。或者选择某一个研究内容即可，比如穿墙雷达、无人机雷达、家用智能雷达、成像雷达、感通一体化雷达、软件化雷达等等，能够把一个领域或者一个方向做到极致，那么在雷达界也会占有一席之地。</p>
+<h3 id="2-最基础的原理"><a href="#2-最基础的原理" class="headerlink" title="2.最基础的原理"></a>2.最基础的原理</h3><p>（1）电磁波的反射效应</p>
+<p>如果电磁波遇到理想导体（电阻为 0）表面，则被完全反射，如果这些被反射的电磁波被雷达的接收天线接收到，则意味着在雷达发射信号的传播方向上存在目标。</p>
+<p>雷达是利用电磁波测定物体位置的无线电设备，电磁波如果遇到电磁波如果遇到尺寸明显大于电磁波波长的目标就会发生反射，雷达就是利用电磁波的这个特性工作的。波长越短的电磁波，传播的直线性越好，反射性能越强。</p>
+<p>（2）光速不变定理</p>
+<p>我们近似地认为，电磁波能量以恒定的速度在空气中传播，大约是光速。即 300，000km&#x2F;秒，或者 186，000 英里&#x2F;秒，或者 162，000 海里&#x2F;秒。</p>
+<p>恒定的电磁波传播速度能够让我们通过测量发射脉冲的延迟时间来确定反射物体（飞机、轮船或汽车）与雷达站点之间的距离，这种方法是最简单的测距手段，称为飞行时间差法（Time of flight,TOF）。</p>
+<p>（3）电磁波沿直线传播</p>
+<p>电磁波能量通常以直线穿过天空，由于大气和天气条件而略有不同，通过使用特殊的雷达天线，电磁波能量可以聚焦到所需的方向，便能够测量反射物体的方向（方位角和高程）。</p>
+<p>（4）电磁波的衍射效应</p>
+<p>衍射，又称绕射，是指波遇到障碍物时偏离原来直线传播的物理现象。雷达发射的电磁波，能够穿越某些障碍物，探测目标，即利用了电磁波的衍射效应。不过，雷达主要还是利用电磁波的发射作用。</p>
+<p>雷达系统可以采用上述这些基本物理原理来实现并确定目标的距离、方位以及高度信息，这里我们暂且不讨论大气条件、天气状况对传输能量的影响。</p>
+<h3 id="3-进一步的原理"><a href="#3-进一步的原理" class="headerlink" title="3.进一步的原理"></a>3.进一步的原理</h3><ul>
+<li><p>雷达装置：雷达发射天线发射电磁波照射目标，然后被目标反射并接收天线接收，接收天线获取的电信号称为回波或回波信号。雷达信号由高功率的发射器产生，并由高灵敏度接收器接收。雷达装置使用回波信号来确定反射物体的方向和距离。</p>
+</li>
+<li><p>散射和反射：散射有前向散射与后向散射之分，而反射方向一般指返回雷达波源的方向，属于后向散射范畴。对于单站雷达来说，可以说利用的是反射信号或者后向散射信号。而对于双站雷达来说，可以说利用的是前向散射信号。当然还有一些特殊的雷达，如二次雷达(通信雷达)，由于目标上有应答器装置，不能说是利用反射或者散射信号，因为这种雷达的应答器自己会发射信号。</p>
+</li>
+<li><p>雷达系统各模块介绍：雷达系统主要由 5 个部分组成，分别是发射机、双工器、接收机、雷达天线以及指示器。雷达发射机产生短时间的高功率射频能量脉冲，这些能量脉冲通过天线进入空间。双工器交替地在发射机和接收机之间切换天线，以便只需要使用一根天线（脉冲雷达），这种“开关”不允许发射机的能量进入接收机，否则发射机的高功率脉冲会破坏接收机。接收机放大和解调接收到的 RF 信号，接收机在输出端提供视频信号。雷达通常情况下通过发射机发射射频信号，同时接收机接收到的信号也是射频信号。接收到的回波信号与本振信号经过混频器混频得到中频信，再对中频信号进行处理得到视频信号。天线将我们分配以及所需效率的发射机能量信号传输到空间， 这个过程以相同的方式应用于接收。指示器应向观察者呈现雷达目标相对位置的连续、易于理解的图像。雷达屏幕显示由回波信号产生的明亮信号，脉冲在运行时延迟的时间越长，目标在雷达示波器的中心就越远，此屏幕上的偏转方向是天线当前指向的方向。</p>
+</li>
+</ul>
 
         </div>
 
@@ -231,7 +257,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/15/%E5%8F%8B%E9%93%BE/">http://example.com/2024/08/15/%E5%8F%8B%E9%93%BE/</a></span>
+                        <span><a href="http://example.com/2024/08/23/%E9%9B%B7%E8%BE%BE%E5%85%A5%E9%97%A8/">http://example.com/2024/08/23/%E9%9B%B7%E8%BE%BE%E5%85%A5%E9%97%A8/</a></span>
                     </p>
                 
                 
@@ -254,6 +280,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -264,10 +294,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">一些奇奇怪怪的工具网站</a>
+                <a class="prev" rel="prev" href="/2024/08/23/PID%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">PID成仙之路</a>
             
             
-            <a class="next" rel="next" href="/2024/08/15/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/">电子设计入门</a>
+            <a class="next" rel="next" href="/2024/08/23/CUBEMX%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">CUBEMX常用配置</a>
             
         </section>
 
