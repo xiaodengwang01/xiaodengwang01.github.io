@@ -13,7 +13,7 @@
 
 
 
-<title>CUBEMX常用配置 | Hexo</title>
+<title>信号与系统入门 | Hexo</title>
 
 
 
@@ -131,7 +131,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">CUBEMX常用配置</h1>
+            <h1 class="post-title">信号与系统入门</h1>
             
                 <div class="post-meta">
                     
@@ -140,14 +140,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;12:33:40</a>
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
+                                <a href="/categories/%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83/">科研训练</a>
                             
                         </span>
                     
@@ -156,42 +156,8 @@
         </header>
 
         <div class="post-content">
-            <ul>
-<li><p><strong>开启外部晶振：</strong> 在Pinout&amp;Configuration -&gt; System Core -&gt; RCC 页面，将 High Speed Clock (HSE) 配置为 Crystal&#x2F;Ceramic Resonator  </p>
-</li>
-<li><p><strong>配置时钟频率：</strong> 在Clock Configuration 页面，将PLL Source 选择为 HSE，将System Clock Mux 选择为 PLLCLK，然后在HCLK (MHz) 输入72并回车，将HCLK频率配置为 72 MHz  </p>
-</li>
-<li><p><strong>配置I2C1：</strong> Pinout&amp;Configuration -&gt; Connectivity -&gt; I2C1，将I2C模式选择为I2C，并在下方Configuration -&gt; Parameter Settings，将I2C Speed Mode选择为Fast Mode  </p>
-</li>
-<li><p><strong>配置生成单独.c&#x2F;.h文件：</strong> 在Project Manager -&gt; Code Generator页面中，勾选Generate peripheral initialization as … per peripheral  </p>
-</li>
-<li><p><strong>打开串口2外设：</strong> Pinout&amp;Configuration -&gt; Connectivity -&gt; USART2，将Mode选择为Asynchronous  </p>
-</li>
-<li><p><strong>启用float打印：</strong> 在cubeIDE菜单栏中，Project Properties -&gt; C&#x2F;C++ Build -&gt; Settings -&gt; Tool Settings -&gt; MCU Settings，勾选Use float with printf … -nano默认情况下，sprintf函数不能打印小数。因此我们需要配置一下编译器，使其能够打印小数  </p>
-</li>
-<li><p><strong>配置ADC：</strong> 在Pinout&amp;Configuration -&gt; Analog -&gt; ADC1 -&gt; Configuration中 </p>
-<ul>
-<li>ADC_Settings -&gt; Continuous Conversion Mode设为Enable，使ADC转换持续进行，不需要每次获取之前手动触发转换</li>
-<li>ADC_Regular_ConversionMode -&gt; Rank -&gt; Sampling Time设为239.5 Cycles，最长采样时间，可以获得更稳定的转换结果</li>
-</ul>
-</li>
-<li><p><strong>旋转编码器</strong></p>
-<ul>
-<li><strong>配置TIM1：</strong> 在Pinout&amp;Configuration -&gt; Timers -&gt; TIM1 </li>
-<li>Mode -&gt; Combined Channels设为Encoder Mode，具体channel都是disable使TIM1进入“编码器模式”</li>
-<li>Configuration -&gt; Encoder -&gt; Input Filter 设为 15，最大程度滤波，可以获得更稳定的效果</li>
-</ul>
-</li>
-<li><p><strong>超声波测距</strong> </p>
-<ul>
-<li><strong>配置TIM1：</strong> 在Pinout&amp;Configuration -&gt; Timers -&gt; TIM1 </li>
-<li>Mode -&gt; Clock Source 设为 Internal Clock，Channel3 设为 Input Capture direct mode，即输入捕获</li>
-<li>Configuration -&gt; Parameter Settings -&gt; Counter Settings -&gt; Prescaler 设为 72-1，使定时器计数周期刚好为 1 us</li>
-<li>（可选）开启输入滤波，以提高稳定性：Configuration -&gt; Parameter Settings -&gt; Input Capture Channel 3 -&gt; Input Filter，填写范围0 - 15，数值越大，滤波效果越强</li>
-<li>Configuration -&gt; NVIC Settings -&gt; 勾选TIM1 capture compare interrupt，开启捕获中断</li>
-</ul>
-</li>
-</ul>
+            <p>【一次讲透小波变换原理，全新角度切入，20分钟时长警告！】 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tu4y1M7th/?share_source=copy_web&vd_source=cbe9ce829422aae7681853861dc5546e">https://www.bilibili.com/video/BV1tu4y1M7th/?share_source=copy_web&amp;vd_source=cbe9ce829422aae7681853861dc5546e</a></p>
+<p>【最准中英文字幕，Razavi Electronics Circuits 1，拉扎维电子电路1】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FD4y1R7Ah?vd_source=217ccdacf4b0ab4eb7b5753e60e0febb">https://www.bilibili.com/video/BV1FD4y1R7Ah?vd_source=217ccdacf4b0ab4eb7b5753e60e0febb</a></p>
 
         </div>
 
@@ -206,7 +172,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/23/CUBEMX%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">http://example.com/2024/08/23/CUBEMX%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</a></span>
+                        <span><a href="http://example.com/2024/08/23/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">http://example.com/2024/08/23/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</a></span>
                     </p>
                 
                 
@@ -243,10 +209,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/23/%E8%93%9D%E7%89%99%E5%8D%8F%E8%AE%AE%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">蓝牙协议成仙之路</a>
+                <a class="prev" rel="prev" href="/2024/08/23/WIFI%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">WIFI成仙之路</a>
             
             
-            <a class="next" rel="next" href="/2024/08/23/DSP%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">DSP成仙之路</a>
+            <a class="next" rel="next" href="/2024/08/23/%E8%93%9D%E7%89%99%E5%8D%8F%E8%AE%AE%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">蓝牙协议成仙之路</a>
             
         </section>
 

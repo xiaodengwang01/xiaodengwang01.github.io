@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>WIFI成仙之路 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">WIFI成仙之路</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="一。基本原理讲解"><a href="#一。基本原理讲解" class="headerlink" title="一。基本原理讲解"></a>一。基本原理讲解</h3><p>1.Wi-Fi&#x2F;LwIP 初始化阶段<br>s1.1：主任务通过调用函数 esp_netif_init() 创建一个 LwIP 核心任务，并初始化 LwIP 相关工作。<br>s1.2：主任务通过调用函数 esp_event_loop_create() 创建一个系统事件任务，并初始化应用程序事件的回调函数。在此情况下，该回调函数唯一的动作就是将事件中继到应用程序任务中。<br>s1.3：主任务通过调用函数 esp_netif_create_default_wifi_sta() 创建有 TCP&#x2F;IP 堆栈的默认网络接口实例绑定 station 或 AP。<br>s1.4：主任务通过调用函数 esp_wifi_init() 创建 Wi-Fi 驱动程序任务，并初始化 Wi-Fi 驱动程序。<br>s1.5：主任务通过调用 OS API 创建应用程序任务。<br>推荐按照 s1.1 ~ s1.5 的步骤顺序针对基于 Wi-Fi&#x2F;LwIP 的应用程序进行初始化。但这一顺序 并非 强制，您可以在第 s1.1 步创建应用程序任务，然后在该应用程序任务中进行所有其它初始化操作。不过，如果您的应用程序任务依赖套接字，那么在初始化阶段创建应用程序任务可能并不适用。此时，您可以在接收到 IP 后再进行任务创建。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ESP_ERROR_CHECK(esp_netif_init());</span><br><span class="line"></span><br><span class="line">ESP_ERROR_CHECK(esp_event_loop_create_default());</span><br><span class="line">esp_netif_create_default_wifi_sta();</span><br><span class="line"></span><br><span class="line">wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();</span><br><span class="line">ESP_ERROR_CHECK(esp_wifi_init(&amp;cfg));</span><br></pre></td></tr></table></figure>
+
+<p>2.Wi-Fi 配置阶段<br>Wi-Fi 驱动程序初始化成功后，可以进入到配置阶段。该场景下，Wi-Fi 驱动程序处于 station 模式。因此，首先您需调用函数 esp_wifi_set_mode() (WIFI_MODE_STA) 将 Wi-Fi 模式配置为 station 模式。可通过调用其它 esp_wifi_set_xxx API 进行更多设置，例如：协议模式、国家代码、带宽等。请参阅 ESP32 Wi-Fi 配置。</p>
+<p>一般情况下，我们会在建立 Wi-Fi 连接之前配置 Wi-Fi 驱动程序，但这 并非 强制要求。也就是说，只要 Wi-Fi 驱动程序已成功初始化，您可以在任意阶段进行配置。但是，如果您的 Wi-Fi 在建立连接后不需要更改配置，则应先在此阶段完成配置。因为调用配置 API（例如 esp_wifi_set_protocol()）将会导致 Wi-Fi 连接断开，为您的操作带来不便。</p>
+<p>如果 menuconfig 已使能 Wi-Fi NVS flash，则不论当前阶段还是后续的 Wi-Fi 配置信息都将被存储至该 flash 中。那么，当主板上电&#x2F;重新启动时，就不需从头开始配置 Wi-Fi 驱动程序。您只需调用函数 esp_wifi_get_xxx API 获取之前存储的配置信息。当然，如果不想使用之前的配置，您依然可以重新配置 Wi-Fi 驱动程序。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#define EXAMPLE_ESP_WIFI_SSID &quot;wireless link&quot;</span><br><span class="line">#define EXAMPLE_ESP_WIFI_PASS &quot;12345678&quot;</span><br><span class="line">#define EXAMPLE_ESP_MAXIMUM_RETRY 5</span><br><span class="line"></span><br><span class="line">wifi_config_t wifi_config = &#123;</span><br><span class="line">.sta = &#123;</span><br><span class="line">.ssid = EXAMPLE_ESP_WIFI_SSID,</span><br><span class="line">.password = EXAMPLE_ESP_WIFI_PASS,</span><br><span class="line">/_ Setting a password implies station will connect to all security modes including WEP/WPA.</span><br><span class="line">_ However these modes are deprecated and not advisable to be used. Incase your Access point</span><br><span class="line">_ doesn&#x27;t support WPA2, these mode can be enabled by commenting below line _/</span><br><span class="line">.threshold.authmode = WIFI_AUTH_WPA2_PSK,</span><br><span class="line"></span><br><span class="line">            .pmf_cfg = &#123;</span><br><span class="line">                .capable = true,</span><br><span class="line">                .required = false</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &amp;wifi_config) );</span><br></pre></td></tr></table></figure>
+
+<p>3.Wi-Fi 启动阶段<br>s3.1：调用函数 esp_wifi_start() 启动 Wi-Fi 驱动程序。<br>s3.2：Wi-Fi 驱动程序将事件 WIFI_EVENT_STA_START 发布到事件任务中，然后，事件任务将执行一些正常操作并调用应用程序的事件回调函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ESP_ERROR_CHECK(esp_wifi_start() );</span><br><span class="line">ESP_LOGI(TAG, &quot;wifi_init_sta finished.&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>4.Wi-Fi 连接阶段<br>s4.1：调用函数 esp_wifi_connect() 后，Wi-Fi 驱动程序将启动内部扫描&#x2F;连接过程。<br>s4.2：如果内部扫描&#x2F;连接过程成功，将产生 WIFI_EVENT_STA_CONNECTED 事件。然后，事件任务将启动 DHCP 客户端服务，最终触发 DHCP 程序。<br>s4.3：在此情况下，应用程序的事件回调函数会将 WIFI_EVENT_STA_CONNECTED 事件中继到应用程序任务中。通常，应用程序不需进行操作，而您可以执行任何动作，例如：打印日志等。<br>步骤 s4.2 中 Wi-Fi 连接可能会由于某些原因而失败，例如：密码错误、未找到 AP 等。这种情况下，将引发 WIFI_EVENT_STA_DISCONNECTED 事件并提示连接错误原因。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (event_base == WIFI_EVENT &amp;&amp; event_id == WIFI_EVENT_STA_START) &#123;</span><br><span class="line">esp_wifi_connect();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.Wi-Fi 获取 IP 阶段<br>s5.1：一旦步骤 4.2 中的 DHCP 客户端初始化完成，Wi-Fi 驱动程序将进入 获取 IP 阶段。<br>s5.2：如果 Wi-Fi 成功从 DHCP 服务器接收到 IP 地址，则将引发 IP_EVENT_STA_GOT_IP 事件，事件任务将执行正常处理。<br>s5.3：应用程序的事件回调函数将事件 IP_EVENT_STA_GOT_IP 中继到应用程序任务中。对于那些基于 LwIP 构建的应用程序，此事件较为特殊，因为它意味着应用程序已准备就绪，可以开始任务，例如：创建 TCP&#x2F;UDP 套接字等。此时较为容易犯的一个错误就是在接收到 IP_EVENT_STA_GOT_IP 事件之前就初始化套接字。切忌在接收到 IP 之前启动任何套接字相关操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">else if (event_base == IP_EVENT &amp;&amp; event_id == IP_EVENT_STA_GOT_IP) &#123;</span><br><span class="line">ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;</span><br><span class="line">ESP_LOGI(TAG, &quot;got ip:&quot; IPSTR, IP2STR(&amp;event-&gt;ip_info.ip));</span><br><span class="line">s_retry_num = 0;</span><br><span class="line">xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.Wi-Fi 断开阶段<br>s6.1：当 Wi-Fi 因为某些原因（例如：AP 掉电、RSSI 较弱等）连接中断时，将产生 WIFI_EVENT_STA_DISCONNECTED 事件。此事件也可能在上文阶段 3 中发生。在这里，事件任务将通知 LwIP 任务清除&#x2F;移除所有 UDP&#x2F;TCP 连接。然后，所有应用程序套接字都将处于错误状态。也就是说，WIFI_EVENT_STA_DISCONNECTED 事件发生时，任何套接字都无法正常工作。<br>s6.2：上述情况下，应用程序的事件回调函数会将 WIFI_EVENT_STA_DISCONNECTED 事件中继到应用程序任务中。推荐您调用函数 esp_wifi_connect() 重新连接 Wi-Fi，关闭所有套接字，并在必要时重新创建套接字。</p>
+<p>7.Wi-Fi IP 更改阶段<br>s7.1：如果 IP 地址发生更改，将引发 IP_EVENT_STA_GOT_IP 事件，其中 “ip_change” 被置为 “true”。<br>s7.2：此事件对应用程序至关重要。这一事件发生时，适合关闭所有已创建的套接字并进行重新创建。</p>
+<p>8.Wi-Fi 清理阶段<br>s8.1：调用函数 esp_wifi_disconnect() 断开 Wi-Fi 连接。<br>s8.2：调用函数 esp_wifi_stop() 终止 Wi-Fi 驱动程序。<br>s8.3：调用函数 esp_wifi_deinit() 清理 Wi-Fi 驱动程序。</p>
+<h3 id="二-代码"><a href="#二-代码" class="headerlink" title="二.代码"></a>二.代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">/_ WiFi station Example</span><br><span class="line">This example code is in the Public Domain (or CC0 licensed, at your option.)</span><br><span class="line">Unless required by applicable law or agreed to in writing, this</span><br><span class="line">software is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR</span><br><span class="line">CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line">_/</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &quot;freertos/FreeRTOS.h&quot;</span><br><span class="line">#include &quot;freertos/task.h&quot;</span><br><span class="line">#include &quot;freertos/event_groups.h&quot;</span><br><span class="line">#include &quot;esp_system.h&quot;</span><br><span class="line">#include &quot;esp_wifi.h&quot;</span><br><span class="line">#include &quot;esp_event.h&quot;</span><br><span class="line">#include &quot;esp_log.h&quot;</span><br><span class="line">#include &quot;nvs_flash.h&quot;</span><br><span class="line"></span><br><span class="line">#include &quot;lwip/err.h&quot;</span><br><span class="line">#include &quot;lwip/sys.h&quot;</span><br><span class="line"></span><br><span class="line">/_ The examples use WiFi configuration that you can set via project configuration menu</span><br><span class="line">If you&#x27;d rather not, just change the below entries to strings with</span><br><span class="line">the config you want - ie #define EXAMPLE_WIFI_SSID &quot;mywifissid&quot;</span><br><span class="line">_/</span><br><span class="line">#define EXAMPLE_ESP_WIFI_SSID &quot;wireless link&quot;</span><br><span class="line">#define EXAMPLE_ESP_WIFI_PASS &quot;12345678&quot;</span><br><span class="line">#define EXAMPLE_ESP_MAXIMUM_RETRY 5</span><br><span class="line"></span><br><span class="line">/_ FreeRTOS event group to signal when we are connected_/</span><br><span class="line">static EventGroupHandle_t s_wifi_event_group;</span><br><span class="line"></span><br><span class="line">/\* The event group allows multiple bits for each event, but we only care about two events:</span><br><span class="line"></span><br><span class="line">- - we are connected to the AP with an IP</span><br><span class="line">- - we failed to connect after the maximum amount of retries \*/</span><br><span class="line">    #define WIFI_CONNECTED_BIT BIT0</span><br><span class="line">    #define WIFI_FAIL_BIT BIT1</span><br><span class="line"></span><br><span class="line">static const char \*TAG = &quot;wifi station&quot;;</span><br><span class="line"></span><br><span class="line">static int s_retry_num = 0;</span><br><span class="line"></span><br><span class="line">static void event_handler(void* arg, esp_event_base_t event_base,</span><br><span class="line">int32_t event_id, void* event_data)</span><br><span class="line">&#123;</span><br><span class="line">if (event_base == WIFI_EVENT &amp;&amp; event_id == WIFI_EVENT_STA_START) &#123;</span><br><span class="line">esp_wifi_connect();</span><br><span class="line">&#125; else if (event_base == WIFI_EVENT &amp;&amp; event_id == WIFI_EVENT_STA_DISCONNECTED) &#123;</span><br><span class="line">if (s_retry_num &lt; EXAMPLE_ESP_MAXIMUM_RETRY) &#123;</span><br><span class="line">esp_wifi_connect();</span><br><span class="line">s_retry_num++;</span><br><span class="line">ESP_LOGI(TAG, &quot;retry to connect to the AP&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);</span><br><span class="line">&#125;</span><br><span class="line">ESP_LOGI(TAG,&quot;connect to the AP fail&quot;);</span><br><span class="line">&#125; else if (event_base == IP_EVENT &amp;&amp; event_id == IP_EVENT_STA_GOT_IP) &#123;</span><br><span class="line">ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;</span><br><span class="line">ESP_LOGI(TAG, &quot;got ip:&quot; IPSTR, IP2STR(&amp;event-&gt;ip_info.ip));</span><br><span class="line">s_retry_num = 0;</span><br><span class="line">xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void wifi_init_sta(void)</span><br><span class="line">&#123;</span><br><span class="line">s_wifi_event_group = xEventGroupCreate();</span><br><span class="line"></span><br><span class="line">    ESP_ERROR_CHECK(esp_netif_init());</span><br><span class="line"></span><br><span class="line">    ESP_ERROR_CHECK(esp_event_loop_create_default());</span><br><span class="line">    esp_netif_create_default_wifi_sta();</span><br><span class="line"></span><br><span class="line">    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_init(&amp;cfg));</span><br><span class="line"></span><br><span class="line">    esp_event_handler_instance_t instance_any_id;</span><br><span class="line">    esp_event_handler_instance_t instance_got_ip;</span><br><span class="line">    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,</span><br><span class="line">                                                        ESP_EVENT_ANY_ID,</span><br><span class="line">                                                        &amp;event_handler,</span><br><span class="line">                                                        NULL,</span><br><span class="line">                                                        &amp;instance_any_id));</span><br><span class="line">    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,</span><br><span class="line">                                                        IP_EVENT_STA_GOT_IP,</span><br><span class="line">                                                        &amp;event_handler,</span><br><span class="line">                                                        NULL,</span><br><span class="line">                                                        &amp;instance_got_ip));</span><br><span class="line"></span><br><span class="line">    wifi_config_t wifi_config = &#123;</span><br><span class="line">        .sta = &#123;</span><br><span class="line">            .ssid = EXAMPLE_ESP_WIFI_SSID,</span><br><span class="line">            .password = EXAMPLE_ESP_WIFI_PASS,</span><br><span class="line">            /* Setting a password implies station will connect to all security modes including WEP/WPA.</span><br><span class="line">             * However these modes are deprecated and not advisable to be used. Incase your Access point</span><br><span class="line">             * doesn&#x27;t support WPA2, these mode can be enabled by commenting below line */</span><br><span class="line">         .threshold.authmode = WIFI_AUTH_WPA2_PSK,</span><br><span class="line"></span><br><span class="line">            .pmf_cfg = &#123;</span><br><span class="line">                .capable = true,</span><br><span class="line">                .required = false</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &amp;wifi_config) );</span><br><span class="line">    ESP_ERROR_CHECK(esp_wifi_start() );</span><br><span class="line"></span><br><span class="line">    ESP_LOGI(TAG, &quot;wifi_init_sta finished.&quot;);</span><br><span class="line"></span><br><span class="line">    /* Waiting until either the connection is established (WIFI_CONNECTED_BIT) or connection failed for the maximum</span><br><span class="line">     * number of re-tries (WIFI_FAIL_BIT). The bits are set by event_handler() (see above) */</span><br><span class="line">    EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,</span><br><span class="line">            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,</span><br><span class="line">            pdFALSE,</span><br><span class="line">            pdFALSE,</span><br><span class="line">            portMAX_DELAY);</span><br><span class="line"></span><br><span class="line">    /* xEventGroupWaitBits() returns the bits before the call returned, hence we can test which event actually</span><br><span class="line">     * happened. */</span><br><span class="line">    if (bits &amp; WIFI_CONNECTED_BIT) &#123;</span><br><span class="line">        ESP_LOGI(TAG, &quot;connected to ap SSID:%s password:%s&quot;,</span><br><span class="line">                 EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS);</span><br><span class="line">    &#125; else if (bits &amp; WIFI_FAIL_BIT) &#123;</span><br><span class="line">        ESP_LOGI(TAG, &quot;Failed to connect to SSID:%s, password:%s&quot;,</span><br><span class="line">                 EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        ESP_LOGE(TAG, &quot;UNEXPECTED EVENT&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* The event will not be processed after unregister */</span><br><span class="line">    ESP_ERROR_CHECK(esp_event_handler_instance_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, instance_got_ip));</span><br><span class="line">    ESP_ERROR_CHECK(esp_event_handler_instance_unregister(WIFI_EVENT, ESP_EVENT_ANY_ID, instance_any_id));</span><br><span class="line">    vEventGroupDelete(s_wifi_event_group);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void app_main(void)</span><br><span class="line">&#123;</span><br><span class="line">//Initialize NVS</span><br><span class="line">esp_err_t ret = nvs_flash_init();</span><br><span class="line">if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) &#123;</span><br><span class="line">ESP_ERROR_CHECK(nvs_flash_erase());</span><br><span class="line">ret = nvs_flash_init();</span><br><span class="line">&#125;</span><br><span class="line">ESP_ERROR_CHECK(ret);</span><br><span class="line">ESP_LOGI(TAG, &quot;ESP_WIFI_MODE_STA&quot;);</span><br><span class="line">wifi_init_sta();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/23/WIFI%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">http://example.com/2024/08/23/WIFI%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/23/RTOS%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">RTOS成仙之路</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/23/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">信号与系统入门</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

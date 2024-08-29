@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>蓝牙协议成仙之路 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">蓝牙协议成仙之路</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 23, 2024&nbsp;&nbsp;13:34:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-蓝牙概念"><a href="#1-蓝牙概念" class="headerlink" title="1.蓝牙概念"></a>1.蓝牙概念</h3><p>蓝牙，是一种支持设备短距离通信（一般 10m 内）的无线电技术，能在包括移动电话、PDA、无线耳机、笔记本电脑、相关外设等众多设备之间进行无线信息交换。利用“蓝牙”技术，能够有效地简化移动通信终端设备之间的通信，也能够成功地简化设备与因特网 Internet 之间的通信，从而数据传输变得更加迅速高效，为无线通信拓宽道路。</p>
+<p>蓝牙作为一种小范围无线连接技术，能在设备间实现方便快捷、灵活安全、低成本、低功耗的数据通信和语音通信，因此它是目前实现无线个域网通信的主流技术之一。与其他网络相连接可以带来更广泛的应用。是一种尖端的开放式无线通信，能够让各种数码设备无线沟通，是无线网络传输技术的一种，原本用来取代红外。</p>
+<p>蓝牙技术是一种无线数据与语音通信的开放性全球规范，它以低成本的近距离无线连接为基础，为固定与移动设备通信环境建立一个特别连接。其实质内容是为固定设备或移动设备之间的通信环境建立通用的无线电空中接口（Radio Air Interface），将通信技术与计算机技术进一步结合起来，使各种 3C 设备在没有电线或电缆相互连接的情况下，能在近距离范围内实现相互通信或操作。简单的说，蓝牙技术是一种利用低功率无线电在各种 3C 设备间彼此传输数据的技术。蓝牙工作在全球通用的 2.4GHz ISM（即工业、科学、医学）频段，使用 IEEE802.11 协议。作为一种新兴的短距离无线通信技术，正有力地推动着低速率无线个人区域网络的发展。</p>
+<h3 id="2-市面蓝牙架构介绍"><a href="#2-市面蓝牙架构介绍" class="headerlink" title="2.市面蓝牙架构介绍"></a>2.市面蓝牙架构介绍</h3><ul>
+<li>SOC 蓝牙单芯片方案</li>
+</ul>
+<p>一般是半导体厂商半开源协议栈，基于特定的编译器，把蓝牙协议栈直接烧写到蓝牙芯片中（比如 CSR BC4&#x2F;5,CSR8670,CSR8675,TI CC2540，NRF51xxx,NRF52xxx，乐鑫 ESP32 等等），此类芯片一般可以直接做为 MCU 用，这类产品一般用于消费类电子，集成度很高，调调部参数可以直接使用，常见的有蓝牙耳机，一般蓝牙耳机之前 CSR 的芯片（CSRBC5&#x2F;8670&#x2F;8675）占很大的份额，现在 CSR 被高通并掉后，出来 QCC3，QCC5 系列，现在还有洛达，杰里的低成本方案，在有就是 BLE smart 设备，也有特有的方案</p>
+<ul>
+<li>SOC 蓝牙+MCU 方案</li>
+</ul>
+<p>就是在 1）的基础上，通过特定的 interface(UART 居多)，发送自定义的 command 来达到想要的功能，比如发送 0x01 代表搜索周围设备，当然在产品中肯定不会定义这么简单的 command，一般要加上 command id + command len + command para data + command check sum 来实现功能。此部分的应用一般用于外设功能相对于复杂，需要驱动很多外设，但是单芯片方案的性能达不到的情况下一般用这种方案</p>
+<ul>
+<li>蓝牙 host + controller 分开方案</li>
+</ul>
+<p>这种应用算是蓝牙最复杂的应用，适用于蓝牙使用情景较复杂的情况下使用，比如车载蓝牙等。客户需要有很多蓝牙协议，比如蓝牙电话（HFP），蓝牙音频（A2DP），蓝牙音乐控制（AVRCP），蓝牙电话本（PBAP），蓝牙短信（MAP），BLE,HID，如果你说以上还能用 soc 做，那么再加上 Carplay 的 IAP&#x2F;IAP2，Android Auto 的 RFCOMM BT 呢，基本以上就需要这种方案了。其中 Transport 是一个协议，H2 就是在 USB 的基础上的协议，H4,H5,BCSP 是 UART 基础上的协议，当然还有 SDIO。</p>
+<p>四.总结<br>其实你会发现每种架构都有每种的好处，并不是每周产品都需要套用某一种架构，需要考虑的方面很多，比如</p>
+<p>1）项目需要的成本 2）项目的功能复杂度 3）项目的研发市场 4）项目硬件性能的考虑（rom,ram,codec 等）</p>
+<p>我大概列举下几种：</p>
+<p>1）手机 -&gt; 手机的蓝牙复杂应用，注定要用第 3 种方案，也就是蓝牙协议栈（host）在主芯片中，蓝牙芯片为 HCI 架构的</p>
+<p>2）蓝牙音响，蓝牙耳机 -&gt; 此种应用一般用单芯片方案就能 hold 住，比如 CSR8670&#x2F;8675&#x2F;杰理蓝牙等，好处在于开发便捷</p>
+<p>3）蓝牙手表 -&gt; 手表要看功能复杂性，如果仅仅有时间显示，传感器交互，蓝牙，那么可以选择单芯片方案（也就是方案 1），如果有网络等比较复杂的功能就要使用 MCU+蓝牙芯片方案（也就是方案 3）了</p>
+<p>4）蓝牙手环，蓝牙心率带等 -&gt; 基本上是单芯片方案</p>
+<h3 id="3-HCI-蓝牙架构"><a href="#3-HCI-蓝牙架构" class="headerlink" title="3.HCI 蓝牙架构"></a>3.HCI 蓝牙架构</h3><p>在介绍架构之前我们先介绍下两个名词:</p>
+<ul>
+<li>BT Controller：此部分指的是蓝牙芯片，包括 BR&#x2F;EDR 芯片（蓝牙 2.1 芯片），AMP 芯片（蓝牙 3.0 芯片），LE 芯片（蓝牙 4.0 芯片），后续我们把 4.0 以下统称为传统蓝牙，4.0 以上称为低功耗蓝牙，芯片层面会有 2 种模式，包括<ul>
+<li>单模蓝牙芯片：单一传统蓝牙芯片，单一低功耗蓝牙芯片</li>
+<li>双模蓝牙芯片：同时支持传统蓝牙跟低功耗蓝牙的芯片</li>
+</ul>
+</li>
+<li>BT Host：蓝牙协议栈</li>
+</ul>
+<p>细展开以上的架构如下：</p>
+<p>1.HW 层：这里就是蓝牙芯片层，包含以下几个部分</p>
+<p>1）RF（RADIO）：射频层，本地蓝牙数据通过射频发送给远端设备，并且通过射频接收来自远端蓝牙设备的数据</p>
+<p>2）BB（BASEBAND）：基带层，进行射频信号与数字或语音信号的相互转化，实现基带协议和其它的底层连接规程。</p>
+<p>3）LMP（LINK MANAGER PROTOCOL）：链路管理层，负责管理蓝牙设备之间的通信，实现链路的建立、验证、链路配置等操作</p>
+<p>4）HCI（HOST CONTROLLER INTERFACE）：主机控制器接口层，HCI 层在芯片以及协议栈都有，芯片层面的 HCI 负责把协议栈的数据做处理，转换为芯片内部动作，并且接收到远端的数据，通过 HCI 上报给协议栈。</p>
+<p>5）BLE PHY：BLE 的物理层</p>
+<p>6）BLE LL：BLE 的链路层</p>
+<p>2.TRANSPORT 层：此部分在硬件接口（UART&#x2F;USB&#x2F;SDIO）实现 HOST 跟 CONTROLLER 的交互，此部分会分为以下几个协议，在后续章节会对 transport 协议做详细的说明</p>
+<p>1）H2：USB 的 transport</p>
+<p>2）H4: UART 的 transport</p>
+<p>H4 是 UART 传输种最简的一个 Transport，只是在 HCI raw data 的前面加一个 type 就行，如下 HCI 一共有五种 HCI data:</p>
+<ul>
+<li><p>HCI COMMAND:由蓝牙协议栈发送给芯片的命令</p>
+</li>
+<li><p>HCI EVENT:由蓝牙芯片上报给蓝牙协议栈的事件</p>
+</li>
+<li><p>HCI ACL:蓝牙协议栈跟蓝牙芯片双向交互的普通数据</p>
+</li>
+<li><p>HCI SCO:蓝牙芯片跟蓝牙协议栈双向交互的通话&#x2F;语音识别等音频数据</p>
+</li>
+<li><p>HCI ISO（这部分是在 core5.2 才添加）:LE audio 用的数据包格式</p>
+</li>
+</ul>
+<p>3）H5: UART 的 transport</p>
+<p>4）BCSP: UART 的 transport</p>
+<p>5）SDIO Transport,我不知道叫什么 transport,但是有走 SDIO 的蓝牙芯片，比如 Marvell8887，可以选择走 SDIO 或者 UART</p>
+<p>其中 2,3,4 的主要差别在于 H4 需要 BT CHIP UART_TX&#x2F;UART_RX&#x2F;UART_CTS&#x2F;UART_RTS&#x2F;VCC&#x2F;GND 接到 MCU，而 H5,BCSP 只需要 BT CHIP 的 UART_TX&#x2F;UART_RX&#x2F;VCC&#x2F;GND 接到 MCU 就可以通信。</p>
+<p>3.HOST 层：此部分就是蓝牙协议栈，</p>
+<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><p><a target="_blank" rel="noopener" href="https://wlink.blog.csdn.net/article/details/107727900">https://wlink.blog.csdn.net/article/details/107727900</a></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/23/%E8%93%9D%E7%89%99%E5%8D%8F%E8%AE%AE%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/">http://example.com/2024/08/23/%E8%93%9D%E7%89%99%E5%8D%8F%E8%AE%AE%E6%88%90%E4%BB%99%E4%B9%8B%E8%B7%AF/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/23/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">信号与系统入门</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/23/CUBEMX%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">CUBEMX常用配置</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
