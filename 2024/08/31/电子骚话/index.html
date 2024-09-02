@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>电子骚话 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">电子骚话</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 31, 2024&nbsp;&nbsp;16:07:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AD%91%E5%9F%BA/">筑基</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>信通你干了什么？没有电工我们如何进行测量？信通淡笑一声：“很简单——打通信不就是了？”说完，她的气息终于不再掩饰，显露而出——信道九转。一瞬间，赛场再次一寂。信通一身蓝白，青丝飘扬，纵横赛场，气盖山河。她牢牢占据上风，口中忽吟道：早岁已知通原艰，任许模电荡云间 。四年电科学全栈，项目沉浮成总师。千焊百量取包络，殚精竭虑数模转。今朝剑指通信题，测电测人还测天。 从今以后，她就彻底从一个学生成为了一名总师，堂堂正正地测量天地，执掌信号。至此他和香农麦克斯韦等先贤并肩而立，宛若大日光照千古，其余通信家无论多么豪杰英雄皆为繁星。</p>
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>妈妈只希望你不要再打电赛了，找个正经工作踏踏实实，开开心心地过日子。找个好老婆让妈妈早点抱上孙子。你打电赛多年，这个家败得千疮百孔，爸爸担心你没钱吃饭，愁得白头发都多了。前几天妈妈给你发的红包，实际,上是你爸让我给你的，你爸这个人到底还是刀子嘴，豆腐心。唉，回头无岸,成功者十不存一。如果你没有选择这条路，我们家现在该有多幸福啊。儿啊，妈妈也不希望你给自己太大压力，一定要达到什么高度，凡事尽力就好，但是电赛不是光靠努力就行的，如果压力太大，我们先放一放 好不好?先不要打电赛了，回家来吃个饭我们慢慢捋一捋聊一聊，看看以后咱们家该怎么过，你年纪也不小了，总不能成家立业两不沾，天天就盯着教程那点东西看啊。你见你身边谁真的打电赛发了大财的?唉，都是那些平台公司编出来骗你当牛做马的!小时候的你多可爱啊，现在你都很 少笑了，都是打电赛害了你，唉..过两天你爸离职办下来了有空了，你有空就回家看看吧，别让他太伤心，妈再给你转几百，你到时候提点水果牛奶来，让你爸高兴高兴，别又把这笔钱拿去报课了。</p>
+<p>妈妈只希望你不要再参加全国大学生智能汽车竞赛了，找个平衡的生活，开开心心地享受大学时光。找个兴趣相投的伴侣让妈妈早点看到你的幸福。你参加竞赛三年，这个家也因为你而承受了不小的压力，爸爸担心你因为比赛而疏忽了学业和生活，愁得白头发都多了。前几天妈妈给你的红包，实际上是你爸让我给你的，他内心还是很关心你的。儿啊，妈妈也不希望你给自己太大压力，一定要追求什么名次，凡事尽力就好。但是全国大学生智能汽车竞赛不是你一个人的事情，也不是只靠努力就能成功的。如果压力太大，我们先放一放，好不好？先不要参加竞赛了，回家来吃个饭，我们慢慢聊聊，看看以后你的人生规划，你年纪也不小了，总不能学业和人生规划两不沾。你见过谁真的因为参加智能汽车竞赛而发家致富的？这些竞赛都是让你体验、学习和成长的，而不是让你成为他们的奴隶。小时候的你多可爱啊，现在你都很少笑了，都是竞赛的压力害了你。过两天你爸有空了，你有空就回家看看吧，别让他太担心。妈妈再给你转几百，你到时候提点水果牛奶来，让你爸高兴高兴，别又把这笔钱拿去参加竞赛了。</p>
+<p>妈妈只希望你不要再打蓝桥杯了，找个正经工作踏踏实实，开开心心地过日子。找个好老婆让妈妈早点抱上孙子。你打蓝桥杯多年，这个家败得千疮百孔，爸爸担心你没钱吃饭，愁得白头发都多了。前几天妈妈给你发的红包，实际,上是你爸让我给你的，你爸这个人到底还是刀子嘴，豆腐心。唉，回头无岸,成功者十不存一。如果你没有选择这条路，我们家现在该有多幸福啊。儿啊，妈妈也不希望你给自己太大压力，一定要达到什么高度，凡事尽力就好，但是蓝桥杯不是光靠努力就行的，如果压力太大，我们先放一放 好不好?先不要打蓝桥杯了，回家来吃个饭我们慢慢捋一捋聊一聊，看看以后咱们家该怎么过，你年纪也不小了，总不能成家立业两不沾，天天就盯着教程那点东西看啊。你见你身边谁真的打蓝桥杯发了大财的?唉，都是那些平台公司编出来骗你当牛做马的!小时候的你多可爱啊，现在你都很 少笑了，都是打蓝桥杯害了你，唉..过两天你爸离职办下来了有空了，你有空就回家看看吧，别让他太伤心，妈再给你转几百，你到时候提点水果牛奶来，让你爸高兴高兴，别又把这笔钱拿去报课了</p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>给高考考生一些报考志愿的建议</p>
+<p>1.三短一长选最长:</p>
+<ul>
+<li>北京大学</li>
+<li>清华大学</li>
+<li>复旦大学</li>
+<li>电子科技大学</li>
+</ul>
+<p>2.三长一短选最短:</p>
+<ul>
+<li>电子科技大学</li>
+<li>南京航空航天大学</li>
+<li>中国科学技术大学</li>
+<li>北京航空航天大学</li>
+</ul>
+<p>3.参差不齐就选C:</p>
+<ul>
+<li>武汉大学</li>
+<li>中国科学技术大学</li>
+<li>电子科技大学</li>
+<li>哈尔滨工业大学</li>
+</ul>
+<p>4.两长两短就选B:</p>
+<ul>
+<li>厦门大学</li>
+<li>电子科技大学</li>
+<li>广州大学</li>
+<li>大连海事大学</li>
+</ul>
+<p>5.实在不行随便选一个:</p>
+<ul>
+<li>电子科技大学</li>
+<li>郫县男子高级职业技术学校</li>
+<li>UESTC</li>
+<li>成电</li>
+</ul>
+<p>如果你高考680+，与其纠结志愿，不如报考电子科技大学英才学院和珠峰计划</p>
+<p>如果你高考670+，与其纠结志愿，不如报考电子科技大学双学位实验班</p>
+<p>如果你高考660+，与其纠结志愿，不如报考电子科技大学清水河校区</p>
+<p>如果你高考650+，与其纠结志愿，不如报考电子科技大学沙河校区</p>
+<p>如果你高考620+，与其纠结志愿，不如报考电子科技大学格拉斯哥学院</p>
+<p>如果你高考600+，与其纠结志愿，不如报考电子科技大学临床医学专业</p>
+<p>如果你高考590+，与其纠结志愿，不如报考电子科技大学护理学专业</p>
+<p>如果你高考文科580+，与其纠结志愿，不如报考电子科技大学社会科学实验班</p>
+<p>如果你高考二本线以上，与其纠结志愿，不如报考电子科技大学中山学院</p>
+<p>如果你高考遗憾未过二本线，与其纠结志愿，不如报考电子科技大学成都学院</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/31/%E7%94%B5%E5%AD%90%E9%AA%9A%E8%AF%9D/">http://example.com/2024/08/31/%E7%94%B5%E5%AD%90%E9%AA%9A%E8%AF%9D/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/"># 电子设计</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/31/%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8/">手势识别入门</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/31/%E7%AB%8B%E5%88%9BEDA/">立创EDA入门</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

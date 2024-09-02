@@ -13,7 +13,7 @@
 
 
 
-<title>一些奇奇怪怪的工具网站 | Hexo</title>
+<title>手势识别入门 | Hexo</title>
 
 
 
@@ -127,11 +127,76 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">一些奇奇怪怪的工具网站</h1>
+            <h1 class="post-title">手势识别入门</h1>
             
                 <div class="post-meta">
                     
@@ -140,14 +205,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2024&nbsp;&nbsp;13:34:03</a>
+                        Date: <a href="#">August 31, 2024&nbsp;&nbsp;16:07:21</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E5%A6%99%E6%8B%9B/">生活小妙招</a>
+                                <a href="/categories/%E7%AD%91%E5%9F%BA/">筑基</a>
                             
                         </span>
                     
@@ -156,38 +221,14 @@
         </header>
 
         <div class="post-content">
-            <p>kimi <a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">https://kimi.moonshot.cn/</a></p>
-<p>bots <a target="_blank" rel="noopener" href="https://www.coze.com/">https://www.coze.com/</a></p>
-<p>chatgpt<br><a target="_blank" rel="noopener" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
-<p>zlibrary<br><a target="_blank" rel="noopener" href="https://zlibrary-sg.se/">https://zlibrary-sg.se</a></p>
-<p>学生邮箱免登录 Foxmail <a target="_blank" rel="noopener" href="https://www.foxmail.com/">https://www.foxmail.com/</a></p>
-<p>gpt3.5 <a target="_blank" rel="noopener" href="https://x.aichatos8.cn/">https://x.aichatos8.cn/</a></p>
-<p>天工 ai<br><a target="_blank" rel="noopener" href="https://work.tiangong.cn/home/writting">https://work.tiangong.cn/home/writting</a></p>
-<p>期末复习指引<br><a target="_blank" rel="noopener" href="https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh">https://uestc.feishu.cn/wiki/IKNbwxB20iiEkBk14PQcjokCnkh</a></p>
-<p>CGTN<br><a target="_blank" rel="noopener" href="https://www.cgtn.com/">https://www.cgtn.com</a></p>
-<p>电子森林<br><a target="_blank" rel="noopener" href="https://www.eetree.cn/wiki/eesites">https://www.eetree.cn/wiki/eesites</a></p>
-<p>deepl 翻译<br><a target="_blank" rel="noopener" href="https://www.deepl.com/zh/translator-mobile">https://www.deepl.com/zh/translator-mobile</a></p>
-<p>免费论文查重<br><a target="_blank" rel="noopener" href="https://www.paperyy.com/">https://www.paperyy.com/</a></p>
-<p>geogerbra<br><a target="_blank" rel="noopener" href="https://www.geogebra.org/?lang=zh-CN">https://www.geogebra.org/?lang=zh-CN</a></p>
-<p>英作批改网<br><a target="_blank" rel="noopener" href="https://www.pigai.org/">https://www.pigai.org/</a></p>
-<p>3d 打印模型<br><a target="_blank" rel="noopener" href="https://www.thingiverse.com/">https://www.thingiverse.com/</a></p>
-<p>表情包制作<br><a target="_blank" rel="noopener" href="https://pearmini.github.io/colorfu/#/">https://pearmini.github.io/colorfu/#/</a></p>
-<p>测速网<br><a target="_blank" rel="noopener" href="https://m.speedtest.cn/">https://m.speedtest.cn/</a></p>
-<p>16 人格测试<br><a target="_blank" rel="noopener" href="https://www.16personalities.com/free-personality-test">https://www.16personalities.com/free-personality-test</a></p>
-<p>c 语言速查<br><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp">https://en.cppreference.com/w/cpp</a></p>
-<p>verilog 在线评测<br><a target="_blank" rel="noopener" href="https://verilogoj.ustc.edu.cn/oj/">https://verilogoj.ustc.edu.cn/oj/</a></p>
-<p>logo 自动生成<br><a target="_blank" rel="noopener" href="https://stockimg.ai/">https://stockimg.ai/</a></p>
-<p>制作表情<br><a target="_blank" rel="noopener" href="https://tikolu.net/emojimix/%F0%9F%98%AD+%F0%9F%A4%AE">https://tikolu.net/emojimix/%F0%9F%98%AD+%F0%9F%A4%AE</a></p>
-<p>数据筛选与检测<br><a target="_blank" rel="noopener" href="https://www.browse.ai/">https://www.browse.ai/</a></p>
-<p>变声器<br><a target="_blank" rel="noopener" href="https://www.altered.ai/">https://www.altered.ai/</a></p>
-<p>辅助读书<br><a target="_blank" rel="noopener" href="https://elevenlabs.io/">https://elevenlabs.io/</a></p>
-<p>矢量图标<br><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p>破解软件<br><a target="_blank" rel="noopener" href="https://www.ghxi.com/">https://www.ghxi.com/</a></p>
-<p>破解网站<br><a target="_blank" rel="noopener" href="http://rutracker.org/">http://rutracker.org/</a></p>
-<p>researchrabbit<br><a target="_blank" rel="noopener" href="https://researchrabbitapp.com/">https://researchrabbitapp.com</a></p>
-<p>uestc 算法小白清单<br><a target="_blank" rel="noopener" href="https://vjudge.net/article/4664">https://vjudge.net/article/4664</a></p>
-<p>游戏安装<br><a target="_blank" rel="noopener" href="https://panzoid.com/">https://panzoid.com</a></p>
-<p>二次元图片检索<br><a target="_blank" rel="noopener" href="http://www.pixiv.net/">http://www.pixiv.net</a></p>
+            <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhx43264573yhx/article/details/105015681">2020新版pycharm+anaconda+python+opencv+qt环境配置_2020版的pycharm与什么版本的解释器相匹配-CSDN博客</a></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lifeisme666/article/details/117854697">https://blog.csdn.net/lifeisme666/article/details/117854697</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44996090/article/details/109686277">https://blog.csdn.net/weixin_44996090/article/details/109686277</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/menglir/article/details/116137112">https://blog.csdn.net/menglir/article/details/116137112</a></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44885615/article/details/106155546">https://blog.csdn.net/weixin_44885615/article/details/106155546</a> (基于tensorflow2.0+CNN实现手势识别(全))</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/guyuealian/article/details/126750433">https://blog.csdn.net/guyuealian/article/details/126750433</a> (手势识别2：基于YOLOv5的手势识别系统(含手势识别数据集+训练代码)</p>
+<p>)</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nb4y1R7Zh/?spm_id_from=333.337.search-card.all.click">https://www.bilibili.com/video/BV1nb4y1R7Zh/?spm_id_from=333.337.search-card.all.click</a>(开源项目 - 手势识别 hand pose 手势 UI 交互识别 增强现实 AR手势识别)</p>
 
         </div>
 
@@ -202,7 +243,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">http://example.com/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</a></span>
+                        <span><a href="http://example.com/2024/08/31/%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8/">http://example.com/2024/08/31/%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8/</a></span>
                     </p>
                 
                 
@@ -226,7 +267,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E7%AD%91%E5%9F%BA/"># 筑基</a>
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/"># 电子设计</a>
                     
                         
                 </span>
@@ -239,10 +280,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/08/21/%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">一些奇奇怪怪的技能学习网站</a>
+                <a class="prev" rel="prev" href="/2024/08/31/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94/">关于保研</a>
             
             
-            <a class="next" rel="next" href="/2024/08/15/%E5%8F%8B%E9%93%BE/">LINK</a>
+            <a class="next" rel="next" href="/2024/08/31/%E7%94%B5%E5%AD%90%E9%AA%9A%E8%AF%9D/">电子骚话</a>
             
         </section>
 

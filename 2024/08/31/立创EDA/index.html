@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>立创EDA入门 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">立创EDA入门</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 31, 2024&nbsp;&nbsp;16:07:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AD%91%E5%9F%BA/">筑基</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="立创EDA官方布线教程"><a href="#立创EDA官方布线教程" class="headerlink" title="立创EDA官方布线教程"></a>立创EDA官方布线教程</h3><p><a target="_blank" rel="noopener" href="https://docs.lceda.cn/cn/Schematic/Canvas-Settings/index.html">https://docs.lceda.cn/cn/Schematic/Canvas-Settings/index.html</a>  </p>
+<h3 id="推荐入门教程"><a href="#推荐入门教程" class="headerlink" title="推荐入门教程"></a>推荐入门教程</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63180933/article/details/134283242">https://blog.csdn.net/weixin_63180933/article/details/134283242</a></p>
+<h3 id="关于开源广场"><a href="#关于开源广场" class="headerlink" title="关于开源广场"></a>关于开源广场</h3><p>保存到自己的编辑器 导出Gerber 点击下单（一般都可包邮）</p>
+<h3 id="立创EDA布线快捷键"><a href="#立创EDA布线快捷键" class="headerlink" title="立创EDA布线快捷键"></a>立创EDA布线快捷键</h3><p>文档类型	快捷键	功能<br>所有	Space(空格键)	旋转所选图形<br>所有	鼠标右键	长按右键拖动画布；操作过程中按一下右键释放操作<br>所有	Left	向左滚动或左移所选图形<br>所有	Right	向右滚动或右移所选图形<br>所有	Up	向上滚动或上移所选图形<br>所有	Down	向下滚动或下移所选图形<br>所有	TAB	在放置元素时修改它的属性；选中一个元素并按下该快捷键打开偏移量对话框<br>所有	Esc	取消绘制<br>所有	HOME	重新指定原点<br>所有	Delete	删除所选<br>所有	F1	打开帮助文档<br>所有	F11	浏览器下全屏<br>所有	A	放大<br>所有	Z	缩小<br>所有	D	拖动<br>所有	K	适合窗口<br>所有	R	旋转所选图形<br>所有	X	水平翻转(封装不支持)<br>所有	Y	垂直翻转(封装不支持)<br>所有	ALT+F5	和F11一致，浏览器下全屏<br>所有	ALT+W	关闭当前页<br>所有	SHIT+ALT+W	关闭全部页<br>所有	CTRL+X	剪切<br>所有	CTRL+C	复制<br>所有	CTRL+V	粘贴<br>所有	CTRL+A	全选<br>所有	CTRL+Z	撤销<br>所有	CTRL+Y	重做<br>所有	CTRL+S	保存<br>所有	CTRL+F	查找元素<br>所有	CTRL+D	设计管理器<br>所有	CTRL+HOME	打开原点坐标设置对话框<br>所有	SHIFT+1	往左边切换文档标签<br>所有	SHIFT+2	往右边切换文档标签<br>所有	SHIFT+X	交叉选择<br>所有	SHIFT+F	浏览和查找元件库<br>所有	SHIFT+拖动元件	光标自动吸附在元件的原点<br>所有	SHIFT+ALT+H	水平居中对齐<br>所有	SHIFT+ALT+E	垂直居中对齐<br>所有	CRTL+SHIFT+L	左对齐<br>所有	CRTL+SHIFT+R	右对齐<br>所有	CRTL+SHIFT+O	顶对齐<br>所有	CRTL+SHIFT+B	底对齐<br>所有	CRTL+SHIFT+G	对齐网格<br>所有	CRTL+SHIFT+H	水平等距分布<br>所有	CRTL+SHIFT+E	垂直等距分布<br>所有	CTRL+SHIFT+F	查找相似对象<br>所有	CTRL+SHIFT+ALT+F12	打开Log对话框  </p>
+<p>原理图快捷键		<br>文档类型	快捷键	功能<br>原理图	W	绘制导线<br>原理图	B	绘制总线<br>原理图	U	总线分支<br>原理图	N	网络标签<br>原理图	P	放置管脚<br>原理图	L	绘制折线<br>原理图	O	绘制多边形<br>原理图	Q	绘制贝塞尔曲线<br>原理图	C	绘制圆弧<br>原理图	S	绘制矩形<br>原理图	E	绘制椭圆<br>原理图	F	自由绘制<br>原理图	T	放置文本<br>原理图	I	修改选中器件<br>原理图	CTRL+Q	标识符 VCC<br>原理图	CTRL+G	标识符 GND<br>原理图	CTRL+R	仿真当前文档<br>原理图	CTRL+J	打开仿真设置对话框<br>原理图	CTRL+SHIFT+X	批量选中元件，布局传递到PCB<br>原理图	SHIFT+T	打开符号向导<br>原理图	ALT+F	打开封装管理器  </p>
+<p>PCB快捷键		<br>文档类型	快捷键	功能<br>PCB	W	绘制走线<br>PCB	U	绘制圆弧<br>PCB	C	绘制圆形<br>PCB	N	放置尺寸<br>PCB	S	放置文本<br>PCB	O	放置连接线<br>PCB	E	绘制铺铜<br>PCB	T	切换至顶层；选中封装时，切换封装层属性为顶层<br>PCB	B	切换至底层；选中封装时，切换封装层属性为底层<br>PCB	1	切换至内层1<br>PCB	2	切换至内层2<br>PCB	3	切换至内层3<br>PCB	4	切换至内层4<br>PCB	P	放置焊盘<br>PCB	Q	切换画布单位<br>PCB	V	放置过孔<br>PCB	M	量测距离<br>PCB	H	持续高亮选中的网络，再按一次取消高亮<br>PCB	L	改变布线角度<br>PCB	-	布线时，减少线宽；小键盘时，循环切换PCB层<br>PCB	+	布线时，增加线宽；小键盘时，循环切换PCB层<br>PCB	*(星号)	循环切换PCB层<br>PCB	Delete	删除选中的元素；布线过程中撤销到上一次布线<br>PCB	Alt–	减少栅格尺寸<br>PCB	Alt++	增加栅格尺寸<br>PCB	CTRL+R	选中元素后按下，指定参考点，开始连续粘贴元素<br>PCB	CTRL+L	打开层管理器<br>PCB	CTRL+Q	显示或隐藏网络文字<br>PCB	SHIFT+M	删除所有铺铜<br>PCB	SHIFT+B	重建所有铺铜<br>PCB	SHIFT+D	根据参考点移动元素<br>PCB	SHIFT+G	显示当前导线的走线长度，布线时有效<br>PCB	SHIFT+W	显示常用线宽，布线时有效<br>PCB	SHIFT+R	循环切换布线冲突模式<br>PCB	SHIFT+S	只显示当前层<br>PCB	SHIFT+双击	删除所选导线线段<br>PCB	CTRL+SHIFT+C	根据参考点复制元素<br>PCB	CTRL+SHIFT+V	粘贴元件时保持编号不变，并关闭飞线层<br>PCB	CTRL+SHIFT+SPACE	切换布线拐角，与快捷键 L 一致<br>PCB	CTRL+ALT+L	开启全部图层<br>封装	CTRL+SHIFT+ALT+D	打开封装自定义数据对话框  </p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/31/%E7%AB%8B%E5%88%9BEDA/">http://example.com/2024/08/31/%E7%AB%8B%E5%88%9BEDA/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/"># 电子设计</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/31/%E7%94%B5%E5%AD%90%E9%AA%9A%E8%AF%9D/">电子骚话</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/31/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9CAI%E5%85%B3%E9%94%AE%E5%8F%A5/">论文写作AI关键句</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

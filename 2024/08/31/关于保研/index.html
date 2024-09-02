@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>关于保研 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">关于保研</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XIAODENGWANG</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 31, 2024&nbsp;&nbsp;16:07:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AD%91%E5%9F%BA/">筑基</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p>一、 何为保研</p>
+<p>1. 保研的定义</p>
+<p>百度百科解释：</p>
+<p>保研（全称：推荐优秀应届本科毕业生免试攻读硕士学位研究生），顾名思义，就是被保送者不经过笔试等初试一些程序，通过一个考评形式鉴定学生的学习成绩、综合素质等，在一个允许的范围内，直接由学校保送读研究生。</p>
+<p>保研也就是我们所说的推免，直白的话来讲就是：拥有一个免试资格。值得注意的是：学校只能给你一个免试的资格，并不能保证你能去哪个学校——这就与后面要讲的夏令营、预推免、九推相关了。</p>
+<p>2. 保研的类别</p>
+<p>应该在21年前后，保研制度改革——特殊保研取消——成电的保研应该只分两种了：</p>
+<p>1. 通过综合成绩评定获得的推免生资格：绝对的主流推免，采用智育成绩+加分成绩占比排名，根据推免生名额划定是否具有推免生资格</p>
+<p>2. 支教保研：参与支教计划，然后保留学籍，等支教完成之后回来读研究生</p>
+<p>3. 保研生的类别</p>
+<p>保研成为研究生一般有三种类型：</p>
+<p>1. 学硕：三年研究生生活，主要搞学术研究，需要发表论文毕业</p>
+<p>2. 直博：五年博士生活(不延毕的话)，毕业后直接博士学位</p>
+<p>3. 专硕：两年半&#x2F;三年研究生活，主要搞工程项目，也有部分学校的专硕也搞科研，但是较少</p>
+<p>PS.大部分学校的学硕3年、专硕2.5-3年，此外部分学校的专硕不提供住宿，在申报的时候一定要注意。</p>
+<p>二、保研去向</p>
+<p>获得保研资格后，究竟能去哪个学校是由你和你想去的学校决定的；这过程一般有三个步骤：夏令营、预推免、九推。经历这三个阶段后，尘埃落定了，你能去那里也就最终决定了。</p>
+<p>1. 夏令营</p>
+<p>大多数学生都是依靠夏令营上岸的，因为在夏令营中取得优秀营员之后等到保研系统开放填写之后可以免复试直接录取(不过有些学校也不叫“优秀营员”，成电一般叫“优本库”——但是同等效力差不多；也有些虽然叫“优营”但仍然要考核的。所以，Case By Case)。</p>
+<p>1.1 夏令营时间</p>
+<p>不同高校的夏令营时间不太一样，但大部分都在大三下半年的4月上旬~8月下旬，具体的夏令营时间就要根据高校的官网通知为准。</p>
+<p>如果你有志向保研，那么大三下的时候你就要多去你理想院校的相关院系官网上看看，时刻注意相关动态，避免错过报名时间。</p>
+<p>1.2 夏令营的申报</p>
+<p>夏令营申报一般有两种形式：</p>
+<p>1. 登录申报系统，填写相关资料进行申报</p>
+<p>2. 将相关资料发送至邮箱。</p>
+<p>申报的材料每个学校不太一样，但是根据网上大部分情况整理的一般材料：</p>
+<p>1. 前五学期成绩单、成绩&#x2F;排名证明，需加盖学校公章</p>
+<p>2. 相关获奖材料的证明：论文、竞赛等</p>
+<p>3. 英语四、六级证书</p>
+<p>4. 目标院校夏令营申请表，一般需要打印手写签名</p>
+<p>5. 个人简历</p>
+<p>6. 个人陈述或申请理由</p>
+<p>7. 推荐信 (部分学校需要)</p>
+<p>PS. 成绩排名，四、六级证书，获奖材料证明一般是每个学校都需要的，但这些都是固定的死模式，没什么可说的。下面我着重讲一下其他几个材料。</p>
+<p>1.2.1 个人简历</p>
+<p>放一个我很喜欢的姐姐的CV吧：<a target="_blank" rel="noopener" href="https://caslab.csl.yale.edu/~shuwen/materials/CV_Shuwen_06252022.pdf%E2%80%94%E2%80%94%E7%AE%80%E5%8E%86%E4%B8%80%E8%88%AC%E6%8C%89%E7%85%A7%E4%BB%A5%E4%B8%8A%E7%9A%84%E9%83%A8%E5%88%86%E4%B9%A6%E5%86%99%E5%8D%B3%E5%8F%AF">https://caslab.csl.yale.edu/~shuwen/materials/CV_Shuwen_06252022.pdf——简历一般按照以上的部分书写即可</a></p>
+<p>几个值得注意的部分：</p>
+<p>1. 书写的内容一定要属实，不要弄虚作假</p>
+<p>2. 简历以一页纸结束最好</p>
+<p>3. 项目经历一定要写你相对来说比较熟悉的，因为这很可能是夏令营面试时老师向你提问的依据</p>
+<p>1.2.2 推荐信</p>
+<p>部分学校申请夏令营时需要推荐信，一般推荐信都是自己写完之后找老师签字，你可以找自己的任课老师(尽量找某个考试得分比较高的老师) 或者某些项目的指导老师，老师一般都会爽快的答应的，因为老师也希望你能去更好的地方深造。</p>
+<p>但是注意的是，虽然是你自己夸自己，但是要使用老师的口吻、从老师的角度去写。如果是任课老师，就可以写上课认真听讲、课后认真完成作业之类的；如果是项目老师就可以写参加项目积极主动、能力强之类的。</p>
+<p>网上有很多的模板，可以参考一下。但是不要照抄一个模板，避免雷同。</p>
+<p>1.3 夏令营考核</p>
+<p>夏令营的考核方式主要分为两类：</p>
+<p>1. 机试或其他形式的设计项目等</p>
+<p>2. 面试</p>
+<p>不同学校有不同的考核方式，但是几乎所有学校都有面试这个环节，我大概讲解一下面试环节的惯用流程：</p>
+<p>1. 自我介绍：有可能是英文的自我介绍，也有可能是中文的自我介绍，时间在1~3分钟左右。建议自己在私下准备好自我介绍的内容并且背诵下来，但是在面试的时候不要语速过快、假装是现场发挥的而不是提前有准备。</p>
+<p>2. 项目经历：写在简历或者个人简述中的项目经历、比赛经理一定要搞的熟悉一点，因为这一部分几乎是必考题</p>
+<p>3. 专业课提问：如果你的项目经历十分丰富，那么在有限的面试时间中可能不会触及到这部分；但是如果你没有项目经历或者项目经历缺乏，那么这一部分就是老师向你问问题的重头戏。建议着重复习一些你拿高分的专业课和写在个人简述中的专业课，因为这很可能是老师向你提问的方向</p>
+<p>4. 未来规划：考察你是否对研究生阶段有清晰的规划</p>
+<p>5. 闲聊：聊一聊你的性格、兴趣爱好等闲聊的话题</p>
+<p>PS.在面试的时候可能存在压力测试，老师故意询问你一些角度刁钻的问题考察你的抗压能力，遇到自己不会的问题时：一定要谦虚承认自己的不足，并表示日后会好好学习该方面的知识。千万不要打肿脸充胖子，因为老师不是傻子，你乱说一气比你说你不会更加减分。</p>
+<p>对于想要参加的学校，强烈建议咨询一下自己的学长学姐、网上多看看面经，这玩意在不同学校中考核方式和侧重方向可能有很大的不同，但是同一个学校的历年来的考核方式和方法一般不会有很大的改变，所以从前人的身上汲取经验是个不错的选择</p>
+<p>2. 预推免&#x2F;九推</p>
+<p>预推免和九推的考核方式和夏令营大概一致，不过夏令营一般会提供住宿、经费报销，预推免和九推一般不提供，由学生自费参与。</p>
+<p>3. 选&#x2F;联系导师</p>
+<p>如果你通过了夏令营&#x2F;预推免&#x2F;九推，那么恭喜你，一般来说你有学上了，但是选&#x2F;联系导师又是一个令人十分头疼的问题。下面我就给予一下我的拙见：</p>
+<p>3.1 了解导师</p>
+<p>如果你认识这个老师的研究生，那么直接向学长学姐咨询了解导师的情况这肯定是一个十分方便的选择，但是学长学姐的话有时候可能说的比较含蓄，具体意思就需要自己去理解。</p>
+<p>如果学长学姐还在老师那么读，他们也不会直言老师的不好，所以对于老师的评价请自己知道就可以，不要出去乱和别人share。</p>
+<p>但是其实大多数时候情况没有这么美好，所以要谨慎选择，多打听多上河畔问问学长学姐们~</p>
+<p>3.2 联系导师</p>
+<p>如果你找到了心仪的导师或者想尝试联系老师更深入的了解一下，那么你就需要去主动联系导师(特别是好的导师，十分的抢手)。联系导师之前最好看一下导师的研究方向，大致浏览一下一两篇导师发表的论文，大致读一下心中有数就行。</p>
+<p>个人觉得在第一次联系导师的时候最好使用邮箱进行联系(各大高校的官网上一般都有导师的邮箱)，即使你有QQ、微信、电话等其他的联系方式，因为使用邮件联系可以给导师充分的回复时间也显得更加正式，直接使用QQ等联系方式在我看来有一点的不太尊重。下面是关于联系导师邮件的一些个人感受，不一定正确仅供参考：</p>
+<p>1. 邮件的标题：建议直接明了，毕竟老师每天都会接收很多邮件，如果你的邮件标题写的不明不了，老师可能也就会忽视你的邮件，可以使用：研究生问题咨询-XX大学-XXX这种格式，鲜艳明了</p>
+<p>2. 邮件的内容：邮件联系一般都是类似于大家打个招呼，老师再回复你邮件的时候一般都会提供诸如：QQ或者其他的联系方式进行细聊，所以我觉得联系导师邮件的内容主要就是展示出你的基本情况以及对导师的了解，语言显示出对老师的尊重和对研究方向感兴趣就可以了，没必要长篇大论的。</p>
+<p>3. 邮件附件：如果可以的话，请在邮件附件里提交你的个人简历，只需要个人简历就可以了。</p>
+<p>4. 等待回复：邮件发送后就可以忙其他的事情了，保研季导师也很忙，所以很多导师都不会立即回复，一般等个3-4天还没有收到导师的回复邮件就可以再发一篇询问一下，第二篇里面写上：老师上次发送的邮件你可能没有看到…诸如这样的客套话。如果导师回复了邮件，一般有两种情况：①很抱歉，我这边名额已经满了XXXX这样的话；②加我QQ细聊。 如果是第一种，那应该是没戏了，另寻他人吧；如果是第二种，那你就可以加导师的QQ细聊，并回复一下导师的邮件收到之类的话。(如果发送了很多封邮件都没有收到回复，如果有QQ等联系方式的话可以加一下试试，看看有没有希望。)</p>
+<p>PS_1.其实联系导师并没有很可怕，因为老师也经历过我们这个阶段，我在联系我现在的导师的时候和导师聊完，导师说：你可以再去看看其他的导师，因为我也是从你这个阶段过来的，当初背个书包去每个实验室找老师聊 ，我能理解，等你最终决定了再联系我，放轻松。</p>
+<p>PS_2.部分同学可能在学校，想联系本校的导师，我还是建议你先发送邮件给老师，尽量不要直接去办公室找老师，因为老师可能没有档期；如果实在发送了几封邮件都没有收到回复那可以冒一下险直接去办公室找老师。</p>
+<p>3.3 导师考核</p>
+<p>你选择导师后，导师还要选择你，这就像婚恋市场一样任何一方不满意都不能走到一起。</p>
+<p>一些导师：加你好友后，和你语音或者电话聊一下，详细了解一下你的具体情况并且给你介绍一下他的研究方向之类的，然后问你关于他的实验室或者研究方向有什么想了解的，如果双方合得来就这样说定了，过程比较轻松。</p>
+<p>另外一些导师：因为名气比较大，所以来找的学生很多，通常有一套比较系统的考核方案，然后根据考核方案选择学生。通常会让一个博士师兄联系你，给你一道编程题目和一篇论文让你搞，然后问你大概几天可以完成。完成之后会有一个面试：导师和几个师兄师姐听你讲解论文以及编程题解决的思路，然后会问你几个问题，此外可能还有中英文自我介绍等。</p>
+<p>目前大致就了解到主要有这两种导师考核方式，考核方式并不能代表一个导师能力的强弱，所以请不要用考核方式去衡量一个导师的科研能力。</p>
+<p>1.A类是科创竞赛，B类一般是文体竞赛，不能叠加，取最高加分（比如A类有一个国一，B类有一个国一，就取A类的国一作为加分），要注意一下A类的加分上限比B类高</p>
+<p>2.按照现在的规则，只能是独立作者＋自己通讯，通讯不能挂导师名字，我知道的可以自己给自己做通讯且符合我电加分要求的，可能只有北核的一些期刊，但是含金量一言难尽</p>
+<p>叠加是指不同类别可以叠加，比如你有一个竞赛国一，同时有一个能加分的论文，这个时候计算加分就是竞赛＋论文，再比如你有一个竞赛国一，又获得了年度大学生人物（社会实践和国际组织实习类），这两个也可以叠加 </p>
+<h3 id="一些体会"><a href="#一些体会" class="headerlink" title="一些体会"></a>一些体会</h3><p>现在正值保研季，和多年前的我一样，相信你们正在为保研忙得焦头烂额，作为一名当初保外校普通组（不知道算不算坑导）的学长，站在多年后的现在，说一说内心的想法，不仅仅是写给现在及以后的保研er，更写给多年前的自己。</p>
+<p>1、选一个好导师非常重要，切忌为了学校title去外校！一个好导师决定你三年甚至更长时间的读研生活质量，切记千万不可为了学校title而盲目去外校不熟知的课题组，这样你可能会非常痛苦。如果你还是坚持去，风险与机会是并存的，但大概率是风险大于收益，因为好组大家都知道，网上都查不出来的多半是普通组甚至坑组。当年保研时我一定要去外校，但现在我觉得成电好课题组是更好的选择，（当然，其他学校的好课题组也是值得去的，不过多半被本校占完了）。</p>
+<p>附：导师评价网（需翻墙）<a target="_blank" rel="noopener" href="http://www.yankong.org/">www.yankong.org</a></p>
+<p>2、切忌以为学校层次更高，就业更好。比成电层次高的就是清北华五，这些学校有很多只让学生做横向而不搞课题不放实习的导师，哪怕清北也不例外，毕竟二十年前进高校是很容易的，老师的水平鱼龙混杂。试想你在外校给导师打了三年工，而其他人实习了一年甚至两年，就现在这个就业环境而言，没有实习是很吃亏的！</p>
+<p>3、课题组往年学生的去向比导师title更重要。一个愿意在课题组网站上贴出往年学生去向的课题组大概率是不错的，但也会有坑，因为我就见过。据我听说，这几年刚进校的年轻老师多半是不错的，不论是学术水平还是对学生的关怀。</p>
+<p>4、对于官网上老师的研究方向不要全信。很多老师现在可能早就不研究那个方向了，而是接到什么项目搞什么，而项目千差万别，可能啥都有。</p>
+<p>5、综合全面因素做出适合自己的最好选择。可能的因素有课题组（实力、氛围）、学校、地域等，千万不要只考虑其中一个，一定要清楚自己未来的规划（私企、国企、选调、读博）再去做选择。如果是就业，一个放实习的导师非常重要；如果是读博，一个熟悉的导师非常重要。</p>
+<p>写这篇帖子的目的主要是想告诉那些在保外边缘的同学，千万不要盲目为了学校title而去外校！千万不要盲目为了学校title而去外校！千万不要盲目为了学校title而去外校！因为周围很多从成电保外的同学都后悔了。在这个人生的重要节点，一定要慎重考虑，千万不要轻易做出自己的选择！</p>
+<p>看到自己学院的各个团队在开宣讲，在此以过来人的身份给准备读研的学弟学妹们一个小建议：适合自己的研究方向固然重要，但是合理的作息时间同样重要！！！一定一定一定要询问导师团队的作息时间！！！最好能够直接向教研室的师兄师姐打听一下！！！</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XIAODENGWANG</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/08/31/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94/">http://example.com/2024/08/31/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/"># 大学生活小技巧</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/08/31/python%E5%85%A5%E9%97%A8/">python入门</a>
+            
+            
+            <a class="next" rel="next" href="/2024/08/31/%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8/">手势识别入门</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
