@@ -238,7 +238,7 @@
 <p>问题<br>在第十集中 main.c文件中显示’hdma_usart1_rx’ undeclared (first use in this function)和undefined reference to &#96;_HAL_DMA_DISABLE_IT’这两个问题我应该怎么解决啊<br>解答<br>是不是在CubeMX中勾选了Generate peripheral initialization as a pair of ‘.c&#x2F;.h. files per peripheral<br>应该是你勾上了为每个外设生成单独的.c.h文件<br>也可在uasrt.h文件中添加这些代码<br>extern DMA_HandleTypeDef hdma_usart3_rx;<br>extern DMA_HandleTypeDef hdma_usart3_tx;</p>
 <p>问题<br>up，请问这个支持ble的串口调试助手在哪下？资料包里没看到<br>解答<br>不用下载，网页版的 serial.keysking.com</p>
 <p>问题<br>kkOLED屏幕的品牌名，其他OLED怎么用这个库<br>解答<br>中景园 SSD1306 128*64，其他屏幕就修改一下初始化和SendCmd函数里的指令就好了。另外用的不是i2c1的话，Send函数也改一下（一般修改地址就行，要算）</p>
-<p>如果要在回调函数中使用HAL_Delay()，就必须配置中断优先级 System Core -&gt; NVIC，将 Time base: System tick timer 的主要优先级调到比EXTI line高否则 HAL_Delay() 函数无法在中断回调函数中执行，会导致程序卡在回调函数中</p>
+<p>问题<br>函数无法在中断回调函数中执行，程序卡在回调函数中<br>解答<br>如果要在回调函数中使用HAL_Delay()，就必须配置中断优先级 System Core -&gt; NVIC，将 Time base: System tick timer 的主要优先级调到比EXTI line高否则 HAL_Delay() </p>
 
         </div>
 
