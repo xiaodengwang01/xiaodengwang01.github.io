@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,inital-scale=1.0">
+		<title>色差方块</title>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				overflow:-Scroll;
+				overflow-y:hidden
+			}
+			.wk{
+				width: 660px;
+				height: 750px;
+				position: absolute;
+				left: 50%;
+				margin-left: -330px;
+				/*margin-top: 0px;*/
+			}
+			#cube{
+				width: 660px;
+				height: 660px;
+			}
+			.cube{
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				float: left;
+				border-radius: 25px;
+			}
+			#time{
+				position: absolute;
+				left: 50%;
+				margin-left: -320px;
+				margin-top: 30px;
+			}
+			.count_down{
+				font-size: 24px;
+			}
+			#score{
+				position: absolute;
+				left: 50%;
+				margin-left: 222px;
+				margin-top: 30px;
+			}
+			.my_score{
+				font-size: 24px;
+			}
+			#pause{
+				position: absolute;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				margin-left: -25px;
+				margin-top: 20px;
+				display: none;
+				cursor:pointer;
+			}
+			#start{
+				position: absolute;
+				left: 50%;
+				width: 90px;
+				height: 90px;
+				margin-left: -45px;
+				margin-top: 230px;
+				cursor:pointer;
+			}
+			#go_on{
+				position: absolute;
+				left: 50%;
+				width: 90px;
+				height: 90px;
+				margin-left: -43px;
+				margin-top: 330px;
+				display: none;
+				cursor:pointer;
+			}
+			.zz{
+				width: 660px;
+				height: 660px;
+				margin-top: -660px;
+				position: absolute;
+				border-radius: 15px;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wk">
+			<div id="cube">
+				<div id="cube1" class="cube"></div>
+				<div id="cube2" class="cube"></div>
+				<div id="cube3" class="cube"></div>
+				<div id="cube4" class="cube"></div>
+				<div id="cube5" class="cube"></div>
+				<div id="cube6" class="cube"></div>
+				<div id="cube7" class="cube"></div>
+				<div id="cube8" class="cube"></div>
+				<div id="cube9" class="cube"></div>
+			</div>
+			<div id="time">
+				<label class="count_down">Time:0</label>
+			</div>
+			<div id="score">
+				<label class="my_score">Score:0</label>
+			</div>
+			<img src="icons/pause.png" id="pause" title="暂停" />
+			<div class="zz">
+				<img src="icons/new.png" id="start" title="开始新游戏" />
+				<img src="icons/play.png" id="go_on" title="继续" />
+			</div>
+		</div>
+		
+		<script src="jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			var x,num,time=0,on=0,score=0;
+			setTime();
+			setInterval(setTime,1000);
+			zsy();
+			//窗口变化检验函数
+			$(window).resize(function(){
+				zsy();
+			})
+			get_cube();
+			play();
+			
+			//开始新游戏
+			$("#start").click(function(){
+				if(on==0||on==2){
+					//$(".zz").toggle();
+					$(".zz").hide();
+					$("#pause").show();
+					on=1;
+					score=0;
+					time=0;
+					$(".count_down").html("Time:"+time);
+					$(".my_score").html("Score:"+score);
+					get_cube();
+				}
+			})
+			
+			//继续游戏
+			$("#go_on").click(function(){
+				if(on==2){
+					//$(".zz").toggle();
+					$(".zz").hide();
+					$("#pause").show();
+					$("#go_on").hide();
+					on=1;
+				}
+			})
+			
+			//暂停游戏
+			$("#pause").click(function(){
+				if(on==1){
+					//$(".zz").toggle();
+					$(".zz").show();
+					$("#go_on").show();
+					$("#pause").hide();
+					on=2;
+				}
+			})
+			
+			//计时器
+			function setTime(){
+				if(time<60&&on==1){
+					$(".count_down").html("Time:"+time);
+					time++;
+				}
+				else if(time>=60){
+					$(".zz").show();
+					$("#pause").hide();
+					on=0;
+					time=0;
+					$(".count_down").html("Time:"+time);
+				}
+			}
+			
+			//点击事件函数
+			function play(){
+				$(".cube.on").die().live('click',function(){
+					score++;
+					$(".my_score").html("Score:"+score);
+					get_cube();
+					play();
+				})
+			}
+			//色块生成函数
+			function get_cube(){
+				$(".cube").removeClass("on");
+				x=Math.random()*360;
+				var str="",cube_num,cube_size,cube_margin;
+				if(score<5){
+					num=Math.floor(Math.random()*9+1);
+					cube_num=9;
+					cube_size=200;
+					cube_margin=10;
+				}
+				else if(score<10){
+					num=Math.floor(Math.random()*16+1);
+					cube_num=16;
+					cube_size=149;
+					cube_margin=8;
+				}
+				else{
+					num=Math.floor(Math.random()*25+1);
+					cube_num=25;
+					cube_size=122;
+					cube_margin=5;
+				}
+				for(var i=1;i<=cube_num;i++){
+					str+="<div id='cube"+i+"' class='cube'></div>";
+				}
+				$("#cube").html(str);
+				$(".cube").width(cube_size).height(cube_size).css("margin",cube_margin+"px");
+				$(".cube").css("background-color","hsl("+x+",70%,70%)");
+				$("#cube"+num).css("background-color","hsl("+x+",90%,70%)");
+				$("#cube"+num).addClass("on");
+				
+				
+			}
+			
+			//窗口自适应函数
+			function zsy(){
+				var bl=1;
+				var gd=1;
+				if($(window).width()<660||$(window).height()<750){
+					bl=$(window).width()/660;
+					gd=$(window).height()/750;
+					if(gd<bl) bl=gd;
+					$(".wk").css("margin-top","-"+375*(1-bl)+"px");
+					$(".wk").css("transform","scale("+bl+","+bl+")");
+					$(".wk").css("-ms-transform","scale("+bl+","+bl+")");
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

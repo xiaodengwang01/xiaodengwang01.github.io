@@ -1,0 +1,148 @@
+---
+layout: false
+---
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>小登王出品</title>
+<meta name="keywords" content="今天吃什么" />
+<meta name="description" content="随机推荐食品，再也不用为今天吃什么发愁了。" />
+<link rel="Shortcut Icon" href="favicon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="img/eat-min.css">
+<style>
+  #start {
+    position: fixed;
+    bottom: 200px; /* 距离底部50px */
+    right: 200px; /* 距离右侧50px */
+  }
+</style>
+</head>
+<body>
+<div class="logo"><img src="img/logo.png" /></div>
+<div id="wrapper">
+  <h1 style="color:#FF9733" id="what"></h1>
+  </h1>
+  <input type="button" value="开始" id="start" />
+</div>
+<textarea rows="9" cols="53" id="list" style="display:none">
+    学子2楼手抓饼/饭团/无刺啵啵鱼/黄焖鸡 学子3楼小炒（便宜现炒，推荐：鱼香茄子、鱼香肉丝、宫保鸡丁、盐煎肉、京酱肉丝） 朝阳1楼抄手/饺子 紫荆1楼小炒/广腊 紫荆2楼小炒（推荐：回锅肉，可考虑加蛋） 紫荆3楼盖饭炒饭（便宜且每种都特别好吃，一定加蛋）/自选窗口（烫菜区有卤味，按kg卖；夏天有冰粉和龟苓膏） 科创素菜自选/花溪牛肉粉 南门混沌大王（推荐：干拌、海鲜汤） 南门食汇小吃（便宜，推荐：糖醋里脊、京酱肉丝） 南门真·无名蹄花（门特别窄小，干净，学生会优惠） 南门壹号考点（调料香，下午4点后开门，老板人好，可自带饮品） 南门广式叉烧饭 南门干锅 匠心包子铺 攀枝花盐边羊肉米线 哈尔滨水饺（好吃就对了） 5号隆江猪脚饭 小厨烧（推荐：干锅，但卫生条件一般） 南充米线（推荐：辣子鸡丁） 蜀味农家小炒（推荐：酸菜黑鱼片、糖醋里脊） 余记快炒（推荐：干锅、京酱肉丝，老板人好） 小厨味道（偏贵但好吃） 花雕醉鸡（建议微微辣，除非喜欢吃辣）Rite Bite巴基斯坦餐厅（多数是鸡肉餐） 停车场烧烤（肉比较新鲜，非四川口味，价格一般） 3楼稽炙牛烤肉自助（方圆5km最顶的自助） 贝贝乔（低配西餐，点外卖更便宜） 涛寿司（低配日料）
+	
+	</textarea>
+<footer>
+    <div class="copyright">
+        <p><a href="https://www.xiaodengwang01.github.io" target="_blank">小登王出品</a></p>
+        <span class="cp">Copyright &copy;
+		<script type="text/javascript">copyright=new Date();update=copyright.getFullYear();document.write(""+ update + "");</script> 
+		www.xiaodengwang01.github.io  All Rights Reserved.</span>
+    </div>
+</footer>
+<script type='text/javascript' src='img/jquery-1.11.1.min.js'></script>
+<script>
+    $(function () {
+    var run = 0,
+        timer;
+
+    $("#start").click(function () {
+        var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
+        if (!run) {
+            $(this).val("停止");
+            timer = setInterval(function () {
+                var r = Math.ceil(Math.random() * list.length),
+                    food = list[r - 1];
+                $("#what").html(food);
+                var rTop = Math.ceil(Math.random() * $(document).height()),
+                    rLeft = Math.ceil(Math.random() * ($(document).width() - 50)),
+                    rSize = Math.ceil(Math.random() * (37 - 14) + 14);
+                $("<span class='temp'></span>").html(food).hide().css({
+                    "top": rTop,
+                    "left": rLeft,
+                    "color": "rgba(0,0,0,." + Math.random() + ")",
+                    "fontSize": rSize + "px"
+                }).appendTo("body").fadeIn("slow", function () {
+                    $(this).fadeOut("slow", function () {
+                        $(this).remove();
+                    });
+                });
+            }, 50);
+            run = 1;
+        } else {
+            $(this).val("不行，换一个");
+            clearInterval(timer);
+            run = 0;
+        };
+    });
+
+    document.onkeydown = function enter(e) {
+        var e = e || event;
+        if (e.keyCode == 13) $("#start").trigger("click");
+    };
+});
+  
+          $i = 0;
+        $('#start').click(function(){
+            $i++;
+            if($i >=10 ){
+                $('#start').hide();
+        $('#what').html('这么挑？饿着吧！');
+            }
+        })
+</script>
+<!--tm-->
+<script type="text/javascript">
+  window.onload = function(){
+    showTime();
+  }
+  function showTime(){
+    var now=new Date(); 
+    var year= now.getFullYear(); 
+    document.getElementById("show").innerHTML=""+year;
+    t=setTimeout('showTime()',1000)
+  }
+</script>
+<!--pb-->
+<script>
+    document.oncontextmenu = function (event){
+    if(window.event){
+    event = window.event;
+    }try{
+    var the = event.srcElement;
+    if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+    return false;
+    }
+    return true;
+    }catch (e){
+    return false;
+    }
+    }
+</script>
+<script>
+    document.onkeydown = function(){
+
+    if(window.event && window.event.keyCode == 123) {
+        alert("Hi,欢迎来到小登网！");
+        event.keyCode=0;
+        event.returnValue=false;
+    }
+    if(window.event && window.event.keyCode == 13) {
+        window.event.keyCode = 505;
+    }
+    if(window.event && window.event.keyCode == 8) {
+        alert(str+"\n请使用Del键进行字符的删除操作！");
+        window.event.returnValue=false;
+    }
+    }
+</script>
+<script type="text/javascript">
+  	if (self == top) {
+	    var theBody = document.getElementsByTagName('body')[0];
+	    theBody.style.display = "block";
+	} else {
+	    top.location = self.location;
+	}
+</script>
+
+</body>
+</html>
