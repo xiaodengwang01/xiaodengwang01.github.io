@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XIAODENGWANG">
+
+
+
+
+
+<title>浏览器收藏夹 | Xiaodengwang&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                <a class="menu-item" href="/archives/">Posts</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xiaodengwang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                <a class="menu-item" href="/archives/">Posts</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">浏览器收藏夹</h1>
+            <div class="post-meta">
+                Author: <a rel="author" href="/">XIAODENGWANG</a>
+                <span class="post-time">Date: <a href="#">August 10, 2026&nbsp;&nbsp;0:00:00</a></span>
+            </div>
+        </header>
+
+        <div class="post-content">
+            <p>整理自多个浏览器收藏夹，共 143 个去重后的页面链接。点击链接将在新标签页打开。</p>
+
+            <h2 id="navigation">分类导航</h2>
+            <ul>
+                <li><a href="#uestc">UESTC</a>（14）</li>
+                <li><a href="#research-tools">科研工具</a>（14）</li>
+                <li><a href="#ai-tools">AI工具</a>（19）</li>
+                <li><a href="#world">看世界</a>（9）</li>
+                <li><a href="#fun-projects">好玩项目</a>（9）</li>
+                <li><a href="#recent">近期</a>（7）</li>
+                <li><a href="#electronics">电子设计</a>（12）</li>
+                <li><a href="#research-training">科研训练</a>（15）</li>
+                <li><a href="#common-sites">常用网站</a>（10）</li>
+                <li><a href="#literature">文献阅读</a>（7）</li>
+                <li><a href="#paper-writing">论文写作</a>（5）</li>
+                <li><a href="#news">实时资讯</a>（5）</li>
+                <li><a href="#servers">服务器管理</a>（11）</li>
+                <li><a href="#graduate-recommendation">保研</a>（6）</li>
+            </ul>
+
+            <h2 id="uestc">UESTC</h2>
+            <ul>
+                <li><a href="https://eportal.uestc.edu.cn/new/index.html?browser=no" target="_blank" rel="noopener noreferrer">网上服务大厅</a></li>
+                <li><a href="https://jzsz.uestc.edu.cn/#/hall/home" target="_blank" rel="noopener noreferrer">线上“一站式”服务平台</a></li>
+                <li><a href="http://172.25.249.64/eportal/index.jsp?userip=100.66.120.36&amp;wlanacname=&amp;nasip=171.88.130.251&amp;wlanparameter=24-6a-0e-d4-cc-b8&amp;url=http://www.msftconnecttest.com/redirect&amp;userlocation=ethtrunk/3:381.823" target="_blank" rel="noopener noreferrer">上网认证</a></li>
+                <li><a href="https://vpn.uestc.edu.cn/portal/#!/login" target="_blank" rel="noopener noreferrer">EasyConnect</a></li>
+                <li><a href="http://mail.stu.scau.edu.cn/" target="_blank" rel="noopener noreferrer">Coremail</a></li>
+                <li><a href="https://xiaodengwang01.github.io/" target="_blank" rel="noopener noreferrer">xiaodengwang01</a></li>
+                <li><a href="https://g9tvo9xbp6.feishu.cn/wiki/AatBwiDa7ig7RJkzdlocLm1cnTh" target="_blank" rel="noopener noreferrer">期末复习导引</a></li>
+                <li><a href="https://github.com/Xovee/uestc-course/tree/main/%E8%AF%BE%E7%A8%8B%E7%9B%AE%E5%BD%95" target="_blank" rel="noopener noreferrer">uestc-course/课程目录 at main · Xovee/uestc-course · GitHub</a></li>
+                <li><a href="https://www.chsi.com.cn/" target="_blank" rel="noopener noreferrer">中国高等教育学生信息网（学信网）</a></li>
+                <li><a href="https://zxkc.uestc.edu.cn/stuad/index.jsp" target="_blank" rel="noopener noreferrer">电子科技大学|在线课程资源</a></li>
+                <li><a href="https://www.lib.uestc.edu.cn/?t_s=1711256074504" target="_blank" rel="noopener noreferrer">电子科技大学图书馆</a></li>
+                <li><a href="https://mirrors.uestc.cn/" target="_blank" rel="noopener noreferrer">电子科技大学开源镜像站</a></li>
+                <li><a href="https://webvpn.uestc.edu.cn/https/77726476706e69737468656265737421e8fc4b8f69256d436a0bc7a99c406d3605/home/homepage" target="_blank" rel="noopener noreferrer">竞赛管理系统</a></li>
+                <li><a href="http://110.184.24.61/portal/entry/pc/authenticate;flowParams=undefined;from=" target="_blank" rel="noopener noreferrer">连网认证</a></li>
+            </ul>
+
+            <h2 id="research-tools">科研工具</h2>
+            <ul>
+                <li><a href="https://radars.ac.cn/" target="_blank" rel="noopener noreferrer">雷达学报</a></li>
+                <li><a href="https://app.diagrams.net/" target="_blank" rel="noopener noreferrer">draw.io</a></li>
+                <li><a href="https://accounts.mathpix.com/quickstart" target="_blank" rel="noopener noreferrer">Mathpix Accounts</a></li>
+                <li><a href="https://www.niupizhiyuan.com/download.html" target="_blank" rel="noopener noreferrer">csdn文章浏览/资源下载</a></li>
+                <li><a href="https://cn.overleaf.com/project" target="_blank" rel="noopener noreferrer">Overleaf</a></li>
+                <li><a href="https://sci-hub.al/" target="_blank" rel="noopener noreferrer">Sci-Hub</a></li>
+                <li><a href="https://yanweb.top/" target="_blank" rel="noopener noreferrer">科研废物导航</a></li>
+                <li><a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer">Kaggle 云算力炼丹</a></li>
+                <li><a href="https://www.iflyrec.com/" target="_blank" rel="noopener noreferrer">讯飞听见 组会记录</a></li>
+                <li><a href="https://mp.weixin.qq.com/s/F4gyI2cqS0qU4mQ6DuiwSA" target="_blank" rel="noopener noreferrer">历史文章合集（收录2025年前所有发布的文章）</a></li>
+                <li><a href="https://www.scribbr.com/ai-detector/" target="_blank" rel="noopener noreferrer">AI Detector - Trusted AI Checker for ChatGPT, Copilot &amp; Gemini</a></li>
+                <li><a href="https://www.paperyy.com/" target="_blank" rel="noopener noreferrer">免费论文查重_PaperYY论文检测__PaperYY论文查重</a></li>
+                <li><a href="https://zhuanlan.zhihu.com/p/571035594" target="_blank" rel="noopener noreferrer">雷达领域SCI期刊整理：题名、刊物信息总结 - 知乎</a></li>
+                <li><a href="https://zhuanlan.zhihu.com/p/317281632" target="_blank" rel="noopener noreferrer">IEEE论文投稿流程（格式说明，新手指南，模板） - 知乎</a></li>
+            </ul>
+
+            <h2 id="ai-tools">AI工具</h2>
+            <ul>
+                <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a></li>
+                <li><a href="https://www.stepfun.com/chats/new" target="_blank" rel="noopener noreferrer">阶跃AI</a></li>
+                <li><a href="https://chat.deepseek.com/a/chat/s/2e76cb35-4b4d-4208-8dbb-73b3e9eb6202" target="_blank" rel="noopener noreferrer">DeepSeek - 探索未至之境</a></li>
+                <li><a href="https://kimi.moonshot.cn/chat/csl0posjot6ot2k62ap0" target="_blank" rel="noopener noreferrer">Kimi.ai - 会推理解析，能深度思考的AI助手</a></li>
+                <li><a href="https://chatexcel.com/#/" target="_blank" rel="noopener noreferrer">ChatExcel AI Excel处理和数据分析</a></li>
+                <li><a href="https://work.tiangong.cn/home/" target="_blank" rel="noopener noreferrer">天工AI助手 — 双千亿级大语言模型</a></li>
+                <li><a href="https://cozeai.com/chat" target="_blank" rel="noopener noreferrer">CozeAI</a></li>
+                <li><a href="http://openai.cha-tai.cn/" target="_blank" rel="noopener noreferrer">ChatAI</a></li>
+                <li><a href="https://suno.com/" target="_blank" rel="noopener noreferrer">Suno</a></li>
+                <li><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
+                <li><a href="https://www.tripo3d.ai/" target="_blank" rel="noopener noreferrer">Tripo AI for Web</a></li>
+                <li><a href="https://runwayml.com/" target="_blank" rel="noopener noreferrer">Runway | Tools for human imagination.</a></li>
+                <li><a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer">DeepSeek 开放平台</a></li>
+                <li><a href="https://www.datawhale.cn/learn/summary/40?from=g401" target="_blank" rel="noopener noreferrer">AI培养方案-课程摘要 | Datawhale</a></li>
+                <li><a href="https://console.cloud.tencent.com/tione/v2/aimarket/detail/deepseek_series?regionId=4&amp;detailTab=introduce&amp;uin=100040898309&amp;ownerUin=100040898309" target="_blank" rel="noopener noreferrer">大模型广场 - 腾讯云 TI 平台 - 控制台</a></li>
+                <li><a href="https://www.doubao.com/chat/" target="_blank" rel="noopener noreferrer">豆包</a></li>
+                <li><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek | 深度求索</a></li>
+                <li><a href="https://gemini.google.com/app?hl=en-US" target="_blank" rel="noopener noreferrer">Google Gemini</a></li>
+                <li><a href="https://api.cl0se-ai.de/console" target="_blank" rel="noopener noreferrer">New API</a></li>
+            </ul>
+
+            <h2 id="world">看世界</h2>
+            <ul>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://sms-activate.guru/cn/freeNumbers" target="_blank" rel="noopener noreferrer">SMS-Activate</a></li>
+                <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://mail.lkkk.eu.org/" target="_blank" rel="noopener noreferrer">AAA临时域名</a></li>
+                <li><a href="https://0630.ppg02-mqelltoq.top/#/register?code=dZk7UrjM" target="_blank" rel="noopener noreferrer">泡泡Dog</a></li>
+                <li><a href="http://www.edu.kg/" target="_blank" rel="noopener noreferrer">edu虚拟邮箱</a></li>
+                <li><a href="https://bewildcard.com/card" target="_blank" rel="noopener noreferrer">WildCard | 一分钟注册，轻松订阅海外线上服务</a></li>
+                <li><a href="https://www.cpolar.com/" target="_blank" rel="noopener noreferrer">cpolar官网-安全的内网穿透工具 | 无需公网ip | 远程访问 | 搭建网站</a></li>
+            </ul>
+
+            <h2 id="fun-projects">好玩项目</h2>
+            <ul>
+                <li><a href="https://emoji.mx/" target="_blank" rel="noopener noreferrer">emojimix</a></li>
+                <li><a href="https://lks.cc/" target="_blank" rel="noopener noreferrer">LKs 网站推荐合集</a></li>
+                <li><a href="https://microsoft.github.io/AI-For-Beginners/" target="_blank" rel="noopener noreferrer">AI for Beginners</a></li>
+                <li><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" rel="noopener noreferrer">GitHub - build-your-own-x</a></li>
+                <li><a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener noreferrer">GitHub - project-based-learning</a></li>
+                <li><a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer">GitHub - public-apis</a></li>
+                <li><a href="https://github.com/EbookFoundation/free-programming-books" target="_blank" rel="noopener noreferrer">GitHub - EbookFoundation</a></li>
+                <li><a href="https://github.com/perklet/reverse-interview-zh" target="_blank" rel="noopener noreferrer">GitHub - reverse-interview</a></li>
+                <li><a href="https://github.com/RVC-Boss/GPT-SoVITS?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">GitHub - GPT-SoVITS</a></li>
+            </ul>
+
+            <h2 id="recent">近期</h2>
+            <ul>
+                <li><a href="https://www.bilibili.com/" target="_blank" rel="noopener noreferrer">bilibili</a></li>
+                <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></li>
+                <li><a href="https://www.hiascend.com/developer/download" target="_blank" rel="noopener noreferrer">昇腾开发资源下载中心-昇腾社区</a></li>
+                <li><a href="https://www.bilibili.com/video/BV127411M7BU/?spm_id_from=333.337.search-card.all.click&amp;vd_source=e4afe74f6b3913d9798b4810ec097816" target="_blank" rel="noopener noreferrer">[DSP]数字信号处理（超浓缩版）_哔哩哔哩_bilibili</a></li>
+                <li><a href="https://www.bilibili.com/video/BV1aq4y1g7eo?spm_id_from=333.788.player.switch&amp;vd_source=e4afe74f6b3913d9798b4810ec097816" target="_blank" rel="noopener noreferrer">被称全球最好听歌曲之一《Far Away From Home》，前奏一响就沦陷_哔哩哔哩_bilibili</a></li>
+                <li><a href="https://zotero-chinese.com/" target="_blank" rel="noopener noreferrer">Zotero 中文社区 | Zotero 中文维护小组</a></li>
+            </ul>
+
+            <h2 id="electronics">电子设计</h2>
+            <ul>
+                <li><a href="https://u.lceda.cn/account/user/projects/all?notNeedOrg=true" target="_blank" rel="noopener noreferrer">工程-嘉立创EDA</a></li>
+                <li><a href="https://oshwhub.com/explore" target="_blank" rel="noopener noreferrer">立创开源广场</a></li>
+                <li><a href="https://www.yahboom.com/study/MicroROS-Pi5#xuanzhon_4" target="_blank" rel="noopener noreferrer">MicroROS-Pi5</a></li>
+                <li><a href="https://led.baud-dance.com/" target="_blank" rel="noopener noreferrer">波特律动LED字模生成器</a></li>
+                <li><a href="http://uinio.com/" target="_blank" rel="noopener noreferrer">UinIO.com 电子技术实验室</a></li>
+                <li><a href="http://docs.keysking.com/docs/stm32/intro/" target="_blank" rel="noopener noreferrer">欢迎来到 波特律动 | 波特律动</a></li>
+                <li><a href="https://lceda001.feishu.cn/wiki/MFNpw4STVi5ImikkcH1clWrlnqb" target="_blank" rel="noopener noreferrer">模块移植Docs</a></li>
+                <li><a href="http://wiki.tjc1688.com/" target="_blank" rel="noopener noreferrer">淘晶驰资料文档</a></li>
+                <li><a href="https://dengfoc.com/" target="_blank" rel="noopener noreferrer">灯哥开源 foc</a></li>
+                <li><a href="http://www.doyoung.net/DBK.html" target="_blank" rel="noopener noreferrer">洋桃电子 YoungTalk 探索最好的STM32教学</a></li>
+                <li><a href="https://wiki.bambulab.com/zh/home" target="_blank" rel="noopener noreferrer">主页 | Bambu Lab Wiki</a></li>
+                <li><a href="https://d2lros2foxy.fishros.com/#/" target="_blank" rel="noopener noreferrer">动手学ROS2</a></li>
+            </ul>
+
+            <h2 id="research-training">科研训练</h2>
+            <ul>
+                <li><a href="http://www-cnki-net-s.vpn.uestc.edu.cn:8118/" target="_blank" rel="noopener noreferrer">中国知网</a></li>
+                <li><a href="https://scholar.google.com.hk/?hl=zh-CN" target="_blank" rel="noopener noreferrer">谷歌学术</a></li>
+                <li><a href="https://alexlenail.me/NN-SVG/" target="_blank" rel="noopener noreferrer">NN SVG</a></li>
+                <li><a href="https://zh.d2l.ai/chapter_preface/index.html" target="_blank" rel="noopener noreferrer">动手学深度学习</a></li>
+                <li><a href="https://www.science.org/journal/science" target="_blank" rel="noopener noreferrer">Science | AAAS</a></li>
+                <li><a href="http://www-wanfangdata-com-cn-s.vpn.uestc.edu.cn:8118/" target="_blank" rel="noopener noreferrer">万方数据知识服务平台</a></li>
+                <li><a href="https://www.loc.gov/collections/world-digital-library/about-this-collection/" target="_blank" rel="noopener noreferrer">About this Collection | World Digital Library | Digital Collections | Library of Congress</a></li>
+                <li><a href="https://onlinelibrary.wiley.com/" target="_blank" rel="noopener noreferrer">Wiley Online Library | Scientific research articles, journals, books, and reference works</a></li>
+                <li><a href="http://zlf-cqvip-com.vpn.uestc.edu.cn:8118/" target="_blank" rel="noopener noreferrer">维普智立方 资源 知识 服务 - 文献</a></li>
+                <li><a href="https://www.icourse163.org/" target="_blank" rel="noopener noreferrer">中国大学MOOC(慕课)_国家精品课程在线学习平台</a></li>
+                <li><a href="https://thecrashcourse.com/" target="_blank" rel="noopener noreferrer">Crash Course</a></li>
+                <li><a href="https://languageplayer.io/" target="_blank" rel="noopener noreferrer">Language Player | Master any language by comprehensible input.</a></li>
+                <li><a href="https://dev.ti.com/" target="_blank" rel="noopener noreferrer">TI Developer Zone</a></li>
+                <li><a href="https://e2e.ti.com/support/sensors-group/sensors/f/sensors-forum" target="_blank" rel="noopener noreferrer">TI forum</a></li>
+                <li><a href="https://svenstaro.github.io/genact/" target="_blank" rel="noopener noreferrer">摸鱼genact</a></li>
+            </ul>
+
+            <h2 id="common-sites">常用网站</h2>
+            <ul>
+                <li><a href="https://hubgw.docker.com/_/mysql/tags" target="_blank" rel="noopener noreferrer">Docker Hub</a></li>
+                <li><a href="https://privacy.aiuys.com/" target="_blank" rel="noopener noreferrer">Privacy | 个人数据泄漏检测</a></li>
+                <li><a href="https://typst.app/project/paoxMcPGx5hqhAxyyiwUWK" target="_blank" rel="noopener noreferrer">RESUME – Typst</a></li>
+                <li><a href="http://gx-jd-com-s.vpn.uestc.edu.cn:8118/" target="_blank" rel="noopener noreferrer">京东读书专业版</a></li>
+                <li><a href="https://gitee.com/explore" target="_blank" rel="noopener noreferrer">开源软件 - Gitee.com</a></li>
+                <li><a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer">菜鸟教程 - 学的不仅是技术，更是梦想！</a></li>
+                <li><a href="https://quickref.cn/" target="_blank" rel="noopener noreferrer">Quick Reference &amp; Quick Reference</a></li>
+                <li><a href="https://www.deepl.com/zh/translator-mobile" target="_blank" rel="noopener noreferrer">DeepL翻译：全世界最准确的翻译</a></li>
+                <li><a href="https://www.asu.edu/" target="_blank" rel="noopener noreferrer">ASU Homepage | Arizona State University</a></li>
+                <li><a href="https://www.aigei.com/" target="_blank" rel="noopener noreferrer">爱给网_音效配乐_3D模型_视频素材_免费下载</a></li>
+            </ul>
+
+            <h2 id="literature">文献阅读</h2>
+            <ul>
+                <li><a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" rel="noopener noreferrer">IEEE Xplore</a></li>
+                <li><a href="https://www.semanticscholar.org/" target="_blank" rel="noopener noreferrer">Semantic Scholar | AI-Powered Research Tool</a></li>
+                <li><a href="https://www.connectedpapers.com/" target="_blank" rel="noopener noreferrer">Connected Papers | Find and explore academic papers</a></li>
+                <li><a href="https://orcid.org/my-orcid?orcid=0009-0005-5684-715X" target="_blank" rel="noopener noreferrer">Dengyu Wang (0009-0005-5684-715X) - My ORCID</a></li>
+                <li><a href="https://www.paperaware.com/" target="_blank" rel="noopener noreferrer">文感 PaperAware-新一代AI原生文献管理工具</a></li>
+                <li><a href="https://ai4paper.pro/" target="_blank" rel="noopener noreferrer">AI4Paper - 让天下没有难读的 Paper</a></li>
+                <li><a href="https://mineru.net/" target="_blank" rel="noopener noreferrer">MinerU | 面向 Agent 和 RAG 的智能文档解析平台</a></li>
+            </ul>
+
+            <h2 id="paper-writing">论文写作</h2>
+            <ul>
+                <li><a href="https://ieeeauthorcenter.ieee.org/" target="_blank" rel="noopener noreferrer">Publish with IEEE - IEEE Author Center</a></li>
+                <li><a href="https://ieee.submission.researchexchange.com/submission/dashboard?siteName=tradar-ieee" target="_blank" rel="noopener noreferrer">My Submissions | IEEE Author Portal</a></li>
+                <li><a href="https://www.deepl.com/zh/translator/l/en/en" target="_blank" rel="noopener noreferrer">DeepL翻译器|全世界最准确的翻译器</a></li>
+                <li><a href="https://3142.nl/latex-diff/" target="_blank" rel="noopener noreferrer">Online LaTeX diff tool</a></li>
+                <li><a href="https://smart-drawio-next.vercel.app/" target="_blank" rel="noopener noreferrer">Smart Drawio</a></li>
+            </ul>
+
+            <h2 id="news">实时资讯</h2>
+            <ul>
+                <li><a href="https://yandex.com/" target="_blank" rel="noopener noreferrer">Yandex</a></li>
+                <li><a href="https://www.hiascend.com/forum/" target="_blank" rel="noopener noreferrer">昇腾论坛</a></li>
+                <li><a href="https://www.bilibili.com/video/BV1xkVnzHEXg?spm_id_from=333.788.recommend_more_video.0&amp;trackid=web_related_0.router-related-2479604-tn27s.1775127650730.190&amp;vd_source=e4afe74f6b3913d9798b4810ec097816" target="_blank" rel="noopener noreferrer">同志，你的磁场减弱了？来感受祖国的力量吧！！_哔哩哔哩_bilibili</a></li>
+                <li><a href="https://www.bilibili.com/video/BV1BES4BfE84/?spm_id_from=333.337.search-card.all.click&amp;vd_source=e4afe74f6b3913d9798b4810ec097816" target="_blank" rel="noopener noreferrer">【武当八段锦】 最好的版本 带呼吸口令和要点标注_哔哩哔哩_bilibili</a></li>
+                <li><a href="https://www.bilibili.com/cheese/play/ss145407212?csource=Share_more&amp;from_spmid=main.space.0.module&amp;plat_id=362&amp;share_from=lesson&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=549e03af-108d-4322-87ea-5dff1fe7206a&amp;share_source=GENERIC&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1754583000&amp;unique_k=8SP8xpC" target="_blank" rel="noopener noreferrer">【电磁场与电磁波】6小时期末速成 零基础友好版_哔哩哔哩_bilibili</a></li>
+            </ul>
+
+            <h2 id="servers">服务器管理</h2>
+            <ul>
+                <li><a href="https://tpass.hunan.chinatax.gov.cn:8443/#/login?redirect_uri=https%3A%2F%2Fetax.hunan.chinatax.gov.cn%3A8443%2Fmhzx%2Fapi%2Fmh%2Ftpass%2Fcode&amp;client_id=ue7c9954acea492784ac6g78939gc2e9&amp;response_type=code&amp;state=359ac5f33b9c4f3aa5ae2bcb3c7f41e4&amp;client_pid=ue7c9954acea492784ac6g78939gc2e9" target="_blank" rel="noopener noreferrer">湖南电子税务局</a></li>
+                <li><a href="https://dc.console.aliyun.com/#/info-stencil/HolderInfo?id=24585647&amp;type=AUDITING" target="_blank" rel="noopener noreferrer">域名控制台</a></li>
+                <li><a href="https://beian.huaweicloud.com/" target="_blank" rel="noopener noreferrer">华为云备案_域名ICP备案服务_个人网站和企业网站备案服务-华为云</a></li>
+                <li><a href="https://chuanyumeet.com/admin" target="_blank" rel="noopener noreferrer">管理后台-L4L@dm1n2024!</a></li>
+                <li><a href="https://memoloop.xyz/admin.html#access" target="_blank" rel="noopener noreferrer">MemoLoop Admin</a></li>
+                <li><a href="https://img.remit.ee/" target="_blank" rel="noopener noreferrer">Remit.ee - 免费图床推荐 | 图片转链接生成器 | 无限上传图片与在线托管</a></li>
+                <li><a href="https://resend.com/emails" target="_blank" rel="noopener noreferrer">Emails · Resend</a></li>
+                <li><a href="https://dash.cloudflare.com/211b623f93c7983c8c48221489bfd30b/home/overview" target="_blank" rel="noopener noreferrer">Account home</a></li>
+                <li><a href="https://bytedance.larkoffice.com/share/base/form/shrcnjGhcnRyB4E55IacGW1fhHH" target="_blank" rel="noopener noreferrer">深度专家众测-话题预设</a></li>
+                <li><a href="https://bytedance.larkoffice.com/wiki/TvVFwq2aSiqgpmkNjpXcnVvpnv3?table=tblYywM3gqs6Q7we&amp;view=vewGz5ZEn9" target="_blank" rel="noopener noreferrer">‌​ ​​‌ ​​‍​​‬‬‬​‌​⁠​‌​​‬​⁠​‌​​​⁠‍‬​‬​‬‌⁠​​​⁠​专家深度通话众测体验 - 飞书云文档</a></li>
+                <li><a href="https://shujufuwubu.feishu.cn/wiki/L0PPwtqCBiXWbCkGqWYcUVbdnec?sheet=DYagjJ" target="_blank" rel="noopener noreferrer">0620-豆包-专家深度通话众测 正式作业 - 飞书云文档</a></li>
+            </ul>
+
+            <h2 id="graduate-recommendation">保研</h2>
+            <ul>
+                <li><a href="https://yzbm.tsinghua.edu.cn/index" target="_blank" rel="noopener noreferrer">研究生申请服务系统</a></li>
+                <li><a href="https://admission.pku.edu.cn/applications/pku/jpf/enrollment/EnrollmentController.jpf" target="_blank" rel="noopener noreferrer">北京大学研究生招生网</a></li>
+                <li><a href="https://gsao.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">复旦大学研究生招生网</a></li>
+                <li><a href="https://yjsy.zju.edu.cn/zs/home" target="_blank" rel="noopener noreferrer">研究生教育管理信息系统</a></li>
+                <li><a href="https://xspt.ustc.edu.cn/sstm/TXlIZWFydFdpbGxHb09udG0vc2NjbCMyYzQ1MjhjMC1kYjA4LTQzNDItOTkxMS1iYjVjOTdiYTY4ODA_" target="_blank" rel="noopener noreferrer">研究生报考服务系统</a></li>
+                <li><a href="https://ga.sjtu.edu.cn/zsgl/xlygl/login.aspx?oid=print" target="_blank" rel="noopener noreferrer">上海交通大学研究生院</a></li>
+            </ul>
+        </div>
+
+        <section class="post-copyright">
+            <p class="copyright-item"><span>Author:</span><span>XIAODENGWANG</span></p>
+            <p class="copyright-item"><span>Permalink:</span><span><a href="/posts/browser-bookmarks/">https://xiaodengwang01.github.io/posts/browser-bookmarks/</a></span></p>
+        </section>
+        <section class="post-tags">
+            <div><span>Tag(s):</span><span class="tag"># 收藏夹&nbsp;&nbsp;# 导航</span></div>
+            <div><a href="javascript:window.history.back();">back</a><span>· </span><a href="/">home</a></div>
+        </section>
+    </article>
+</div>
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XIAODENGWANG | Static site · Style adapted from <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank" rel="noopener">Chic</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

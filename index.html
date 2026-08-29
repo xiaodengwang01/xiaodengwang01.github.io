@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,7 @@
     <!-- stylesheets list from _config.yml -->
     
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
     
 
 
@@ -33,18 +34,7 @@
     
     <script src="/js/script.js"></script>
     
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<meta name="generator" content="Hexo 7.3.0"></head>
+    <script src="/js/tocbot.min.js"></script></head>
 
 <body>
     <script>
@@ -74,15 +64,8 @@
         <div class="container">
             <div class="navbar-header header-logo"><a href="/">Xiaodengwang&#39;s Blog</a></div>
             <div class="menu navbar-right">
-                
-                <a class="menu-item" href="/archives">Posts</a>
-                
-                <a class="menu-item" href="/category">Categories</a>
-                
-                <a class="menu-item" href="/tag">Tags</a>
-                
-                <a class="menu-item" href="/about">About</a>
-                
+                <a class="menu-item" href="#about">About</a>
+                <a class="menu-item" href="/archives/">Posts</a>
                 
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
@@ -103,15 +86,8 @@
                 </div>
             </div>
             <div class="menu" id="mobile-menu">
-                
-                <a class="menu-item" href="/archives">Posts</a>
-                
-                <a class="menu-item" href="/category">Categories</a>
-                
-                <a class="menu-item" href="/tag">Tags</a>
-                
-                <a class="menu-item" href="/about">About</a>
-                
+                <a class="menu-item" href="#about">About</a>
+                <a class="menu-item" href="/archives/">Posts</a>
             </div>
         </div>
     </nav>
@@ -132,18 +108,16 @@
 </script>
             <div class="main">
                 
-    <div class="container profile-container">
+    <div class="container profile-container home-hero">
     <div class="intro">
         <div class="avatar">
-            <a href="/archives"><img src="/image/man.jpg"></a>
+            <a href="#about"><img src="/image/man.jpg" alt="王登宇手绘头像"></a>
         </div>
         <div class="nickname">XIAODENGWANG</div>
-        <div class="description"><p>记录电子设计、嵌入式、学习与生活。</p>
-</div>
         <div class="links">
             
                 
-                    <a class="link-item" title="Blog" href="/archives">
+                    <a class="link-item" title="Blog" href="/archives/">
                         
                         
                             <i class="iconfont icon-blog"></i>
@@ -160,13 +134,188 @@
             
         </div>
     </div>
+    <a class="scroll-cue" href="#about" aria-label="向下查看个人信息">
+        <span>了解更多</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+    </a>
 </div>
 
+<section class="academic-profile" id="about" aria-labelledby="about-title">
+    <div class="academic-layout">
+        <aside class="academic-aside">
+            <img class="academic-photo" src="/image/academic-profile.jpg" alt="王登宇个人照片">
+            <div class="academic-identity">
+                <h1 id="about-title">王登宇</h1>
+                <p class="academic-name-en">Dengyu Wang</p>
+                <p>电子科技大学本科生</p>
+                <p>信息与通信工程学院</p>
+                <p>信息对抗技术</p>
+            </div>
+            <dl class="academic-contact">
+                <div>
+                    <dt>研究方向</dt>
+                    <dd>智能感知、毫米波雷达、仿真数据生成</dd>
+                </div>
+                <div>
+                    <dt>电子邮箱</dt>
+                    <dd><a href="mailto:xiaodengwang@std.uestc.edu.cn">xiaodengwang@std.uestc.edu.cn</a></dd>
+                </div>
+                <div>
+                    <dt>个人主页</dt>
+                    <dd><a href="https://github.com/xiaodengwang01" target="_blank" rel="noopener">GitHub</a></dd>
+                </div>
+            </dl>
+        </aside>
+
+        <div class="academic-content">
+            <section class="academic-section">
+                <h2>个人简介</h2>
+                <p>电子科技大学信息与通信工程学院信息对抗技术专业本科生，就读于“成电英才计划”拔尖创新人才实验班。现于电子科技大学雷达探测与成像团队开展科研训练，指导教师为郭世盛研究员，主要关注毫米波雷达人体感知、雷达仿真数据生成与智能感知系统落地。</p>
+            </section>
+
+            <section class="academic-section">
+                <h2>教育背景</h2>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h3>电子科技大学 · 信息与通信工程学院</h3>
+                        <time>2023.09 – 至今</time>
+                    </div>
+                    <p>信息对抗技术，“成电英才计划”拔尖创新人才实验班</p>
+                    <ul>
+                        <li>前五学期学业成绩排名专业第一：1 / 26</li>
+                        <li>GPA：3.83 / 4.00</li>
+                        <li>嵌入式系统设计工程师初级证书、A 类业余无线电台操作证书、UOM 无人机操作员证</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="academic-section">
+                <h2>科研经历与论文进展</h2>
+                <article class="research-item">
+                    <div class="timeline-head">
+                        <h3>毫米波雷达空中手写字符数字孪生系统构建</h3>
+                        <time>2025.09 – 2026.06</time>
+                    </div>
+                    <p>提出 RadHCR 数字孪生系统，实现原始回波数据的大规模、快速、低成本扩展；构建 25 类手写字符仿真与实测混合数据集，验证合成数据在手写识别中的有效性。</p>
+                    <p class="publication-status">第一作者论文投稿至 IEEE Transactions on Radar Systems，一审大修后已修改并重新提交。</p>
+                </article>
+
+                <article class="research-item">
+                    <div class="timeline-head">
+                        <h3>面向人体感知的雷达仿真数据生成方法综述</h3>
+                        <time>2026.03 – 2026.07</time>
+                    </div>
+                    <p>系统梳理显式物理仿真方法、隐式生成模型方法、质量评估体系与典型人体感知应用。</p>
+                    <p class="publication-status">第一作者论文投稿至《雷达学报》，已提交并处于外审阶段。</p>
+                </article>
+
+                <article class="research-item">
+                    <div class="timeline-head">
+                        <h3>干扰环境下分层感知毫米波雷达手势识别</h3>
+                        <time>2025.03 – 2026.06</time>
+                    </div>
+                    <p>参与设计面向人体运动干扰的分层毫米波雷达手势识别方法，利用整体位移与局部手势角度差异降低误识别。</p>
+                    <p class="publication-status">第三作者论文投稿至 IEEE Internet of Things Journal，一审大修后已修改并重新提交。</p>
+                </article>
+            </section>
+
+            <section class="academic-section">
+                <h2>学科竞赛与荣誉</h2>
+                <ul class="achievement-list">
+                    <li><span>2025</span><strong>全国大学生嵌入式芯片与系统设计竞赛</strong><span class="achievement-result">国家级一等奖</span></li>
+                    <li><span>2025</span><strong>全国大学生物联网设计竞赛</strong><span class="achievement-result">国家级一等奖</span></li>
+                    <li><span>2025</span><strong>华为鲲鹏创新大赛高校赛道</strong><span class="achievement-result">全国总决赛铜奖</span></li>
+                    <li><span>2025</span><strong>中国移动大学生科技创新大赛</strong><span class="achievement-result">全国总决赛三等奖</span></li>
+                    <li><span>2025</span><strong>全国大学生电子设计竞赛</strong><span class="achievement-result">四川省二等奖</span></li>
+                    <li><span>2025</span><strong>全国大学生光电设计竞赛</strong><span class="achievement-result">西南赛区二等奖</span></li>
+                </ul>
+            </section>
+
+            <section class="academic-section">
+                <h2>校园实践</h2>
+                <ul class="campus-list">
+                    <li>
+                        <span>2024.10 – 至今</span>
+                        <div>
+                            <strong>电子科技大学英才实验学院科学技术协会 · 副会长 / 集训队负责人</strong>
+                            <p>协调组织学院电子信息类学科竞赛培训工作；2025 学年社团成员 28 人累计斩获国家级奖项 12 项、省部级奖项 20 余项。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>2025.03 – 至今</span>
+                        <div>
+                            <strong>华为昇腾校园大使</strong>
+                            <p>管理“华为 &amp; 电子科技大学联合实验室”；作为华为昇腾高校人才促进计划优秀案例参加 KADC 鲲鹏昇腾开发者大会。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>2024.12 – 2025.09</span>
+                        <div>
+                            <strong>电子科技大学意行实践队 · 队长</strong>
+                            <p>组织“意行红韵，创智领航”主题红色研学；搭建竞赛科研校际交流平台；获四川综合素质 A 级证书。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="academic-section">
+                <h2>项目经历</h2>
+                <div class="project-grid">
+                    <article>
+                        <h3>Asayn</h3>
+                        <p>轻量化本地 AI Agent 工具，即下即用，支持工具调用、会话管理、技能系统与自动化工作流。</p>
+                        <time>2026.05 – 至今</time>
+                    </article>
+                    <article>
+                        <h3>AskMap</h3>
+                        <p>本地知识卡片管理工具，将 AI 对话和课程笔记转化为极简问答卡片。</p>
+                        <time>2024.07 – 至今</time>
+                    </article>
+                    <article>
+                        <h3><a href="https://memoloop.xyz" target="_blank" rel="noopener noreferrer">MemoLoop <span aria-hidden="true">↗</span></a></h3>
+                        <p>面向保研、考研复试、夏令营和预推免的专业课知识卡片复习与模拟面试工具。</p>
+                        <span class="project-kind">在线项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://chuanyumeet.com" target="_blank" rel="noopener noreferrer">ChuanyuMeet <span aria-hidden="true">↗</span></a></h3>
+                        <p>独立上线的 Web 项目，点击项目名称可直接访问网站。</p>
+                        <span class="project-kind">在线项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://github.com/xiaodengwang01/LearnDock" target="_blank" rel="noopener noreferrer">LearnDock <span aria-hidden="true">↗</span></a></h3>
+                        <p>面向来华国际学生的英文攻略站，采用 Python、SQLite 与结构化内容发布流程。</p>
+                        <span class="project-kind">GitHub 开源项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://github.com/xiaodengwang01/Velora" target="_blank" rel="noopener noreferrer">Velora <span aria-hidden="true">↗</span></a></h3>
+                        <p>本地数字人对话项目，支持实时视频对话、按键讲话和可编辑的本地记忆。</p>
+                        <span class="project-kind">GitHub 开源项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://github.com/xiaodengwang01/WebDesignWorkbench" target="_blank" rel="noopener noreferrer">WebDesignWorkbench <span aria-hidden="true">↗</span></a></h3>
+                        <p>面向 AI 编程助手的网页设计工作台与可复用设计技能。</p>
+                        <span class="project-kind">GitHub 开源项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://github.com/xiaodengwang01/EERAG" target="_blank" rel="noopener noreferrer">EERAG <span aria-hidden="true">↗</span></a></h3>
+                        <p>公开项目仓库，项目内容正在整理中。</p>
+                        <span class="project-kind">GitHub 开源项目</span>
+                    </article>
+                    <article>
+                        <h3><a href="https://github.com/xiaodengwang01/xiaodengwang01.github.io" target="_blank" rel="noopener noreferrer">个人静态博客 <span aria-hidden="true">↗</span></a></h3>
+                        <p>无需 Hexo 编译、可由 GitHub Pages 直接发布的个人静态网站。</p>
+                        <span class="project-kind">GitHub 开源项目</span>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
 
             </div>
             <footer id="footer" class="footer">
     <div class="copyright">
-        <span>© XIAODENGWANG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+        <span>© XIAODENGWANG</span>
     </div>
 </footer>
 
