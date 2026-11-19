@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小登写给云辛的情书</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="Love_files/default.css">
+    <script src="Love_files/jquery.min.js"></script>
+    <script src="Love_files/jscex.min.js"></script>
+    <script src="Love_files/jscex-parser.js"></script>
+    <script src="Love_files/jscex-jit.js"></script>
+    <script src="Love_files/jscex-builderbase.min.js"></script>
+    <script src="Love_files/jscex-async.min.js"></script>
+    <script src="Love_files/jscex-async-powerpack.min.js"></script>
+    <script src="Love_files/functions.js"></script>
+    <script src="Love_files/love.js"></script>
+</head>
+<body>
+    <main>
+        <h1>小登写给云辛的情书</h1>
+        <p id="error">当前浏览器无法播放情书动画。</p>
+        <div id="wrap">
+            <div id="stage">
+                <canvas id="canvas" width="1100" height="680" aria-label="爱心树动画"></canvas>
+                <button id="open-letter" type="button">打开情书</button>
+            </div>
+            <div id="text">
+                <div id="code">
+                    <span class="say">云辛：</span>
+                    <span class="say">有些话，见面时总忘了说。</span>
+                    <span class="say">一起走过的路、聊过的小事，我都记在了心里。</span>
+                    <span class="say">以后遇到喜欢的风景，我还是想第一个讲给你听。</span>
+                    <span class="say">—— 小登</span>
+                </div>
+            </div>
+            <div id="clock-box">
+                这封信已打开
+                <div id="clock"></div>
+            </div>
+        </div>
+        <audio class="letter-music" aria-label="背景音乐" src="../heartwarming.mp3" preload="none" controls loop></audio>
+    </main>
+
+    <script>
+        (function () {
+            var canvas = $('#canvas');
+
+            if (!canvas[0].getContext) {
+                $("#error").show();
+                return false;
+            }
+
+            var width = canvas[0].width;
+            var height = canvas[0].height;
+
+            var opts = {
+                seed: {
+                    x: width / 2 - 20,
+                    color: "rgb(190, 26, 37)",
+                    scale: 2
+                },
+                branch: [
+                    [535, 680, 570, 250, 500, 200, 30, 100, [
+                        [540, 500, 455, 417, 340, 400, 13, 100, [
+                            [450, 435, 434, 430, 394, 395, 2, 40]
+                        ]],
+                        [550, 445, 600, 356, 680, 345, 12, 100, [
+                            [578, 400, 648, 409, 661, 426, 3, 80]
+                        ]],
+                        [539, 281, 537, 248, 534, 217, 3, 40],
+                        [546, 397, 413, 247, 328, 244, 9, 80, [
+                            [427, 286, 383, 253, 371, 205, 2, 40],
+                            [498, 345, 435, 315, 395, 330, 4, 60]
+                        ]],
+                        [546, 357, 608, 252, 678, 221, 6, 100, [
+                            [590, 293, 646, 277, 648, 271, 2, 80]
+                        ]]
+                    ]]
+                ],
+                bloom: {
+                    num: 700,
+                    width: 1080,
+                    height: 650,
+                },
+                footer: {
+                    width: 1200,
+                    height: 5,
+                    speed: 10,
+                }
+            }
+
+            var tree = new Tree(canvas[0], width, height, opts);
+            var seed = tree.seed;
+            var foot = tree.footer;
+            var hold = true;
+            var openedAt;
+            var openButton = document.getElementById("open-letter");
+
+            function pointsAtHeart(event) {
+                var bounds = canvas[0].getBoundingClientRect();
+                var x = (event.clientX - bounds.left) * width / bounds.width;
+                var y = (event.clientY - bounds.top) * height / bounds.height;
+                return seed.hover(x, y);
+            }
+
+            function openLetter() {
+                hold = false;
+                openedAt = new Date();
+                openButton.hidden = true;
+                canvas.off("click mousemove").removeClass("hand");
+            }
+
+            openButton.addEventListener("click", openLetter, { once: true });
+            canvas.on("click", function (event) {
+                if (pointsAtHeart(event)) openLetter();
+            }).on("mousemove", function (event) {
+                canvas.toggleClass("hand", pointsAtHeart(event));
+            });
+
+            var seedAnimate = eval(Jscex.compile("async", function () {
+                seed.draw();
+                while (hold) {
+                    $await(Jscex.Async.sleep(10));
+                }
+                while (seed.canScale()) {
+                    seed.scale(0.95);
+                    $await(Jscex.Async.sleep(10));
+                }
+                while (seed.canMove()) {
+                    seed.move(0, 2);
+                    foot.draw();
+                    $await(Jscex.Async.sleep(10));
+                }
+            }));
+
+            var growAnimate = eval(Jscex.compile("async", function () {
+                do {
+                    tree.grow();
+                    $await(Jscex.Async.sleep(10));
+                } while (tree.canGrow());
+            }));
+
+            var flowAnimate = eval(Jscex.compile("async", function () {
+                do {
+                    tree.flower(2);
+                    $await(Jscex.Async.sleep(10));
+                } while (tree.canFlower());
+            }));
+
+            var moveAnimate = eval(Jscex.compile("async", function () {
+                tree.snapshot("p1", 240, 0, 610, 680);
+                while (tree.move("p1", 500, 0)) {
+                    foot.draw();
+                    $await(Jscex.Async.sleep(10));
+                }
+                foot.draw();
+                tree.snapshot("p2", 500, 0, 610, 680);
+
+                // 会有闪烁不得意这样做, (＞﹏＜)
+                canvas.parent().css("background-image", "url(" + tree.toDataURL('image/png') + ")");
+                canvas.css("background", "#ffc0cb");
+                $await(Jscex.Async.sleep(300));
+                canvas.css("background", "none");
+            }));
+
+            var jumpAnimate = eval(Jscex.compile("async", function () {
+                while (true) {
+                    tree.ctx.clearRect(0, 0, width, height);
+                    tree.jump();
+                    foot.draw();
+                    $await(Jscex.Async.sleep(25));
+                }
+            }));
+
+            var textAnimate = eval(Jscex.compile("async", function () {
+                $("#code").show().typewriter();
+                $("#clock-box").fadeIn(500);
+                while (true) {
+                    timeElapse(openedAt);
+                    $await(Jscex.Async.sleep(1000));
+                }
+            }));
+
+            var runAsync = eval(Jscex.compile("async", function () {
+                $await(seedAnimate());
+                $await(growAnimate());
+                $await(flowAnimate());
+                $await(moveAnimate());
+
+                textAnimate().start();
+
+                $await(jumpAnimate());
+            }));
+
+            runAsync().start();
+        })();
+    </script>
+</body>
+</html>

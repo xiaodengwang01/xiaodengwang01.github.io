@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    background: #ffc0cb;
+    color: #542033;
+    font-family: system-ui, sans-serif;
+}
+
+h1 {
+    margin: 0.8rem 1rem 0.35rem;
+    color: #78183b;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    text-align: center;
+}
+
+#wrap {
+    position: relative;
+    width: min(calc(100% - 2rem), 1100px);
+    margin: 0 auto;
+}
+
+#stage {
+    position: relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#open-letter {
+    position: absolute;
+    top: 61%;
+    left: 48%;
+    transform: translateX(-50%);
+    border: 1px solid #b12c57;
+    border-radius: 1.5rem;
+    padding: 0.45rem 1rem;
+    background: #fff0f4;
+    color: #78183b;
+    font: inherit;
+    cursor: pointer;
+}
+
+#text {
+    position: absolute;
+    top: 13%;
+    left: 5.5%;
+    width: 36%;
+}
+
+#code {
+    display: none;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.65;
+}
+
+.say {
+    display: block;
+    margin-bottom: 0.55em;
+}
+
+#clock-box {
+    display: none;
+    position: absolute;
+    bottom: 12%;
+    left: 5.5%;
+    color: #78183b;
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+}
+
+#clock {
+    margin-top: 0.2rem;
+    font-variant-numeric: tabular-nums;
+}
+
+#clock .digit {
+    font-size: 1.3em;
+}
+
+#error {
+    display: none;
+    text-align: center;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.letter-music {
+    display: block;
+    width: min(16rem, calc(100% - 2rem));
+    height: 42px;
+    margin: 0.75rem auto 1rem;
+}
+
+@media (max-width: 780px) {
+    #text,
+    #clock-box {
+        position: static;
+        width: auto;
+        padding: 0 1rem;
+    }
+}

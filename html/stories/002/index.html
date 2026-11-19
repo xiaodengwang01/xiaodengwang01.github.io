@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小登送给云辛的玫瑰</title>
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        body {
+            box-sizing: border-box;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            display: grid;
+            place-items: center;
+            background: #ffc0cb;
+            color: #78183b;
+            font-family: system-ui, sans-serif;
+        }
+
+        main {
+            width: min(100%, 600px);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.35rem, 4vw, 2rem);
+            font-weight: 600;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>小登送给云辛的玫瑰</h1>
+        <canvas id="rose" width="600" height="600" aria-label="一朵红玫瑰"></canvas>
+    </main>
+    <script>
+        const canvas = document.getElementById("rose");
+        const context = canvas.getContext("2d");
+        const size = canvas.width;
+        const offset = -250;
+        const depths = new Float32Array(size * size).fill(Infinity);
+        const { cos, sin, pow, random } = Math;
+
+        // 原示例以不同曲面上的采样点绘制花茎、叶片和花瓣。
+        function rosePoint(u, v, surface) {
+            if (surface > 60) {
+                const radius = 13 + 5 / (0.2 + pow(v * 4, 4));
+                return [
+                    sin(u * 7) * radius - sin(v) * 50,
+                    v * size + 50,
+                    625 + cos(u * 7) * radius + v * 400,
+                    u - v / 2,
+                    u,
+                ];
+            }
+
+            const planeX = u * 2 - 1;
+            const planeY = v * 2 - 1;
+            if (planeX * planeX + planeY * planeY >= 1) {
+                return null;
+            }
+
+            if (surface > 37) {
+                const side = surface & 1;
+                const angle = side ? 6 : 4;
+                const length = 0.5 / (u + 0.01) + cos(v * 125) * 3 - u * 300;
+                const curve = v * offset;
+                const vein = (length * (u + 1) + (planeY > 0 ? curve : -curve)) / 25;
+                const shade = 0.4 - u * 0.1 + pow(1 - planeY * planeY, -offset * 6) * 0.15
+                    - u * v * 0.4 + cos(u + v) / 5
+                    + pow(cos(vein), 30) * 0.1 * (1 - planeY * planeY);
+                return [
+                    length * cos(angle) + curve * sin(angle) + side * 610 - 390,
+                    length * sin(angle) - curve * cos(angle) + 550 - side * 350,
+                    1180 + cos(planeY + planeX) * 99 - side * 300,
+                    shade,
+                    length / 1e3 + 0.7 - length * curve * 3e-6,
+                ];
+            }
+
+            if (surface > 32) {
+                const angle = surface * 1.16 - 0.15;
+                const length = u * 45 - 20;
+                const curve = v * v * offset;
+                const depth = length * sin(angle) + curve * cos(angle) + 620;
+                return [
+                    length * cos(angle) - curve * sin(angle),
+                    28 + cos(planeY * 0.5) * 99 - v * v * v * 60 - depth / 2 - offset,
+                    depth,
+                    (v * v * 0.3 + pow(1 - planeX * planeX, 7) * 0.15 + 0.3) * v,
+                    v * 0.7,
+                ];
+            }
+
+            const length = planeX * (2 - v) * (80 - surface * 2);
+            const curve = 99 - cos(planeX) * 120 - cos(v) * (-offset - surface * 4.9)
+                + cos(pow(1 - v, 7)) * 50 + surface * 2;
+            const depth = length * sin(surface) + curve * cos(surface) + 700;
+            return [
+                length * cos(surface) - curve * sin(surface),
+                planeY * 99 - cos(pow(v, 7)) * 50 - surface / 3 - depth / 1.35 + 450,
+                depth,
+                (1 - v / 1.2) * 0.9 + u * 0.1,
+                pow(1 - v, 20) / 4 + 0.05,
+            ];
+        }
+
+        function drawRose() {
+            for (let sample = 0; sample < 10000; sample++) {
+                const point = rosePoint(random(), random(), (sample % 46) / 0.74);
+                if (!point) continue;
+
+                const [rawX, rawY, depth, red, green] = point;
+                const x = Math.trunc(rawX * size / depth - offset);
+                const y = Math.trunc(rawY * size / depth - offset);
+                if (x < 0 || x >= size || y < 0 || y >= size) continue;
+
+                const pixel = y * size + x;
+                if (depth >= depths[pixel]) continue;
+
+                depths[pixel] = depth;
+                context.fillStyle = "rgb(" + ~(red * offset) + ", " + ~(green * offset)
+                    + ", " + ~(red * red * -80) + ")";
+                context.fillRect(x, y, 1, 1);
+            }
+            requestAnimationFrame(drawRose);
+        }
+
+        requestAnimationFrame(drawRose);
+    </script>
+</body>
+</html>

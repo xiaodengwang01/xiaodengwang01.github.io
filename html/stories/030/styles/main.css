@@ -1,0 +1,85 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background: #020409;
+    font-family: system-ui, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(2000px at 10% 130%, #212750 10%, #020409 100%);
+}
+
+#universe {
+    display: block;
+}
+
+.story {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 50%;
+    width: min(500px, calc(100% - 1.5rem));
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border: 1px solid #9c9a70;
+    border-radius: 1.5rem;
+    padding: 0.4rem 1.15rem;
+    background: #141933;
+    color: #f4eebf;
+    font: inherit;
+    cursor: pointer;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    pointer-events: none;
+}
+
+#scene {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    margin-left: -768px;
+}
+
+audio {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    z-index: 2;
+    width: min(15rem, calc(100% - 2rem));
+    height: 42px;
+    transform: translateX(-50%);
+}
